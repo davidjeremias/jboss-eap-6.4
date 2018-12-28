@@ -1,0 +1,33 @@
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:rich="http://richfaces.org/rich" xmlns:a4j="http://richfaces.org/a4j">
+    
+    <h:outputScript library="scripts" name="Mensagem.js" target="body" />
+    <h:outputStylesheet library="css" name="msg.css" />
+
+    <rich:popupPanel id="painelModalMsg" modal="true" resizeable="false" moveable="false" minHeight="110">
+
+        <div class="msgsPopup">
+            <div id="msgAuto">
+                <rich:messages id="msgAutoConteudo" layout="table" showDetail="true" showSummary="false"
+                    limitRender="true" ajaxRendered="true" />
+            </div>
+            <div id="msgManual"></div>
+        </div>
+
+        <div class="botoesPopup">
+            <h:form>
+                <div id="trBtOk">
+                    <h:commandLink value="OK" onclick="return Mensagem.ok()" styleClass="button orange" />
+                </div>
+                <div id="trBtConfirmacao">
+                    <h:commandLink value="Sim" onclick="return Mensagem.sim()" styleClass="button caixa" />
+                    <h:commandLink value="Não" onclick="return Mensagem.nao()" styleClass="button orange" />
+                </div>
+            </h:form>
+        </div>
+
+        <div style="clear: both;"></div>
+    </rich:popupPanel>
+
+</ui:fragment>

@@ -1,0 +1,44 @@
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:rich="http://richfaces.org/rich" xmlns:a4j="http://richfaces.org/a4j">
+
+    <ui:composition template="/composicoes/masterLayout.xhtml" xmlns:siavs="http://java.sun.com/jsf/composite/siavs">
+        <ui:define name="conteudo">
+            <!-- *************************************************************************************************************************************************************** -->
+
+            <h:panelGroup id="jsfTelaPrincipal" styleClass="layoutPadrao">
+                <ui:include src="Mensagem.xhtml" />
+
+                <div class="telaPrincipal #{C.view.nomePadrao}">
+                    <h:panelGroup id="renderInicial">
+                        <h:inputHidden value="#{C.view.atributoFoco}" id="atributoFoco" />
+                        <h:inputHidden value="#{C.view.opSucesso}" id="opSucesso" />
+                    </h:panelGroup>
+
+                    <h:panelGroup id="containerTitulo">
+                        <!-- Se é para exibir o título -->
+                        <h:panelGroup rendered="#{C.view.exibirTitulo}">
+                            <ul class="titulos">
+                                <li class="selecionada"><siavs:tituloTela titulo="#{C.view.titulo}" /></li>
+                            </ul>
+                        </h:panelGroup>
+
+                        <!-- Se não for para exibir o título -->
+                        <h:panelGroup rendered="#{!C.view.exibirTitulo}">
+                            <ui:insert name="titulo" />
+                        </h:panelGroup>
+                    </h:panelGroup>
+
+                    <div class="box">
+                        <ui:insert name="conteudoSimples" />
+                    </div>
+
+                    <ui:insert name="conteudoExtra" />
+                </div>
+            </h:panelGroup>
+
+            <!-- *************************************************************************************************************************************************************** -->
+        </ui:define>
+    </ui:composition>
+
+</ui:fragment>

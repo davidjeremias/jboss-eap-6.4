@@ -1,0 +1,111 @@
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:rich="http://richfaces.org/rich" xmlns:a4j="http://richfaces.org/a4j">
+
+    <ui:composition template="/composicoes/layoutSimples.xhtml" xmlns:siavs="http://java.sun.com/jsf/composite/siavs">
+        <ui:define name="conteudoSimples">
+
+            <!-- *************************************************************************************************************************************************************** -->
+            <!-- FORMULÁRIO DE PESQUISA -->
+            <!-- *************************************************************************************************************************************************************** -->
+
+            <h:form id="compFormPesquisa" rendered="#{C.view.opListar || C.view.opExcluir}">
+
+                <div class="formPesquisa">
+                    <!-- Campos do formulário utilizado como filtro na pesquisa -->
+                    <ui:insert name="formPesquisa" />
+                </div>
+
+                <div class="tabelaPesquisa" align="center">
+
+                    <rich:dataTable id="compTabelaPesquisa" rows="#{C.view.qtdeLinhasTabela}" value="#{C.view.listaVo}"
+                        var="voTabela" noDataLabel="#{msgs.MN003}" sortMode="multi">
+
+                        <!-- Colunas visíveis na tabela -->
+                        <ui:insert name="colunasTabelaPesquisa" />
+
+                        <rich:column style="text-align:left; vertical-align: middle;"
+                            rendered="#{C.view.permiteAlterar(voTabela) || C.view.permiteExcluir(voTabela)}">
+                            <f:facet name="header">
+                                <h:outputText value="Ação" />
+                            </f:facet>
+                            <div class="botoesAcao">
+                                <h:commandLink action="#{C.view.irTelaAlteracao(voTabela)}"
+                                    rendered="#{C.view.permiteAlterar(voTabela)}" styleClass="bt_alterar"
+                                    immediate="true" title="#{msgs.MA003}" />
+                                <a4j:commandLink action="#{C.view.setVo(voTabela)}"
+                                    onclick="Mensagem.exibirConfirmacao('#{msgs.MA001} #{C.view.titulo}?', fnExcluir)"
+                                    rendered="#{C.view.permiteExcluir(voTabela)}" styleClass="bt_excluir"
+                                    title="#{msgs.MA004}" execute="@form" />
+                            </div>
+                        </rich:column>
+                    </rich:dataTable>
+
+                    <rich:dataScroller id="compPaginacaoPesquisa" for="compTabelaPesquisa" align="center"
+                        rendered="#{C.view.qtdeLinhasTabela != 0}">
+                        <f:facet name="last">
+                            <h:outputText value=">|" />
+                        </f:facet>
+                        <f:facet name="first">
+                            <h:outputText value="|&lt;" />
+                        </f:facet>
+                    </rich:dataScroller>
+
+                    <!-- Conteúdo adicionado abaixo da tabela de pesquisa -->
+                    <ui:insert name="fimTabPesquisa" />
+                </div>
+
+
+                <a4j:jsFunction name="fnExcluir" action="#{C.view.excluir(C.view.vo)}"
+                    render="compFormPesquisa renderInicial containerTitulo" execute="@form" oncomplete="U.posRender();" />
+
+                <h:commandLink id="btIncluirPadrao" immediate="true" action="#{C.view.irTelaCadastro()}" value="Incluir"
+                    styleClass="bt_incluir" title="#{msgs.MA005}" rendered="#{C.view.permiteIncluir()}" />
+                <div class="clearBoth"></div>
+
+            </h:form>
+
+            <!-- *************************************************************************************************************************************************************** -->
+            <!-- FORMULÁRIO DE CADASTRO -->
+            <!-- *************************************************************************************************************************************************************** -->
+
+            <div class="formCadastro">
+                <h:form id="compFormCadastro" prependId="false" rendered="#{C.view.opIncluir || C.view.opAlterar}">
+
+                    <!-- Campos do formulário de cadastro -->
+                    <ui:insert name="formCadastro" />
+
+                    <ul class="botoes">
+                        <li>
+                        	<ui:insert name="tempBtIncluir">
+                                <a4j:commandLink value="Salvar" action="#{C.view.incluir(C.view.vo)}"
+                                    rendered="#{empty C.view.vo.pk}" styleClass="button caixa" title="#{msgs.MA006}"
+                                    render="compFormCadastro renderInicial containerTitulo" execute="@form"
+                                    oncomplete="U.posRender()" />
+                            </ui:insert> 
+                            
+                            <a4j:commandLink value="Salvar" action="#{C.view.alterar(C.view.vo)}"
+                                rendered="#{!empty C.view.vo.pk}" styleClass="button caixa" title="#{msgs.MA006}"
+                                render="compFormCadastro renderInicial containerTitulo" execute="@form"
+                                oncomplete="U.posRender()" />
+                        </li>
+                        
+                        <li>
+                        	<ui:insert name="tempBtVoltar">
+                                <h:commandLink value="Voltar" immediate="true" action="#{C.view.irTelaInicio()}"
+                                    styleClass="button orange"
+                                    title="Clique para voltar a tela inicial do #{C.view.titulo}!" />
+                            </ui:insert>
+                       </li>
+                    </ul>
+
+                </h:form>
+            </div>
+
+            <!-- *************************************************************************************************************************************************************** -->
+            <!-- *************************************************************************************************************************************************************** -->
+
+        </ui:define>
+    </ui:composition>
+
+</ui:fragment>

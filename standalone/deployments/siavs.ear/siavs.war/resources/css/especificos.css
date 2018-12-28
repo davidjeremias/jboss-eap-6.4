@@ -1,0 +1,483 @@
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+/* Geral */
+input.matriculaRede {
+	text-transform: uppercase;
+}
+
+
+div.descending, div.ascending {
+	display: inline-block;
+	vertical-align: middle;
+	width: 16px;
+	height: 16px;
+}
+
+div.ascending {
+	background-image: url("#{resource['images/bullet_arrow_up.png']}");
+}
+
+div.descending {
+	background-image: url("#{resource['images/bullet_arrow_down.png']}");
+}
+
+div.descending, div.ascending {
+	display: inline-block;
+	vertical-align: middle;
+	width: 16px;
+	height: 16px;
+}
+
+div.ascending {
+	background-image: url("#{resource['images/bullet_arrow_up.png']}");
+}
+
+div.descending {
+	background-image: url("#{resource['images/bullet_arrow_down.png']}");
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+#manterMeta .tabelaPesquisa {
+	width: 100%;
+	border: 1px solid rgb(235, 235, 235);
+}
+
+#manterMeta .tabelaPesquisa table {
+	background: none;
+	border: none;
+}
+
+#manterMeta .tabelaPesquisa table tr {
+	background: none;
+}
+
+#manterMeta .tabelaPesquisa table tr td {
+	padding: 3px 0 !important;
+	border: none;
+	font-weight: bold;
+	font-size: 10pt;
+	color: #5B5F62;
+	width: 90%;
+}
+
+#manterMeta .tabelaPesquisa table tr td:FIRST-CHILD {
+	padding-left: 35px  !important;
+	width: 11%;
+}
+
+#manterMeta .tabelaPesquisa table tr td input {
+	text-align: right;
+	padding-right: 0;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+#vinculaServico {
+	padding: 20px;
+}
+
+#vinculaServico .linha {
+	margin: 0 0 10px 4px;
+}
+	
+#vinculaServico .rf-pick {
+	width: 100%;
+}
+	
+#vinculaServico .rf-pick:FOCUS {
+	outline: none;
+}
+
+#vinculaServico .rf-pick tr {
+	background: none;
+}
+
+#vinculaServico .rf-pick td {
+	padding: 0;
+	border: none;
+	vertical-align: middle;
+	padding: 0 4px;
+}
+
+#vinculaServico .rf-pick-btn {
+	padding: 10px 0;
+	margin: 10px auto;
+	text-align: center;
+	font-weight: bold;
+	font-family: Tahoma;
+	display: block;
+	width: 53px;
+	-webkit-border-radius: .5em;
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+}
+
+#vinculaServico .rf-pick-add-all,
+#vinculaServico .rf-pick-rem-all {
+	display: none;
+}
+
+#vinculaServico .rf-pick-btn:HOVER {
+	color: #ffffff;
+	background: #f47c20;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f88e11), to(#f06015));
+	background: -moz-linear-gradient(top, #f88e11, #f06015);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
+}
+
+#vinculaServico .rf-pick-btn,
+#vinculaServico .rf-pick-btn:VISITED {
+	color: #ffffff;
+	border: solid 1px #da7c0c;
+	background: #f78d1d;
+	background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20));
+	background: -moz-linear-gradient(top, #faa51a, #f47a20);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20');
+}
+
+#vinculaServico .rf-pick-btn-dis,
+#vinculaServico .rf-pick-btn-dis:HOVER,
+#vinculaServico .rf-pick-btn-dis:VISITED {
+	color: #ffffff;
+	border: solid 1px #999999;
+	background: #CCCCCC;
+	background: -webkit-gradient(linear, left top, left bottom, from(#D8D8D8), to(#A8A8A8));
+	background: -moz-linear-gradient(top, #D8D8D8, #A8A8A8);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#D8D8D8', endColorstr='#A8A8A8');
+}
+
+#vinculaServico .rf-pick-opt {
+	font-size: 12px;
+}
+
+#vinculaServico .rf-pick-sel {
+	background-color: #0090FF;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+#vinculaServico .rf-pick-lst-scrl {
+	overflow-y: scroll;
+	width: 307px !important;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.leiaMaisNoticia {
+	border: none !important;
+}
+
+.leiaMaisNoticia .rf-pp-cnt {
+	padding: 0;
+	font-size: 12px;
+}
+
+.leiaMaisNoticia label {
+	display: block;
+}
+
+.leiaMaisNoticia .titulo {
+	color: #006AB6;
+	font-size: 22px;
+	text-align: center;
+	width: 100%;
+	padding: 10px 160px;
+	display: table-cell;
+	background-color: #F3F3F3;
+	border-bottom: 1px solid #999999;
+	background-image: url("#{resource['images/msg/ico_info.png']}");
+	background-repeat: no-repeat;
+	background-position: 30px 17px;
+}
+
+.leiaMaisNoticia .dataHora {
+	font-weight: normal !important;
+	font-style: italic;
+	margin: 5px 0 0 5px;
+}
+
+.leiaMaisNoticia .noticia {
+	font-weight: normal !important;
+	margin: 5px;
+	height: 60px;
+	overflow-y: auto;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+#avaliaServico .infoNotas {
+	color: #00DB26;
+	font-weight: bold;
+	display: block;
+	text-align: center;
+	margin: 10px 0;
+}
+
+#avaliaServico .tabelaPesquisa {
+	height: 350px;
+}
+
+#avaliaServico tr {
+	background: #F1F1F1;
+}
+
+#avaliaServico td {
+	text-align: center;
+	vertical-align: middle;
+	border-bottom: none;
+	border-right: none;
+	border-left: none;
+} 
+
+#avaliaServico td.problema table {
+	margin: 5px 0 !important;
+} 
+
+#avaliaServico td.problema td {
+	text-align: left;
+	border: none;
+} 
+
+#avaliaServico textarea {
+	resize: none;
+} 
+
+#avaliaServico tr.noticia td {
+	text-align: left;
+	padding: 4px 0;
+	border-top: none;
+	border-bottom: none;
+	font-size: 11px;
+}
+ 
+#avaliaServico tr.noticia span.informativo {
+	color: #0000FF;
+	font-weight: bold;
+	padding: 0 7px;
+}
+
+#avaliaServico tr.noticia span.corpo {
+	font-style: italic;
+}
+	
+#avaliaServico td.comentario .obrigatorio {
+	position: relative;
+	top: 28px;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+#consultaPainelAvaliacao {
+	padding-top: 10px;
+}
+
+#consultaPainelAvaliacao .formPesquisa .linha div {
+	float: left;
+	white-space: nowrap;
+}
+
+#consultaPainelAvaliacao .formPesquisa .linha label {
+	width: 100px;
+}
+
+#consultaPainelAvaliacao .formPesquisa .linha .rf-cal {
+	width: 150px !important;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+#painelAvaliacao .tabelaPesquisa {
+	width: 100%;
+	margin-top: 10px;
+	height: 350px;
+}
+
+#painelAvaliacao .tabelaPesquisa td {
+	text-align: center;
+	vertical-align: middle;
+	padding: 5px 4px !important;
+}
+
+#painelAvaliacao .legenda {
+	text-align: center;
+	font-weight: bold;
+}
+
+#painelAvaliacao .legenda div,
+#painelAvaliacao .legenda span {
+	display: inline-block;
+}
+
+#painelAvaliacao .legenda span {
+	margin-right: 10px;
+}
+
+#painelAvaliacao .acimaMedia,
+#painelAvaliacao .abaixoMedia {
+	border-radius:50%;
+	-moz-border-radius:50%;
+	-webkit-border-radius:50%;
+	width: 10px;
+	height: 10px;
+	border: 1px solid #000;
+}
+
+#painelAvaliacao .acimaMedia {
+	background-color: green;
+}
+
+#painelAvaliacao .abaixoMedia {
+	background-color: red;
+}
+
+#painelAvaliacao .botoes li {
+	margin-top: 21px !important;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+#consultaAvaliacaoServico .formPesquisa .linha div {
+	white-space: nowrap;
+	float: left;
+}
+
+#consultaAvaliacaoServico .formPesquisa .linha label {
+	width: 100px;
+}
+
+#consultaAvaliacaoServico .formPesquisa .linha .rf-cal {
+	width: 150px !important;
+}
+
+#consultaAvaliacaoServico input[type=checkbox] {
+	width: 13px;
+	margin: 3px 0 0 5px;
+}
+
+#consultaAvaliacaoServico .marcarTodos {
+	margin-left: 38px;
+}
+
+#consultaAvaliacaoServico .marcarTodos label {
+	margin-left: 5px;
+}
+
+#consultaAvaliacaoServico .botoes li {
+	padding-top: 10px;
+}
+
+#consultaAvaliacaoServico .bt_excel {
+	float: right;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+	
+.manterUsuarioRodape {
+	font-size: 11px;
+	margin: 4px;
+	display: block;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.login .telaPrincipal {
+	width: 310px;
+}
+
+.login .linha {
+	width: 71% !important;
+	margin: 0 auto;
+}
+
+.login label {
+	width: 80px !important;
+}
+
+.login input {
+	width: 80px !important;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.txtDeNoticia .rf-ed {
+	display: inline-table;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.enviarEmailPosicionamento .tabelaPesquisa {
+	overflow-y: auto !important;
+}
+
+.enviarEmailPosicionamento div.box .tabelaPesquisa {
+	height: 430px;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.anexarArquivo .rf-fu {
+	border: none;
+	width: 0;
+	height: 0;
+}
+
+.anexarArquivo .rf-fu-hdr {
+	margin: 0;
+	border: none;
+	height: 0;
+}
+
+.anexarArquivo .rf-fu-btn-add {
+	margin: 0;
+	border: 0;
+}
+
+.anexarArquivo .rf-fu-btn-cnt-add {
+	position: absolute !important;
+	margin: 0px !important;
+	padding: 0px !important;
+	background: none !important;
+	
+	background-image: url("#{resource['images/ico_anexo.png']}") !important;
+	background-position: 0px 0px !important;
+	width: 16px !important;
+	height: 16px !important;
+	display: block !important;
+}
+
+.anexarArquivo .rf-fu-inp {
+	cursor: pointer !important;
+	margin-right: 0 !important;
+	width: 16px !important;
+	height: 16px !important;
+	float: none !important;
+}
+
+.anexarArquivo .rf-fu-lst {
+	height: 30px !important;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.bt_grafico {
+	background-image: url("#{resource['images/bt_grafico.png']}");
+	width: 16px !important;
+	height: 16px !important;
+}
+
+#tabelaGrafico {
+	width: 100%;
+	border: 2px solid #CCC;
+	margin: 20px auto;
+}
+
+#tabelaGrafico span{
+	font-weight: bold;
+	color: #666666;
+	width: 100%;
+	display: block;
+	text-align: center;
+	padding-top: 10px;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */

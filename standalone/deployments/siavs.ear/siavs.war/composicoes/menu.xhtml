@@ -1,0 +1,66 @@
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:rich="http://richfaces.org/rich" xmlns:a4j="http://richfaces.org/a4j">
+
+    <script>
+function fnCheckAlteracao()
+{
+	var r = confirm("Você fez alterações na página deseja sair sem salvar?");
+	if (r == true) {
+		//alert('sair');
+	    return true;
+	} else {
+	   // alert('ficar');
+	    return false;
+	}    
+}
+</script>
+    <h:form id="menuForm" rendered="#{controle.usuarioLogado}">
+
+        <div id="menu_cef">
+            <ul>
+                <a4j:region rendered="#{controle.administrador}">
+                    <li><a href="#">Administração</a>
+                        <ul>
+                            <li><h:commandLink action="#{manterGrupoView.irTelaInicio()}"
+                                    value="#{manterGrupoView.titulo}" /></li>
+                            <li><h:commandLink action="#{manterSegmentoView.irTelaInicio()}"
+                                    value="#{manterSegmentoView.titulo}" /></li>
+                            <li><h:commandLink action="#{manterServicoView.irTelaInicio()}"
+                                    value="#{manterServicoView.titulo}" /></li>
+                            <li><h:commandLink action="#{manterUsuarioView.irTelaInicio()}"
+                                    value="#{manterUsuarioView.titulo}" /></li>
+                        </ul></li>
+                </a4j:region>
+
+                <a4j:region rendered="#{controle.administrador || controle.publicadorTI || controle.publicador}">
+                    <li><a href="#">Posicionamento</a>
+                        <ul>
+                            <li><h:commandLink action="#{publicaNoticiaView.irTelaInicio()}"
+                                    value="#{publicaNoticiaView.titulo}" /></li>
+                            <li><h:commandLink action="#{registraEmailPosicionamentoView.irTelaInicio()}"
+                                    value="#{registraEmailPosicionamentoView.titulo}" /></li>
+                        </ul></li>
+                </a4j:region>
+
+                <a4j:region rendered="#{controle.gestorPV}">
+                    <li><h:commandLink action="#{designaAvaliadorView.irTelaInicio()}" value="Designa Avaliador" /></li>
+                </a4j:region>
+
+                <a4j:region rendered="#{controle.avaliador}">
+                    <li><h:commandLink action="#{avaliaServicoView.irTelaInicio()}" value="Avaliação" /></li>
+                </a4j:region>
+
+                <li><h:commandLink id="menuConsultaPainelAvaliacao"
+                        action="#{consultaPainelAvaliacaoView.irTelaInicio()}" value="Painel" /></li>
+                <li><a href="#">Relatórios</a>
+                    <ul>
+                        <li><h:commandLink action="#{consultaAvaliacaoServicoView.irTelaInicio()}"
+                                value="#{consultaAvaliacaoServicoView.titulo}" /></li>
+                    </ul></li>
+
+                <li><h:outputLink value="${request.contextPath}/pages/SIAVS_Manual_Usuario.pdf" target="_new">Ajuda</h:outputLink></li>
+            </ul>
+        </div>
+    </h:form>
+</ui:fragment>

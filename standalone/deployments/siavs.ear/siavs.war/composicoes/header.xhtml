@@ -1,0 +1,26 @@
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets" >
+
+    <div id="header">
+        <div class="subHeader">
+            <div style="float: left;">
+                <a class="logoCaixa" href="http://www.caixa.gov.br/" title="Retorna para o Portal Caixa"></a> <a
+                    class="tituloSistema" href="#{request.contextPath}/pages/home.jsf"
+                    title="Volta para a tela inicial do sistema">Sistema de Avaliação de Sistemas</a>
+            </div>
+
+            <h:panelGroup rendered="#{controle.usuarioLogado}">
+                <div class="boxMaster">
+                    <h:outputText value="Olá #{controle.nome}, " style="font-weight:bold; color: #003399;" />
+                    <br />
+                    <h:outputText value="seja bem-vindo(a)." style="font-weight:bold; color: #003399;" />
+                    <br />
+                    <h:outputText value="#{controle.data}" style="color: #003399;">
+                        <f:convertDateTime pattern="EEEE, dd/MM/yyyy HH:mm:ss" timeZone="America/Sao_Paulo" />
+                    </h:outputText>
+                </div>
+            </h:panelGroup>
+        </div>
+    </div>
+
+</ui:fragment>

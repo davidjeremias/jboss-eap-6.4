@@ -1,0 +1,140 @@
+package br.gov.caixa.siavs.vo;
+
+import java.util.Date;
+
+/**
+ * <b>Title:</b> NoticiaVO <br>
+ * <b>Description:</b> Permite ao Publicador consultar, publicar, alterar ou excluir informações de publicação de notícias. <br>
+ * <b>Company:</b> Spread
+ * @author leandro.vieira
+ * @version: $Revision: 1.0 $, $Date: 17/06/2013$
+ */
+public class NoticiaVO extends AbstractVOSIAVS {
+
+	private static final long serialVersionUID = 1L;
+
+// ****************************************************************
+	/**
+	 * Identificador da Notícia
+	 */
+	private Long nuNoticia;
+	/**
+	 * Texto contendo a notícia informativa.
+	 */
+	private String deNoticia;
+	/**
+	 * Data e hora de início da publicação da notícia
+	 */
+	private Date tsInicioPublicacao;
+	/**
+	 * Data atual
+	 */
+	private Date dataAtual = new Date();
+	/**
+	 * Data e hora de fim da publicação da notícia
+	 */
+	private Date tsFimPublicacao;
+	/**
+	 * Relacionamento com serviço.
+	 */
+	private ServicoVO servico;
+// ****************************************************************
+	/**
+	 * Construtor padrão.
+	 */
+	public NoticiaVO(){}
+
+	/**
+	 * Construtor com chave primária.
+	 * @param nuNoticia Long
+	 */
+	public NoticiaVO(Long nuNoticia){
+		this.setNuNoticia(nuNoticia);
+	}
+// ****************************************************************
+
+	/**
+	 * @return Long
+	 */
+	public Long getNuNoticia() {
+		return nuNoticia;
+	}
+
+	/**
+	 * @param nuNoticia Long
+	 */
+	public void setNuNoticia(Long nuNoticia) {
+		this.nuNoticia = nuNoticia;
+	}
+
+	/**
+	 * @return String
+	 */
+	public String getDeNoticia() {
+		return deNoticia;
+	}
+
+	/**
+	 * @param deNoticia String
+	 */
+	public void setDeNoticia(String deNoticia) {
+		this.deNoticia = deNoticia;
+	}
+
+	/**
+	 * @return Date
+	 */
+	public Date getTsInicioPublicacao() {
+		return tsInicioPublicacao;
+	}
+
+	/**
+	 * @param tsInicioPublicacao Date
+	 */
+	public void setTsInicioPublicacao(Date tsInicioPublicacao) {
+		this.tsInicioPublicacao = tsInicioPublicacao;
+	}
+
+	/**
+	 * @return Date
+	 */
+	public Date getTsFimPublicacao() {
+		return tsFimPublicacao;
+	}
+	/**
+	 * @return Date
+	 */
+	public Date getDataAtual() {
+		return dataAtual;
+	}
+	/**
+	 * @param tsFimPublicacao Date
+	 */
+	public void setTsFimPublicacao(Date tsFimPublicacao) {
+		this.tsFimPublicacao = tsFimPublicacao;
+	}
+
+	/**
+	 * @return ServicoVO
+	 */
+	public ServicoVO getServico() {
+		return servico;
+	}
+
+	/**
+	 * @param servico ServicoVO
+	 */
+	public void setServico(ServicoVO servico) {
+		this.servico = servico;
+	}
+
+// ****************************************************************
+
+	/**
+	 * @see br.com.spread.framework.vo.AbstractVO#getPk
+	 */
+	@Override
+	public Object getPk() {
+		return this.getNuNoticia();
+	}
+}

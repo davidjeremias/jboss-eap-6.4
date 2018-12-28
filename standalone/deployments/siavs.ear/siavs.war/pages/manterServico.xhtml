@@ -1,0 +1,192 @@
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:rich="http://richfaces.org/rich" xmlns:a4j="http://richfaces.org/a4j">
+
+    <ui:composition template="/composicoes/layoutBasico.xhtml" xmlns:siavs="http://java.sun.com/jsf/composite/siavs">
+
+        <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+        <ui:define name="formPesquisa">
+
+            <div class="linha">
+                <div>
+                    <label for="C">Serviço :</label>
+                    <h:inputText id="txtDeServico" maxlength="50" value="#{C.view.voFiltro.deServico}"
+                        style="width: 30%;" title="#{msgs.MH002}" />
+                </div>
+
+                <div>
+                    <label for="txtNoSistema">Sistema :</label>
+                    <h:inputText id="txtNoSistema" maxlength="50" value="#{C.view.voFiltro.noSistema}"
+                        style="width: 30%;" title="#{msgs.MH002}" />
+                </div>
+
+                <div style="float: right; padding-right: 6px;">
+                    <h:commandLink action="#{C.view.listar(C.view.voFiltro)}" styleClass="bt_listar"
+                        title="#{msgs.MA007}">
+                        <f:ajax execute="@form" render="compFormPesquisa" />
+                    </h:commandLink>
+                </div>
+
+                <div class="clearBoth"></div>
+            </div>
+
+        </ui:define>
+
+        <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+        <ui:define name="colunasTabelaPesquisa">
+
+            <rich:column style="text-align:left; vertical-align: middle; width: 90%;">
+                <f:facet name="header">
+				Serviço
+			</f:facet>
+                <h:outputText value="#{voTabela.deServico}" />
+            </rich:column>
+
+            <rich:column style="width: 25%">
+                <f:facet name="header">
+				Sistema
+			</f:facet>
+                <h:outputText value="#{voTabela.noSistema}" />
+            </rich:column>
+
+            <rich:column style="width: 1%; text-align: center;">
+                <f:facet name="header">
+				Ativo
+			</f:facet>
+                <h:selectBooleanCheckbox value="#{voTabela.icAtivo}" disabled="true" />
+            </rich:column>
+
+        </ui:define>
+
+        <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+        <ui:define name="formCadastro">
+
+            <div class="linha">
+                <label for="txtDeServico">Serviço <siavs:obrigatorio />:
+                </label>
+                <h:inputText id="txtDeServico" maxlength="50" value="#{C.view.vo.deServico}" />
+                <div class="clearBoth"></div>
+            </div>
+
+            <div class="linha">
+                <label for="txtNoSistema">Sistema <siavs:obrigatorio />:
+                </label>
+                <h:inputText id="txtNoSistema" maxlength="50" value="#{C.view.vo.noSistema}" />
+                <div class="clearBoth"></div>
+            </div>
+
+            <div class="linha">
+                <label for="chkIcAtivo">Ativo:</label>
+                <h:selectBooleanCheckbox id="chkIcAtivo" value="#{C.view.vo.icAtivo}" />
+                <div class="clearBoth"></div>
+            </div>
+
+            <div class="linha">
+
+                <div class="linha">
+                    <label for="chkIcCorporativo">Corporativo :</label>
+                    <h:selectBooleanCheckbox id="chkIcCorporativo" value="#{C.view.vo.icCorporativo}"
+                        valueChangeListener="#{C.view.chkIcCorporativoOnChange}">
+                        <f:ajax render="agrCorporativo" />
+                    </h:selectBooleanCheckbox>
+                </div>
+
+                <h:panelGroup id="agrCorporativo">
+                    <h:panelGroup rendered="#{!C.view.vo.icCorporativo}">
+                        <div style="float: right; width: 549px;">
+                            <label for="txtNoGestor">Gestor <siavs:obrigatorio
+                                    condicao="#{!C.view.vo.icCorporativo}" />:
+                            </label>
+                            <h:inputText id="txtNoGestor" maxlength="50" value="#{C.view.vo.noGestor}"
+                                style="width: 324px;" />
+                        </div>
+                    </h:panelGroup>
+
+                    <h:panelGroup rendered="#{C.view.vo.icCorporativo}">
+                        <div style="float: right; width: 549px;">
+
+                            <div>
+                                <label for="cmbRelacionamento">Relacionamento<siavs:obrigatorio
+                                        condicao="#{C.view.vo.icCorporativo}" />:
+                                </label>
+                                <h:selectOneMenu id="cmbRelacionamento" value="#{C.view.vo.unidadeRelacionamento}"
+                                    converter="#{unidadeConverter}" style="width: 300px;">
+                                    <f:selectItem itemLabel="Selecione" />
+                                    <f:selectItems value="#{dominioView.listaUnidadeRelacionamento}" var="item"
+                                        itemLabel="#{item}" itemValue="#{item}" />
+                                </h:selectOneMenu>
+                            </div>
+
+                            <div>
+                                <label for="cmbProducao">Produção<siavs:obrigatorio
+                                        condicao="#{C.view.vo.icCorporativo}" />:
+                                </label>
+                                <h:selectOneMenu id="cmbProducao" value="#{C.view.vo.unidadeProducao}"
+                                    converter="#{unidadeConverter}" style="width: 300px;">
+                                    <f:selectItem itemLabel="Selecione" />
+                                    <f:selectItems value="#{dominioView.listaUnidadeProducao}" var="item"
+                                        itemLabel="#{item}" itemValue="#{item}" />
+                                </h:selectOneMenu>
+                            </div>
+
+                        </div>
+                    </h:panelGroup>
+
+                </h:panelGroup>
+                <div class="clearBoth"></div>
+            </div>
+
+            <div class="linha">
+                <label for="chkIcAgencia">Agência :</label>
+                <h:selectBooleanCheckbox id="chkIcAgencia" value="#{C.view.vo.icAgencia}"
+                    valueChangeListener="#{C.view.chkIcAgenciaOnChange}">
+                    <f:ajax render="agrSegmentos" />
+                </h:selectBooleanCheckbox>
+                <div class="clearBoth"></div>
+            </div>
+
+            <h:panelGroup id="agrSegmentos">
+                <h:panelGroup rendered="#{C.view.vo.icAgencia}">
+                    <div class="linha">
+                        <fieldset>
+                            <legend>Segmentos</legend>
+
+                            <h:selectManyCheckbox layout="pageDirection" value="#{C.view.listaSegmentoCadastrados}">
+                                <f:selectItems value="#{C.view.listaSegmento}" var="item" itemLabel="#{item.noSegmento}"
+                                    itemValue="#{item.nuSegmento}" />
+                            </h:selectManyCheckbox>
+                        </fieldset>
+                        <div class="clearBoth"></div>
+                    </div>
+                </h:panelGroup>
+            </h:panelGroup>
+
+        </ui:define>
+
+        <ui:define name="tempBtIncluir">
+            <a4j:commandLink value="Salvar" action="#{C.view.incluir(C.view.vo)}"
+                rendered="#{empty C.view.vo.pk and C.view.retornarVinculaServico}" styleClass="button caixa"
+                title="#{msgs.MA006}" render="compFormCadastro renderInicial containerTitulo" execute="@form"
+                oncomplete="U.posRender(U.recuperarComponente('opSucesso').value == 'true' ? fnVoltar : null)" />
+            <a4j:commandLink value="Salvar" action="#{C.view.incluir(C.view.vo)}"
+                rendered="#{empty C.view.vo.pk and !C.view.retornarVinculaServico}" styleClass="button caixa"
+                title="#{msgs.MA006}" render="compFormCadastro renderInicial containerTitulo" execute="@form"
+                oncomplete="U.posRender()" />
+
+            <a4j:jsFunction name="fnVoltar" action="#{C.view.voltar()}" execute="@form"
+                render="compFormCadastro renderInicial containerTitulo" oncomplete="U.posRender()" />
+        </ui:define>
+
+        <ui:define name="tempBtVoltar">
+            <h:commandLink value="Voltar" immediate="true" action="#{C.view.voltar()}" styleClass="button orange"
+                title="Clique para voltar a tela anterior!" />
+        </ui:define>
+
+        <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+    </ui:composition>
+
+</ui:fragment>

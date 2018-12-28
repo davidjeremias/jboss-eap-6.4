@@ -1,0 +1,105 @@
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:rich="http://richfaces.org/rich" xmlns:a4j="http://richfaces.org/a4j">
+
+    <ui:composition template="/composicoes/layoutBasico.xhtml" xmlns:siavs="http://java.sun.com/jsf/composite/siavs">
+
+        <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+        <ui:define name="conteudoExtra">
+            <siavs:leiaMaisNoticia noticia="#{C.view.vo.deNoticia}" dataHora="#{C.view.vo.tsInicioPublicacao}" />
+        </ui:define>
+
+        <ui:define name="colunasTabelaPesquisa">
+
+            <rich:column style="text-align:left; width: 19%" sortBy="#{voTabela.servico.deServico}"
+                sortOrder="#{C.view.ordenar('voTabela.servico.deServico', true)}">
+                <f:facet name="header">
+				Serviço
+			</f:facet>
+                <h:outputText value="#{voTabela.servico.deServico}" />
+            </rich:column>
+
+            <rich:column style="width: 17%; text-align:center;" sortBy="#{voTabela.tsInicioPublicacao}"
+                sortOrder="#{C.view.ordenar('tsInicioPublicacao', true)}">
+                <f:facet name="header">
+                    <h:commandLink value="Início Publicação" action="#{C.view.ordenar('tsInicioPublicacao', false)}">
+                        <h:graphicImage value="#{resource['images/bullet_arrow_up.png']}"
+                            style="vertical-align: middle; active:images/bullet_arrow_up.png" />
+                        <f:ajax execute="@this" render="compTabelaPesquisa" />
+                    </h:commandLink>
+                </f:facet>
+                <siavs:calendario valor="#{voTabela.tsInicioPublicacao}" isInput="false" />
+            </rich:column>
+
+            <rich:column style="width: 17%; text-align:center;" sortBy="#{voTabela.tsFimPublicacao}"
+                sortOrder="#{C.view.ordenar('tsFimPublicacao', true)}">
+                <f:facet name="header">
+                    <h:commandLink value="Fim Publicação" action="#{C.view.ordenar('tsFimPublicacao', false)}">
+                        <h:graphicImage value="#{resource['images/bullet_arrow_up.png']}"
+                            style="vertical-align: middle; active:images/bullet_arrow_up.png" />
+                        <f:ajax execute="@this" render="compTabelaPesquisa" />
+                    </h:commandLink>
+                </f:facet>
+                <siavs:calendario valor="#{voTabela.tsFimPublicacao}" isInput="false" />
+            </rich:column>
+
+            <rich:column style="text-align:left; width: 40%">
+                <f:facet name="header">
+				Notícia
+			</f:facet>
+                <h:outputText value="#{C.view.limparHtml(voTabela.deNoticia)}"
+                    rendered="#{!(C.view.limparHtml(voTabela.deNoticia).length() > 30)}" style="float: left;" />
+                <h:outputText value="#{C.view.limparHtml(voTabela.deNoticia).substring(0, 30)} ..."
+                    rendered="#{C.view.limparHtml(voTabela.deNoticia).length() > 30}" style="float: left;" />
+                <a4j:commandLink action="#{C.view.setVo(voTabela)}" oncomplete="U.abrirPopup('leiaMaisNoticia');"
+                    rendered="#{C.view.limparHtml(voTabela.deNoticia).length() > 30}" render="leiaMaisNoticia"
+                    value=" (Leia Mais)" styleClass="leiaMais" />
+            </rich:column>
+
+        </ui:define>
+
+        <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+        <ui:define name="formCadastro">
+
+            <div class="linha">
+                <label for="cmbServico">Serviço<siavs:obrigatorio />:
+                </label>
+                <h:selectOneMenu id="cmbServico" value="#{C.view.vo.servico.nuServico}">
+                    <f:selectItem itemLabel="Selecione" itemValue="" />
+                    <f:selectItems value="#{controle.getListaServico(null)}" var="item" itemLabel="#{item.deServico}"
+                        itemValue="#{item.nuServico}" />
+                </h:selectOneMenu>
+            </div>
+
+            <div class="linha">
+                <div class="linha" style="display: inline-table; width: 320px;">
+                    <label for="txtTsInicioPublicacao:txtTsInicioPublicacaoInputDate">Data Publicação <siavs:obrigatorio />:
+                    </label>
+                    <siavs:calendario id="txtTsInicioPublicacao" valor="#{C.view.vo.tsInicioPublicacao}"
+                        mindate="#{C.view.vo.dataAtual}" />
+                </div>
+
+                <div style="display: inline-table;">
+                    <label for="txtTsFimPublicacao:txtTsFimPublicacaoInputDate" style="width: 20px;">até</label>
+                    <siavs:calendario id="txtTsFimPublicacao" valor="#{C.view.vo.tsFimPublicacao}"
+                        mindate="#{C.view.vo.tsInicioPublicacao}" />
+                </div>
+
+                <div class="clearBoth"></div>
+            </div>
+
+            <div class="linha txtDeNoticia">
+                <label for="txtDeNoticia" style="display: inline-table;">Notícia<siavs:obrigatorio />:
+                </label>
+                <siavs:editor id="txtDeNoticia" tamanhoMaximo="300" valor="#{C.view.vo.deNoticia}" />
+                <div class="clearBoth"></div>
+            </div>
+
+        </ui:define>
+
+        <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+    </ui:composition>
+
+</ui:fragment>

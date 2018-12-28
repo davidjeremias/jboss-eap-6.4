@@ -1,0 +1,191 @@
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:rich="http://richfaces.org/rich" xmlns:a4j="http://richfaces.org/a4j">
+
+    <ui:composition template="/composicoes/layoutBasico.xhtml" xmlns:siavs="http://java.sun.com/jsf/composite/siavs">
+
+        <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+        <ui:define name="conteudoExtra">
+            <siavs:leiaMaisEmail email="#{C.view.vo.deConteudo}" />
+        </ui:define>
+
+        <ui:define name="formPesquisa">
+
+            <div class="linha">
+
+                <div style="float: left;">
+                    <label for="cmbGrupo" style="width: 42px;">Grupo :</label>
+                    <h:selectOneMenu id="cmbGrupo" value="#{C.view.voFiltro.grupo.nuGrupo}" style="width: 110px;">
+                        <f:selectItem itemLabel="Todos" itemValue="#{null}" />
+                        <f:selectItems value="#{controle.listaGrupo}" var="item" itemLabel="#{item.noGrupo}"
+                            itemValue="#{item.nuGrupo}" />
+                        <f:ajax render="cmbServico" />
+                    </h:selectOneMenu>
+                </div>
+
+                <div style="float: left; width: 175px;">
+                    <label for="cmbServico" style="width: 62px;">Serviço :</label>
+                    <h:selectOneMenu id="cmbServico" value="#{C.view.voFiltro.servico.nuServico}" style="width: 90px;">
+                        <f:selectItem itemLabel="Todos" itemValue="#{null}" />
+                        <f:selectItems value="#{controle.getListaServico(C.view.voFiltro.grupo)}" var="item"
+                            itemLabel="#{item.deServico}" itemValue="#{item.nuServico}" />
+                    </h:selectOneMenu>
+                </div>
+
+                <div style="float: left; width: 180px;">
+                    <label for="txtDtInicio:txtDtInicioInputDate" style="width: 35px;">Data :</label>
+                    <siavs:calendario id="txtDtInicio" valor="#{C.view.dtInicio}" />
+                </div>
+
+                <div style="float: left;">
+                    <label for="txtDtFim:txtDtFimInputDate" style="width: 22px;">até</label>
+                    <siavs:calendario id="txtDtFim" valor="#{C.view.dtFim}" />
+                </div>
+
+                <div style="float: right; padding-right: 6px;">
+                    <h:commandLink action="#{C.view.listar(C.view.voFiltro)}" styleClass="bt_listar"
+                        title="#{msgs.MA007}">
+                        <f:ajax execute="@form" render="compFormPesquisa" />
+                    </h:commandLink>
+                </div>
+
+                <div class="clearBoth"></div>
+            </div>
+
+        </ui:define>
+
+        <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+        <ui:define name="colunasTabelaPesquisa">
+
+            <rich:column style="text-align:left; width: 15%">
+                <f:facet name="header">
+				Grupo
+			</f:facet>
+                <h:outputText value="#{voTabela.grupo.noGrupo}" />
+            </rich:column>
+
+            <rich:column style="text-align:left; width: 15%">
+                <f:facet name="header">
+				Serviço
+			</f:facet>
+                <h:outputText value="#{voTabela.servico.deServico}" />
+            </rich:column>
+
+            <rich:column style="width: 17%" sortBy="#{voTabela.dtCadastro}"
+                sortOrder="#{C.view.ordenar('dtCadastro', true)}">
+                <f:facet name="header">
+                    <h:commandLink value="Data Registro" action="#{C.view.ordenar('dtCadastro', false)}">
+                        <h:graphicImage value="#{resource['images/bullet_arrow_up.png']}"
+                            style="vertical-align: middle; active:images/bullet_arrow_up.png" />
+                        <f:ajax execute="@this" render="compTabelaPesquisa" />
+                    </h:commandLink>
+                </f:facet>
+                <h:outputText value="#{voTabela.dtCadastroFormatadoHoraMinuto}"></h:outputText>
+                <!-- 		<siavs:calendario valor="#{voTabela.dtCadastro}" isInput="false" padrao="dd/MM/yyyy HH:mm:ss" /> -->
+            </rich:column>
+
+            <rich:column style="text-align:left">
+                <f:facet name="header">
+				Email
+			</f:facet>
+                <h:outputText value="#{C.view.limparHtml(voTabela.deConteudo)}"
+                    rendered="#{!(C.view.limparHtml(voTabela.deConteudo).length() > 130)}" style="float: left;" />
+                <h:outputText value="#{C.view.limparHtml(voTabela.deConteudo).substring(0, 130)} ..."
+                    rendered="#{C.view.limparHtml(voTabela.deConteudo).length() > 130}" style="float: left;" />
+                <a4j:commandLink action="#{C.view.setVo(voTabela)}" oncomplete="U.abrirPopup('leiaMaisEmail');"
+                    rendered="#{C.view.limparHtml(voTabela.deConteudo).length() > 130}" render="leiaMaisEmail"
+                    value=" (Leia Mais)" styleClass="leiaMais" />
+                <h:commandLink action="#{C.view.abrirAnexo(voTabela)}" rendered="#{!empty voTabela.arAnexo}"
+                    styleClass="bt_anexo" title="#{msgs.MA013}" />
+            </rich:column>
+
+        </ui:define>
+
+        <ui:define name="fimTabPesquisa">
+            <div>
+                <label>Total de Registro: </label>
+                <h:outputText value="#{C.view.listaVo.size()}">
+                    <f:convertNumber pattern="0000" />
+                </h:outputText>
+            </div>
+        </ui:define>
+
+
+        <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+        <ui:define name="formCadastro">
+
+            <div class="linha">
+                <label for="cmbGrupo">Grupo <siavs:obrigatorio />:
+                </label>
+                <h:selectOneMenu id="cmbGrupo" value="#{C.view.vo.grupo.nuGrupo}">
+                    <f:selectItem itemLabel="Selecione" itemValue="" itemDisabled="#{controle.publicador}" />
+                    <f:selectItem itemLabel="Todos" itemValue="0" />
+                    <f:selectItems value="#{controle.listaGrupo}" var="item" itemLabel="#{item.noGrupo}"
+                        itemValue="#{item.nuGrupo}" />
+                    <f:ajax render="cmbServico" />
+                </h:selectOneMenu>
+                <div class="clearBoth"></div>
+            </div>
+
+            <div class="linha">
+                <label for="cmbIcDestinatario">Destinatários <siavs:obrigatorio />:
+                </label>
+                <h:selectOneMenu id="cmbIcDestinatario" value="#{C.view.icDestinatario}">
+                    <f:selectItem itemLabel="Selecione" itemValue="" />
+                    <f:selectItem itemLabel="Somente os empregados do serviço selecionado" itemValue="1" />
+                    <f:selectItem itemLabel="Todos os empregados do SIAVS" itemValue="2" />
+                    <f:ajax render="agrServico" />
+                </h:selectOneMenu>
+                <div class="clearBoth"></div>
+            </div>
+
+            <h:panelGroup id="agrServico">
+                <h:panelGroup rendered="#{C.view.icDestinatario == 1}">
+                    <div class="linha">
+                        <label for="cmbServico">Serviço <siavs:obrigatorio />:
+                        </label>
+                        <h:selectOneMenu id="cmbServico" value="#{C.view.vo.servico.nuServico}">
+                            <f:selectItem itemLabel="Selecione" itemValue="" />
+                            <f:selectItem itemLabel="Todos" itemValue="" />
+                            <f:selectItems value="#{controle.getListaServico(C.view.vo.grupo)}" var="item"
+                                itemLabel="#{item.deServico}" itemValue="#{item.nuServico}" />
+                        </h:selectOneMenu>
+                        <div class="clearBoth"></div>
+                    </div>
+                </h:panelGroup>
+            </h:panelGroup>
+
+            <div class="linha">
+                <label for="txtNoAnexo">Anexo:</label>
+                <h:inputText id="txtNoAnexo" value="#{C.view.vo.noAnexo}" disabled="true" style="width: 290px;" />
+                <div style="float: right; margin-right: 30px; width: 36px; margin-top: 4px;">
+                    <siavs:anexarArquivo id="anexarArquivo" tiposArquivo="pdf, zip" listener="#{C.view.arAnexoListener}"
+                        render="txtNoAnexo" />
+                    <a4j:commandLink action="#{C.view.removerAnexo()}" styleClass="bt_excluir" title="#{msgs.MA012}"
+                        execute="@form" render="txtNoAnexo" style="margin: 0;" />
+                </div>
+                <div class="clearBoth"></div>
+            </div>
+
+            <div class="linha">
+                <label for="txtDeAssunto">Assunto <siavs:obrigatorio />:
+                </label>
+                <h:inputText id="txtDeAssunto" value="#{C.view.vo.deAssunto}" maxlength="100" />
+                <div class="clearBoth"></div>
+            </div>
+
+            <div class="linha registraEmailPosicionamento">
+                <siavs:editor id="txtDeConteudo" tamanhoMaximo="3000" valor="#{C.view.vo.deConteudo}" />
+                <div class="clearBoth"></div>
+            </div>
+
+        </ui:define>
+
+        <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+    </ui:composition>
+
+</ui:fragment>

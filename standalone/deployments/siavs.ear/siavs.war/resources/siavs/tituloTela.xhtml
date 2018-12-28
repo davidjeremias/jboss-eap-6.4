@@ -1,0 +1,30 @@
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:a4j="http://richfaces.org/a4j" xmlns:cc="http://java.sun.com/jsf/composite"
+    xmlns:rich="http://richfaces.org/rich">
+
+    <cc:interface>
+        <cc:attribute name="titulo" required="true" />
+        <cc:attribute name="estiloAba" default="selecionada" />
+        <cc:attribute name="link" method-signature="String action()" />
+        <cc:attribute name="indexBg" default="0" />
+    </cc:interface>
+
+    <cc:implementation>
+        <div id="titulo" class="#{cc.attrs.estiloAba}">
+            <div class="background" style="z-index:#{cc.attrs.indexBg}">
+                <div class="esquerda"></div>
+                <div class="meio"></div>
+                <div class="direita"></div>
+            </div>
+            <div class="clearBoth"></div>
+            <h3>
+                <h:outputText value="#{cc.attrs.titulo}" rendered="#{cc.attrs.link == null}" />
+                <h:commandLink action="#{cc.attrs.link}" value="#{cc.attrs.titulo}" rendered="#{cc.attrs.link != null}"
+                    immediate="true" />
+            </h3>
+        </div>
+        <div class="clearBoth"></div>
+    </cc:implementation>
+
+</ui:fragment>

@@ -1,0 +1,285 @@
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:rich="http://richfaces.org/rich" xmlns:a4j="http://richfaces.org/a4j">
+
+    <div id="painelAvaliacao">
+        <!-- Se não for o detalhamento -->
+        <h:panelGroup rendered="#{painelAvaliacaoView.servico == null}">
+
+            <h:panelGroup id="tabelaPesquisa">
+                <div class="tabelaPesquisa">
+
+                    <table class="rf-dt">
+                        <thead class="rf-dt-thd">
+
+                            <tr class="rf-dt-shdr rf-dt-hdr-fst">
+                                <th class="rf-dt-shdr-c" rowspan="2" style="width: 1%;">Pos</th>
+                                <th class="rf-dt-shdr-c" rowspan="2">Serviço</th>
+                                <th class="rf-dt-shdr-c" colspan="2">AVALIAÇÕES</th>
+                                <th class="rf-dt-shdr-c" colspan="#{painelAvaliacaoView.listaProblema.size() * 2}">PROBLEMA</th>
+                                <h:panelGroup rendered="#{exibirGrafico}">
+                                    <th class="rf-dt-shdr-c" rowspan="2" style="width: 60px;">Ações</th>
+                                </h:panelGroup>
+                            </tr>
+
+                            <tr class="rf-dt-shdr">
+                                <th class="rf-dt-shdr-c" style="width: 1%;">Média</th>
+                                <th class="rf-dt-shdr-c" style="width: 1%;">Qtde Aval</th>
+                                <!-- *	*	*	*	*	*	*	*	*	*	*	* -->
+                                <a4j:repeat value="#{painelAvaliacaoView.listaProblema}" var="problema">
+                                    <th class="rf-dt-shdr-c" colspan="2" style="width: 1%;">#{problema.deProblema}</th>
+                                </a4j:repeat>
+                                <!-- *	*	*	*	*	*	*	*	*	*	*	* -->
+                            </tr>
+
+                        </thead>
+
+                        <tbody class="rf-dt-b">
+                            <h:panelGroup rendered="#{painelAvaliacaoView.lista.isEmpty()}">
+                                <tr class="rf-dt-nd">
+                                    <td colspan="#{5 + (painelAvaliacaoView.listaProblema.size() * 2)}"
+                                        class="rf-dt-nd-c">Não existem dados para consulta.</td>
+                                </tr>
+                            </h:panelGroup>
+
+                            <!-- *	*	*	*	*	*	*	*	*	*	*	* -->
+                            <a4j:repeat value="#{painelAvaliacaoView.lista}" var="to" iterationStatusVar="status">
+
+                                <tr class="rf-dt-r">
+
+                                    <td class="rf-dt-c"><h:outputText value="#{status.index + 1}º" /></td>
+
+                                    <td class="rf-dt-c" style="text-align: left"><a4j:commandLink
+                                            action="#{painelAvaliacaoView.detalhar(to.servico)}"
+                                            styleClass="bt_detalhar" title="#{msgs.MA010}" render="form" execute="@form"
+                                            oncomplete="U.posRender()" style="display: inline-block; margin-right: 5px;"
+                                            rendered="#{!exibirGrafico and (controle.administrador || controle.publicadorTI || controle.publicador)}" />
+                                        <h:outputText value="#{to.servico.deServico}" /></td>
+
+                                    <td class="rf-dt-c"><h:panelGroup
+                                            rendered="#{to.mediaNotaAvaliacao &gt;= painelAvaliacaoView.valorMeta}">
+                                            <div class="acimaMedia" style="float: left;"></div>
+                                        </h:panelGroup> <h:panelGroup
+                                            rendered="#{to.mediaNotaAvaliacao &lt; painelAvaliacaoView.valorMeta}">
+                                            <div class="abaixoMedia" style="float: left;"></div>
+                                        </h:panelGroup> <h:outputText value="#{to.mediaNotaAvaliacao}">
+                                            <f:convertNumber maxFractionDigits="2" minFractionDigits="2" locale="us" />
+                                        </h:outputText></td>
+
+                                    <td class="rf-dt-c"><h:outputText value="#{to.qtdeAvaliacao}" /></td>
+
+                                    <a4j:repeat value="#{painelAvaliacaoView.listaProblema}" var="problema">
+                                        <td class="rf-dt-c" style="width: 1%;">#{to.mapProblema.get(problema.nuProblema)}</td>
+                                        <td class="rf-dt-c" style="width: 1%;"><h:outputText
+                                                value="#{(to.mapProblema.get(problema.nuProblema) / to.qtdeAvaliacao)}">
+                                                <f:convertNumber type="percent" maxFractionDigits="0" />
+                                            </h:outputText></td>
+                                    </a4j:repeat>
+
+                                    <h:panelGroup rendered="#{exibirGrafico}">
+                                        <td class="rf-dt-c" style="text-align: center;"><a4j:commandLink
+                                                action="#{painelAvaliacaoView.detalhar(to.servico)}"
+                                                styleClass="bt_detalhar" title="#{msgs.MA010}" render="form"
+                                                execute="@form" oncomplete="U.posRender()"
+                                                style="display: inline-block; margin-right: 5px;"
+                                                rendered="#{controle.administrador || controle.publicadorTI || controle.publicador}" />
+                                            <a4j:commandLink action="#{painelAvaliacaoView.exibirGrafico(to.servico)}"
+                                                styleClass="bt_grafico" render="pnlGrafico" execute="@this"
+                                                oncomplete="U.posRender();"
+                                                style="display: inline-block; margin-right: 5px;" /></td>
+                                    </h:panelGroup>
+
+                                </tr>
+
+                            </a4j:repeat>
+                            <!-- *	*	*	*	*	*	*	*	*	*	*	* -->
+                        </tbody>
+                    </table>
+
+                </div>
+
+                <div class="legenda">
+                    <span>Média das Avaliações: </span>
+                    <div class="acimaMedia"></div>
+                    <span>Média &gt;= <h:outputText value="#{painelAvaliacaoView.valorMeta}">
+                            <f:convertNumber maxFractionDigits="2" minFractionDigits="2" locale="us" />
+                        </h:outputText></span>
+                    <div class="abaixoMedia"></div>
+                    <span>Média &lt; <h:outputText value="#{painelAvaliacaoView.valorMeta}">
+                            <f:convertNumber maxFractionDigits="2" minFractionDigits="2" locale="us" />
+                        </h:outputText></span>
+                </div>
+
+                <h:panelGroup id="pnlGrafico">
+                    <h:panelGroup rendered="#{painelAvaliacaoView.servicoVOGrafico != null}">
+
+                        <table id="tabelaGrafico">
+                            <tr>
+                                <td style="width: 50%;"><span><h:outputText
+                                            value="#{painelAvaliacaoView.servicoVOGrafico.deServico} - Últimos 15 dias" /></span>
+                                    <div id="graficoQuinzenal" style="width: 100%; height: 300px;"></div></td>
+                                <td style="width: 50%;"><span><h:outputText
+                                            value="#{painelAvaliacaoView.servicoVOGrafico.deServico} - Últimos 6 meses" /></span>
+                                    <div id="graficoSemestral" style="width: 100%; height: 300px;"></div></td>
+                            </tr>
+                        </table>
+
+                        <script type="text/javascript">
+
+						var cor = "rgba(128, 175, 211, 1)";
+						var corBorda = "rgba(153, 153, 153, 1)";
+						var dataUltimaQuinzena = [<a4j:repeat value="#{painelAvaliacaoView.listaUltimaQuinzena}" var="item">['<h:outputText value="#{item.data}"><f:convertDateTime pattern="dd/MM"/></h:outputText>', #{item.mediaNotaAvaliacao}],</a4j:repeat>];
+						var dataUltimoSemestre = [<a4j:repeat value="#{painelAvaliacaoView.listaUltimoSemestre}" var="item">['<h:outputText value="#{item.data}"><f:convertDateTime pattern="MMM/yy"/></h:outputText>', #{item.mediaNotaAvaliacao}],</a4j:repeat>];
+
+						$( document ).ready(function() {
+							$.plot("#graficoQuinzenal", 
+									[dataUltimaQuinzena], 
+									{
+										series: {
+											color: cor,
+											points: { 
+												show: true,
+											},
+											lines: { 
+												show: true,
+												fill: true,
+											},
+										},
+										xaxis: {
+											mode: "categories",
+											tickLength: 0,
+										},
+										yaxis: {
+											max: 10,
+											tickDecimals: 1,
+										},
+										grid: {
+											borderColor: corBorda,
+											margin: {
+											    top: 10,
+											    left: 10,
+											    bottom: 20,
+											    right: 10,
+											},										
+										},
+									}
+							);
+							
+							$.plot("#graficoSemestral", 
+									[dataUltimoSemestre], 
+									{
+										series: {
+											color: cor,
+											bars: {
+												show: true,
+												barWidth: 0.6,
+												align: "center",
+												fillColor: cor,
+											},
+										},
+										xaxis: {
+											mode: "categories",
+										},
+										yaxis: {
+											max: 10,
+											tickDecimals: 1,
+										},
+										grid: {
+											borderColor: corBorda,
+											margin: {
+											    top: 10,
+											    left: 10,
+											    bottom: 20,
+											    right: 10,
+											},										
+										},
+									}
+							);
+						});
+						
+					</script>
+
+                    </h:panelGroup>
+                </h:panelGroup>
+
+            </h:panelGroup>
+
+            <div class="clearBoth"></div>
+        </h:panelGroup>
+
+
+        <!-- Se for o detalhamento -->
+        <h:panelGroup rendered="#{painelAvaliacaoView.servico != null}">
+
+            <div class="tabelaPesquisa">
+
+                <rich:dataTable id="compTabelaPesquisa" value="#{painelAvaliacaoView.listaVo}" var="voTabela"
+                    noDataLabel="#{msgs.MN003}" sortMode="multi">
+
+                    <rich:column style="text-align: left;">
+                        <f:facet name="header">
+                            <h:outputText value="Unidade" />
+                        </f:facet>
+
+                        <h:outputText value="#{voTabela.funcionarioCaixaLocal.unidade.nuUnidade}" /> - <h:outputText
+                            value="#{voTabela.funcionarioCaixaLocal.unidade.noUnidade}" />, <h:outputText
+                            value="#{voTabela.funcionarioCaixaLocal.unidade.sgUf}" />
+                    </rich:column>
+
+                    <rich:column style="width: 1% !important;">
+                        <f:facet name="header">
+                            <h:outputText value="Usuário" />
+                        </f:facet>
+
+                        <span title="#{voTabela.funcionarioCaixaLocal.funcionarioCaixa.noFuncionario}"><h:outputText
+                                value="#{voTabela.funcionarioCaixaLocal.funcionarioCaixa.deMatricula}" /></span>
+                    </rich:column>
+
+                    <rich:column style="width: 15% !important; white-space: nowrap;">
+                        <f:facet name="header">
+                            <h:outputText value="Telefone" />
+                        </f:facet>
+
+                        <h:outputText value="#{voTabela.funcionarioCaixaLocal.unidade.nuTelefone}" />
+                    </rich:column>
+
+                    <rich:column style="width: 1% !important;">
+                        <f:facet name="header">
+                            <h:outputText value="Aval" />
+                        </f:facet>
+
+                        <h:outputText value="#{voTabela.vrNotaAvaliacao}">
+                            <f:convertNumber maxFractionDigits="0" />
+                        </h:outputText>
+                    </rich:column>
+
+                    <rich:column style="width: 20% !important; text-align: left;">
+                        <f:facet name="header">
+                            <h:outputText value="Problema" />
+                        </f:facet>
+
+                        <h:outputText value="#{voTabela.problema.deProblema}" />
+                    </rich:column>
+
+                    <rich:column style="width: 30% !important; text-align: left;">
+                        <f:facet name="header">
+                            <h:outputText value="Comentário" />
+                        </f:facet>
+
+                        <h:outputText value="#{voTabela.deComentario}" />
+                    </rich:column>
+
+                </rich:dataTable>
+            </div>
+
+            <ul class="botoes">
+                <li><a4j:commandLink value="Voltar" action="#{painelAvaliacaoView.detalhar(null)}"
+                        styleClass="button orange"
+                        title="Clique para voltar a tela inicial de #{painelAvaliacaoView.titulo}!" render="form"
+                        execute="@form" oncomplete="U.posRender()" /></li>
+            </ul>
+
+        </h:panelGroup>
+    </div>
+
+</ui:fragment>

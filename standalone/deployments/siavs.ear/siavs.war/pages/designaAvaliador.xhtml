@@ -1,0 +1,78 @@
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:rich="http://richfaces.org/rich" xmlns:a4j="http://richfaces.org/a4j">
+
+    <ui:composition template="/composicoes/layoutBasico.xhtml" xmlns:siavs="http://java.sun.com/jsf/composite/siavs">
+
+        <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+        <ui:define name="colunasTabelaPesquisa">
+            <rich:column style="width: 1%; vertical-align: middle;">
+                <f:facet name="header">
+				Matrícula
+			</f:facet>
+                <h:outputText value="#{voTabela.funcionarioCaixa.deMatricula}" />
+            </rich:column>
+
+            <rich:column style="width: 50%; vertical-align: middle;">
+                <f:facet name="header">
+				Nome
+			</f:facet>
+                <h:outputText value="#{voTabela.funcionarioCaixa.noFuncionario}" />
+            </rich:column>
+
+            <rich:column style="width: 50%">
+                <f:facet name="header">
+				Segmento
+			</f:facet>
+                <ui:repeat var="funcionarioCaixaLocalVO" value="#{voTabela.listaSegmento}">
+                    <h:outputText value="#{funcionarioCaixaLocalVO.segmento.noSegmento}" />
+                    <br />
+                </ui:repeat>
+            </rich:column>
+        </ui:define>
+
+        <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+        <ui:define name="formCadastro">
+            <div class="linha">
+                <label for="txtNuMatricula">Matrícula:</label>
+                <h:inputText id="txtNuMatricula" maxlength="7" value="#{C.view.vo.funcionarioCaixa.deMatricula}"
+                    disabled="true" />
+                <div class="clearBoth"></div>
+            </div>
+
+            <div class="linha">
+                <label for="txtNoFuncionario">Nome:</label>
+                <h:inputText id="txtNoFuncionario" maxlength="250" value="#{C.view.vo.funcionarioCaixa.noFuncionario}"
+                    disabled="true" />
+                <div class="clearBoth"></div>
+            </div>
+
+            <div class="linha">
+                <label for="txtNuUnidade">Agência: </label>
+                <h:inputText id="txtNoUnidade"
+                    value="#{C.view.vo.funcionarioCaixa.unidade.nuUnidade} - #{C.view.vo.funcionarioCaixa.unidade.noUnidade}"
+                    disabled="true" />
+                <div class="clearBoth"></div>
+            </div>
+
+            <h:panelGroup id="agrSegmentos">
+                <div class="linha">
+                    <fieldset>
+                        <legend>Segmentos</legend>
+
+                        <h:selectManyCheckbox layout="pageDirection" value="#{C.view.listaSegmentoCadastrados}">
+                            <f:selectItems value="#{C.view.listaSegmento}" var="item" itemLabel="#{item.noSegmento}"
+                                itemValue="#{item.nuSegmento}" />
+                        </h:selectManyCheckbox>
+                    </fieldset>
+                    <div class="clearBoth"></div>
+                </div>
+            </h:panelGroup>
+        </ui:define>
+
+        <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+    </ui:composition>
+
+</ui:fragment>

@@ -1,0 +1,60 @@
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:rich="http://richfaces.org/rich" xmlns:a4j="http://richfaces.org/a4j">
+
+    <ui:composition template="/composicoes/layoutSimples.xhtml" xmlns:siavs="http://java.sun.com/jsf/composite/siavs">
+
+        <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+        <ui:define name="conteudoSimples">
+
+            <h:form id="form">
+                <div id="consultaPainelAvaliacao">
+                    <!-- Se não for o detalhamento -->
+
+                    <div class="formPesquisa">
+                        <div class="linha">
+                            <div>
+                                <label for="cmbGrupo">Grupo <siavs:obrigatorio />:
+                                </label>
+                                <h:selectOneMenu id="cmbGrupo"
+                                    value="#{consultaPainelAvaliacaoView.painelAvaliacao.grupoVO.nuGrupo}"
+                                    style="width: 130px;">
+                                    <f:selectItems value="#{consultaPainelAvaliacaoView.painelAvaliacao.listaGrupo}"
+                                        var="item" itemLabel="#{item.noGrupo}" itemValue="#{item.nuGrupo}"
+                                        style="width: 30%;" />
+                                </h:selectOneMenu>
+                            </div>
+
+                            <div>
+                                <label for="txtDtAvaliacao:txtDtAvaliacaoInputDate">Data<siavs:obrigatorio />:
+                                </label>
+                                <siavs:calendario id="txtDtAvaliacao"
+                                    valor="#{consultaPainelAvaliacaoView.painelAvaliacao.dtInicial}" />
+                            </div>
+
+                            <div style="float: right; padding-right: 6px;">
+
+                                <a4j:commandLink action="#{consultaPainelAvaliacaoView.painelAvaliacao.listarPorData()}"
+                                    styleClass="bt_listar" title="#{msgs.MA007}" render="tabelaPesquisa" execute="@form"
+                                    oncomplete="U.posRender();" />
+                            </div>
+
+                        </div>
+                        <div class="clearBoth"></div>
+                    </div>
+
+                    <div class="clearBoth"></div>
+
+                    <ui:param name="exibirGrafico" value="true" />
+                    <ui:include src="/pages/painelAvaliacao.xhtml" />
+                </div>
+            </h:form>
+
+        </ui:define>
+
+        <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+    </ui:composition>
+
+</ui:fragment>

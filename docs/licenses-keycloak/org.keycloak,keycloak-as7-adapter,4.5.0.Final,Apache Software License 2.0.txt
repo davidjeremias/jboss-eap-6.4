@@ -1,0 +1,1 @@
+org.keycloak,keycloak-adapter-core,4.5.0.Final,Apache Software License 2.0.txt

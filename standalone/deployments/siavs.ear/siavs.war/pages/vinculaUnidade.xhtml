@@ -1,0 +1,106 @@
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:rich="http://richfaces.org/rich" xmlns:a4j="http://richfaces.org/a4j">
+
+    <ui:composition template="/composicoes/layoutSimples.xhtml" xmlns:siavs="http://java.sun.com/jsf/composite/siavs">
+
+        <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+        <ui:define name="titulo">
+            <siavs:tituloGrupo />
+        </ui:define>
+
+        <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+        <ui:define name="conteudoSimples">
+            <h:form id="formUnidade" prependId="false">
+                <script>
+				$(document).ready(function() {
+					$("#txtUnidade").keyup(function() {
+						$("#selectOneUnidade option").prop("selected", false);
+						$("#selectOneUnidade option:contains('" + $(this).prop("value") + "'):first").attr("selected", true);
+					});
+				});
+			</script>
+                <div id="vinculaUnidade">
+                    <fieldset>
+                        <legend>Unidades</legend>
+                        <div class="tabelaPesquisa" style="width: 100%; height: 250px;">
+                            <rich:tree toggleType="ajax" var="item">
+                                <rich:treeModelRecursiveAdaptor roots="#{C.view.unidadesVinculadoras}"
+                                    nodes="#{item.unidadesVinculadas}">
+                                    <rich:treeNode>
+                                        <h:outputText value="#{item.grupoUnidadeVO.unidade.nuUnidadeFormatado} - " />
+                                        <h:outputText value="#{item.grupoUnidadeVO.unidade.noUnidade} - " />
+                                        <h:outputText value="#{item.grupoUnidadeVO.dtInclusao}">
+                                            <f:convertDateTime pattern="(dd-MM-yyyy)" />
+                                        </h:outputText>
+                                        <a4j:commandLink action="#{C.view.setVo(item.grupoUnidadeVO)}"
+                                            onclick="Mensagem.exibirConfirmacao('#{msgs.MA001} #{C.view.titulo}?', fnExcluir);"
+                                            rendered="#{C.view.permiteExcluir(item.grupoUnidadeVO) and empty item.unidadesVinculadas}"
+                                            styleClass="bt_excluir" title="#{msgs.MA004}" />
+
+                                        <a4j:commandLink action="#{C.view.setUnidadeVinculadora(item)}"
+                                            onclick="Mensagem.exibirConfirmacao('#{msgs.MA004_2}', fnExcluir);"
+                                            rendered="#{C.view.permiteExcluir(item.grupoUnidadeVO) and not empty item.unidadesVinculadas}"
+                                            styleClass="bt_excluir" title="#{msgs.MA004}" />
+                                    </rich:treeNode>
+                                </rich:treeModelRecursiveAdaptor>
+                            </rich:tree>
+                        </div>
+                    </fieldset>
+                    <div class="clearBoth"></div>
+                </div>
+                <br />
+                <div class="formCadastro" style="text-align: left;">
+                    <div class="linha">
+                        <label for="txtUnidade">Unidade :</label>
+                        <h:inputText id="txtUnidade" maxlength="4" value="#{C.view.nuUnidadeFiltro}" style="width: 12%"
+                            styleClass="numero" />
+                        <h:selectOneMenu id="selectOneUnidade" value="#{C.view.unidadeSelecionada}" style="width: 50%">
+                            <f:selectItem itemLabel="" itemValue="0@0" noSelectionOption="true" />
+                            <f:selectItems value="#{vinculaUnidadeView.unidadesSelecao}" var="unidadeSelect"
+                                itemLabel="#{unidadeSelect.nuUnidadeFormatado} - #{unidadeSelect.noUnidade}"
+                                itemValue="#{unidadeSelect.nuUnidade}@#{unidadeSelect.nuNatural}" />
+                        </h:selectOneMenu>
+                        <div class="clearBoth"></div>
+                    </div>
+                    <div class="linha">
+                        <label for="txtUnidade">Vinculadas :</label>
+                        <h:selectBooleanCheckbox value="#{C.view.vinculadas}" />
+                        <div class="clearBoth"></div>
+                    </div>
+                </div>
+
+                <ul class="botoes">
+                    <li><a4j:commandLink value="Salvar" action="#{C.view.salvarVinculoUnidade()}"
+                            styleClass="button caixa" title="#{msgs.MA006}" render="renderInicial formUnidade"
+                            execute="@form" oncomplete="U.posRender();" /></li>
+                    <li><h:commandLink value="Voltar" immediate="true"
+                            action="#{manterGrupoView.irTelaAlteracao(manterGrupoView.vo)}" styleClass="button orange"
+                            title="Clique para voltar a tela do #{manterGrupoView.titulo}!" /></li>
+                </ul>
+
+                <fieldset>
+                    <legend>Unidades não Vinculadas</legend>
+                    <div class="tabelaPesquisa" style="width: 100%; height: 50px;">
+                        <table>
+                            <ui:repeat var="vo" value="#{vinculaUnidadeView.listarUnidadeNaoVinculada()}">
+                                <tr>
+                                    <td>#{vo.nuUnidade} - #{vo.nomeGrupo}</td>
+                                </tr>
+                            </ui:repeat>
+                        </table>
+                    </div>
+                </fieldset>
+                <a4j:jsFunction name="fnExcluir" action="#{C.view.excluir()}" render="formUnidade" execute="@form"
+                    oncomplete="U.posRender();" />
+            </h:form>
+
+        </ui:define>
+
+        <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+    </ui:composition>
+
+</ui:fragment>

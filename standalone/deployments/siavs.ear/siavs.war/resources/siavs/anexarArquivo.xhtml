@@ -1,0 +1,27 @@
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:a4j="http://richfaces.org/a4j" xmlns:cc="http://java.sun.com/jsf/composite"
+    xmlns:rich="http://richfaces.org/rich">
+
+    <cc:interface>
+        <cc:attribute name="id" required="true" />
+        <cc:attribute name="tiposArquivo" required="true" />
+        <cc:attribute name="listener" required="true"
+            method-signature="void listener(org.richfaces.event.FileUploadEvent)" />
+        <cc:attribute name="render" required="true" />
+    </cc:interface>
+
+    <cc:implementation>
+
+        <div class="anexarArquivo">
+            <rich:fileUpload id="#{cc.attrs.id}"
+                ontyperejected="Mensagem.exibirManual('Apenas o(s) seguinte(s) tipo(s) são permitidos: #{cc.attrs.tiposArquivo}.')"
+                onuploadcomplete="U.posRender();  U.getCompRF('#{cc.attrs.id}').__removeAllItems();"
+                fileUploadListener="#{cc.attrs.listener}" acceptedTypes="#{cc.attrs.tiposArquivo}" maxFilesQuantity="1"
+                immediateUpload="true" addLabel="" render="#{cc.attrs.render}">
+            </rich:fileUpload>
+        </div>
+
+    </cc:implementation>
+
+</ui:fragment>

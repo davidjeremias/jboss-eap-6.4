@@ -1,0 +1,663 @@
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+/* Formatacoes gerais */
+
+html { height: 100%; }
+
+body {
+	font-family: Trebuchet, Arial, Helvetica, sans-serif !important;
+	font-size: 12px !important;
+	color: #333333 !important;
+	height: 100%:
+}
+
+a {
+	color: #0060c0;
+	font-weight: bold !important;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+strong {
+	font-weight: bold;
+}
+
+label {
+	font-weight: bold !important;
+}
+
+span .obrigatorio {
+	color: red;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+/* Campos de formulario */
+
+select,
+input[type="password"],
+input[type="text"] {
+	font-family: Trebuchet, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+	border: 1px solid #cccccc;
+	background-color: #ffffff;
+	height: 20px;
+}
+
+select {
+	padding-left: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+	border-radius: .5em 0 0 .5em;
+	height: 20px;
+	margin: 2px 5px 4px 5px;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+	-webkit-border-radius: .5em;
+	-moz-border-radius: .5em;
+	-ms-border-radius: .5em;
+	border-radius: .5em;
+}
+
+input[type="button"] {
+	font-family: Trebuchet, Arial, Helvetica, sans-serif;
+}
+
+input[readonly="readonly"],
+input[disabled="disabled"],
+select[disabled="disabled"],
+textarea[disabled] {
+	background-color: rgb(243, 243, 243);
+	color: rgb(173, 173, 173);
+	background-image: none;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+/*	Rodape */
+
+#rodape {
+	position: absolut;
+	bottom: 0;
+	width: 100%;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+/* Area de informacao */
+
+div.telaPrincipal {
+	width: 85%;
+	margin: 20px auto;
+}
+
+ul.titulos {
+	height: 42px;
+	width: 925px;
+}
+
+ul.titulos li {
+	display: inline-block;
+	position: relative;
+	top: -1px;
+}
+
+ul.titulos li.selecionada:first-child {
+	left: 0;
+}
+
+ul.titulos li:first-child {
+	left: -2px;
+}
+
+ul.titulos li.selecionada {
+	top: 0;
+}
+
+div#titulo {
+	height: 42px;
+}
+
+div#titulo .background {
+	position: relative;
+	top: 1px;
+	left: -1px;
+	height: 42px;
+}
+
+div#titulo.selecionada .background {
+	z-index: 10 !important;
+}
+
+div#titulo .background div {
+	height: 42px;
+	position: absolute;
+}
+
+div#titulo .background .esquerda {
+	background-image: url("#{resource['images/bg_aba_esquerda.png']}");
+	width: 7px;
+}
+
+div#titulo .background .meio {
+	background-image: url("#{resource['images/bg_aba_meio.png']}");
+	left: 7px;
+	right: 86px;
+}
+
+div#titulo .background .direita {
+	background-image: url("#{resource['images/bg_aba_direita.png']}");
+	width: 86px;
+	right: 0;
+}
+
+div#titulo.selecionada .background .esquerda {
+	background-image: url("#{resource['images/bg_aba_selecionada_esquerda.png']}");
+	width: 7px;
+}
+
+div#titulo.selecionada .background .meio {
+	background-image: url("#{resource['images/bg_aba_selecionada_meio.png']}");
+	left: 7px;
+	right: 86px;
+}
+
+div#titulo.selecionada .background .direita {
+	background-image: url("#{resource['images/bg_aba_selecionada_direita.png']}");
+	width: 86px;
+	right: 0;
+}
+
+div#titulo h3 {
+	top: -21px;
+	font-size: 16px;
+	color: #6E6A6E;
+	font-weight: bold;
+	text-transform: uppercase;
+	position: relative;
+	z-index: 10;
+	white-space: nowrap;
+}
+
+div#titulo.selecionada h3 {
+	color: #384F9C;
+	margin: 0 36px 0 0;
+	padding: 0 35px 6px 20px;	
+}
+
+div#titulo h3 a,
+div#titulo h3 a:HOVER,
+div#titulo h3 a:VISITED {
+	color: #6E6A6E !important;
+	text-decoration: none;
+	margin: 0 36px 0 0;
+	padding: 10px 35px 6px 20px;
+}
+
+div#titulo.selecionada h3 a,
+div#titulo.selecionada h3 a:HOVER,
+div#titulo.selecionada h3 a:VISITED {
+	color: #384F9C !important;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+/* Formulario e box */
+
+form.box,
+div.box {
+	border: 1px solid #CDD5E3;
+	background-color: #fcfcfc;
+	padding: 15px 10px 10px 10px;
+	-webkit-border-radius: 0 .5em .5em .5em;
+	-moz-border-radius: 0 .5em .5em .5em;
+	-ms-border-radius: 0 .5em .5em .5em;
+	border-radius: 0 .5em .5em .5em;
+}
+
+div.box dl {
+	width: 100%;
+}
+
+div.box h4 {
+	font-size: 13px;
+	font-weight: bold;
+	padding: 0 10px;
+}
+
+div.box div.label {
+	float: left;
+	text-align: right;
+	border: solid 1px pink;
+}
+
+div.box .formPesquisa label,
+div.box .formCadastro label {
+	float: left;
+	padding-top: 6px;
+	margin-right: 3px;
+	width: 10%;
+	text-align: right;
+}
+
+div.box .formCadastro label {
+	width: 180px;
+}
+
+div.box .formPesquisa input, 
+div.box .formCadastro input {
+	float: left;
+	margin-right: 10px;
+	width: 70%;
+}
+
+div.box .formPesquisa input[type=checkbox], 
+div.box .formCadastro input[type=checkbox] {
+	width: 13px;
+	height: 17px;
+	margin: 3px 0 0 5px;
+}
+
+div.box div.formPesquisa .linha,
+div.box .formCadastro .linha {
+	width: 100%;
+}
+
+.tabelaPesquisa table {
+	width: 100%;
+}
+
+.tabelaPesquisa .rf-dt-shdr-c {
+	text-align: center;
+	font-weight: bold;
+	vertical-align: middle;
+	padding: 5px 10px;
+	border: 1px solid #eeeeee;
+	background-image: url("#{resource['images/bg_th.png']}");
+	white-space: nowrap;
+}
+
+div.box .tabelaPesquisa table thead tr {
+	background: #f0f0f0;
+}
+
+div.box .tabelaPesquisa table tbody tr:nth-child(2n+1) {
+	background: #F1F1F1;
+}
+
+div.box .tabelaPesquisa table tbody tr.linha_impar {
+	background: #F1F1F1;
+} /* Colocado por jQuery no IE */
+
+div.box .tabelaPesquisa table thead th.ordenacao a {
+	display: none;
+}
+
+/* A ordenacao da tabela pode ser controlada por jQuery ou JS inline */
+div.box table thead th.ordenacao a:first-child {
+	display: inline;
+}
+
+div.box .tabelaPesquisa .rf-dt-shdr-c a {
+	color: #000000;
+}
+
+.layoutPadrao div.box .tabelaPesquisa {
+	height: 285px;
+	overflow-y: scroll;
+	float: left;
+	width: 94%;
+}
+
+.tabelaPesquisa .rf-dt-r td,
+.tabelaPesquisa .rf-dt-nd td {
+	border: 1px solid #D6D6D6;
+	padding: 5px 5px 0px 4px !important;
+}
+
+.tabelaPesquisa .rf-dt-nd td {
+	padding-top: 4px !important;	
+}
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+/* Formulario de entrada de dados*/
+
+form dl dt {
+	float: left;
+	width: 100px;
+	padding-top: 14px;
+}
+
+form dl dd {
+	float: left;
+	padding: 10px;
+	height: 20px;
+}
+
+div.box dl dt {
+	float: left;
+	width: 10%;
+}
+
+div.box dl dd {
+	float: left;
+	width: 80%;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+/* Botoes de acao */
+
+div.botoesAcao {
+	width: 45px;
+	margin: 0 auto;
+}
+
+a#botoes {
+	vertical-align: middle;
+	margin: 20px auto;
+}
+
+a.bt_incluir,
+a.bt_alterar,
+a.bt_excluir,
+a.bt_listar {
+	width: 16px;
+	height: 16px;
+	text-indent: -9999px;
+	overflow: hidden;
+	float: left;
+	background-repeat: no-repeat;
+}
+
+a.bt_alterar {
+	background-image: url("#{resource['images/ico_alterar.png']}");
+	float: left;
+}
+
+a.bt_excluir {
+	background-image: url("#{resource['images/ico_excluir.png']}");
+	float: right
+}
+
+a.bt_incluir {
+	background-image: url("#{resource['images/ico_incluir.png']}");
+	width: 32px;
+	height: 32px;
+}
+
+a.bt_listar {
+	background-image: url("#{resource['images/ico_listar.png']}");
+	width: 32px;
+	height: 32px;
+}
+
+.layoutPadrao a.bt_incluir {
+	margin: 30px 0px 0px 0px;
+	float: right;
+}
+
+.layoutPadrao a.bt_excluir,
+.layoutPadrao a.bt_alterar {
+	margin: 0px 3px;
+}
+
+a.bt_detalhar {
+	background-image: url("#{resource['images/ico_detalhar.png']}");
+	width: 14px;
+	height: 14px;
+}
+
+a.bt_excel {
+	background-image: url("#{resource['images/ico_excel.png']}");
+	width: 26px;
+	height: 31px;
+}
+
+a.bt_anexo {
+	background-image: url("#{resource['images/ico_anexo.png']}");
+	width: 16px;
+	height: 16px;
+	display: block;
+	float: right;
+}
+
+.clearBoth {
+	clear: both;
+}
+
+.linha .clearBoth {
+	clear: both;
+	padding-bottom: 5px;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+/* Paginacao */
+
+ul.paginacao {
+	margin: 0 auto;
+	display: table;
+	background-color: #eeeeee;
+	-webkit-border-radius: 0 0 .5em .5em;
+	-moz-border-radius: 0 0 .5em .5em;
+	border-radius: 0 0 .5em .5em;
+	border: 1px solid #dddddd;
+	border-top: none;
+	font-size: 11px;
+}
+
+ul.paginacao li {
+	display: table-cell;
+	padding: 5px 10px;
+	border-left: 1px solid #dddddd;
+}
+
+ul.paginacao li:first-child {
+	border-left: none;
+}
+
+ul.paginacao li.pg_atual {
+	background: #ffffff;
+}
+
+ul.paginacao li a {
+	padding-top: 4px;
+	font-weight: normal;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+/* Botoes do formulario */
+
+ul.botoes {
+	width: 100%;
+	text-align: center;
+	padding: 7px 0;
+}
+
+ul.botoes li {
+	display: inline-table;
+	margin: 0 10px;
+}
+
+div.box p.titulo {
+	background-color: #0060c0;
+	color: white;
+	text-align: center;
+	height: 15px;
+	font-size: 14px;
+	font-weight: bold;
+	-webkit-border-radius: .3em;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+/* Popup excluir */
+
+.msgPopupExcluir {
+	font-family: Arial Bold; 
+	font-size: 16px; 
+	color: #0039ba; 
+	text-align: center;
+	width: 100%;
+	display: block;	
+}
+
+.popupExcluir.botoes {
+	padding: 16px 0 0 0;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+fieldset {
+	border-width: 1px !important;
+	border-style: solid !important;
+	padding: 10px !important;
+	border-color: #C4C0B9 !important;
+	width: 90% !important;
+	margin: 0 auto !important;
+}
+
+.linha table tr td label {
+	text-align: left !important;
+	padding-left: 10px !important;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.rf-cal input {
+	width: 87px !important;
+}
+
+.rf-cal table {
+	width: inherit !important;
+}
+
+.rf-cal table tr {
+	display: inherit !important;
+	width: inherit !important;
+	background: inherit !important;
+}
+
+.rf-cal *.rf-cal-ftr,
+.rf-cal *.rf-cal-tl-ftr,
+.rf-cal *.rf-cal-day-lbl,
+.rf-cal *.rf-cal-week
+{
+	background: #E8EDF8;
+	border-top-color: #E8EDF8;
+	border-right-color: #E8EDF8;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.leiaMais,
+.leiaMais:HOVER,
+.leiaMais:VISITED {
+	color: #000000 !important;
+	font-weight: bold;
+	text-decoration: none;
+	float: left;
+	padding-left: 3px;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.linha fieldset table tr {
+display: -webkit-inline-box;
+width: 50%;
+}
+
+/* rich:tree */
+.rf-trn {
+	white-space: normal !important;
+	font: 12px bold !important;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+/* Oculta o texto dentro do preview de imagem do editor */
+.ImagePreviewBox table tr td{
+	font-size: 0px;
+}
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+/* Página de erro */
+
+div.telaErro h4 {
+	font-size: 18px;
+	font-weight: bold;
+	color: #002aa8;
+	padding-bottom: 4px;
+	margin-bottom: 16px;
+	border-bottom: 1px dotted #777;
+	margin-top: 40px;
+}
+
+div.padrao_erro {
+    font-size: 14px;
+    border: 1px solid #eaa;
+    background-color: #fee;
+    border-radius: 3px;
+    margin-top: 30px;
+    padding: 16px;
+}
+
+div.padrao_erro h5 {
+    color: #a00;
+    margin: 0;
+    font-size: 16px;
+	font-weight: bold;
+}
+
+div.padrao_erro p {
+    color: #833;
+    float: none;
+    margin: 16px 0 0 0;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+/* Loading ajax */
+
+#statusAjax {	
+	background-color:#fff;	
+	filter:alpha(opacity=50);  /* para o IE */
+	-moz-opacity:0.5;  /* para o FireFox*/    
+	opacity:0.5; /* para o outros Navegadores */
+	position: center;
+	position: absolute;	
+	top: 0px;
+	left: 0px;
+	margin: 0;	
+	display: block;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    z-index: 5000;
+    background: rgba(255,255,255,50%);
+      
+}
+#statusAjax img {
+	position: center;
+	position: absolute;
+    z-index: 1000;
+	top:45%;
+	left:45%;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.versao {
+	position: absolute;
+    color: #999999;
+    font-family: Trebuchet,Arial,Helvetica,sans-serif !important;
+    font-size: 0.8em;
+    right: 20px;
+}
+
+.invisivel {
+	filter:alpha(opacity=0);  /* para o IE */
+	-moz-opacity:0.0;  /* para o FireFox*/    
+	opacity:0.0; /* para o outros Navegadores */
+	background-color:transparent;	
+}

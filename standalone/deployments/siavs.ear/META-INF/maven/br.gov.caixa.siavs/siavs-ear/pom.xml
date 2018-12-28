@@ -1,0 +1,84 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+<!-- ************************************************************************************************************************************* -->
+
+	<parent>
+		<groupId>br.gov.caixa.siavs</groupId>
+		<artifactId>siavs-bom</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
+	<artifactId>siavs-ear</artifactId>
+	<packaging>ear</packaging>
+	<description>Sistema de Avaliação de Serviços - Parte EAR</description>
+
+<!-- ************************************************************************************************************************************* -->
+
+	<properties>
+		<!-- Sobrescrevendo propriedades utilizadas pelos plugins do maven -->
+		<jboss-as.deployment.filename>${project.build.finalName}.${project.packaging}</jboss-as.deployment.filename>
+	</properties>
+
+<!-- ************************************************************************************************************************************* -->
+<!-- ************************************************************************************************************************************* -->
+
+	<build>
+		<plugins>
+
+			<plugin>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>2.8</version>
+
+				<configuration>
+					<defaultLibBundleDir>lib</defaultLibBundleDir>
+					<finalName>${project.build.finalName}</finalName>
+
+					<modules>
+						<ejbModule>
+							<groupId>br.gov.caixa.siavs</groupId>
+							<artifactId>siavs-ejb</artifactId>
+							<bundleFileName>${project.build.finalName}.jar</bundleFileName>
+						</ejbModule>
+						<webModule>
+							<groupId>br.gov.caixa.siavs</groupId>
+							<artifactId>siavs-web</artifactId>
+							<bundleFileName>${project.build.finalName}.war</bundleFileName>
+							<contextRoot>/</contextRoot>
+						</webModule>
+					</modules>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+
+<!-- ************************************************************************************************************************************* -->
+
+	<dependencies>
+
+<!--  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  * -->
+<!-- SIAVS -->
+
+		<dependency>
+			<groupId>br.gov.caixa.siavs</groupId>
+			<artifactId>siavs-ejb</artifactId>
+			<version>1.0.0</version>
+			<type>ejb</type>
+		</dependency>
+
+		<dependency>
+			<groupId>br.gov.caixa.siavs</groupId>
+			<artifactId>siavs-web</artifactId>
+			<version>1.0.0</version>
+			<type>war</type>
+		</dependency>
+
+<!--  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  * -->
+
+	</dependencies>
+
+<!-- ************************************************************************************************************************************* -->
+
+</project>

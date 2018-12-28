@@ -1,0 +1,121 @@
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:rich="http://richfaces.org/rich" xmlns:a4j="http://richfaces.org/a4j">
+
+    <ui:composition template="/composicoes/layoutSimples.xhtml" xmlns:siavs="http://java.sun.com/jsf/composite/siavs">
+
+        <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+        <ui:define name="conteudoExtra">
+            <siavs:leiaMaisNoticia noticia="#{C.view.noticia.deNoticia}" dataHora="#{C.view.noticia.tsInicioPublicacao}" />
+        </ui:define>
+
+        <ui:define name="conteudoSimples">
+
+            <h:form id="form">
+                <div id="avaliaServico">
+                    <span class="infoNotas">Notas: Ruim (0 à 4) – Regular (5 à 6) – Bom (7) – Muito Bom (8) –
+                        Ótimo (9 à 10)</span>
+
+                    <div class="tabelaPesquisa" style="width: 100%;">
+                        <table class="rf-dt">
+
+                            <thead class="rf-dt-thd">
+                                <tr class="rf-dt-shdr">
+                                    <th class="rf-dt-shdr-c" style="width: 17%;">Usei / Tentei Usar</th>
+                                    <th class="rf-dt-shdr-c" style="width: 20%;">Serviço</th>
+                                    <th class="rf-dt-shdr-c" style="width: 16%;">Avaliação / Nota</th>
+                                    <th class="rf-dt-shdr-c" style="width: 20%;">Problema</th>
+                                    <th class="rf-dt-shdr-c">Comentário</th>
+                                </tr>
+                            </thead>
+
+                            <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+                            <a4j:repeat value="#{C.view.listaAvaliaServicoBean}" var="avaliaServicoBean">
+                                <tr class="rf-dt-r">
+
+                                    <td class="rf-dt-c"><h:selectBooleanCheckbox
+                                            value="#{avaliaServicoBean.usouTentouUsar}"
+                                            disabled="#{avaliaServicoBean.jaAvaliado}">
+                                            <f:ajax render="cmbVrNotaAvaliacao rbtNuProblema txaDeComentario" />
+                                        </h:selectBooleanCheckbox></td>
+
+                                    <td class="rf-dt-c"><h:outputText
+                                            value="#{avaliaServicoBean.avaliacaoVO.servico.deServico}" /></td>
+
+                                    <td class="rf-dt-c"><h:selectOneMenu
+                                            value="#{avaliaServicoBean.avaliacaoVO.vrNotaAvaliacao}"
+                                            disabled="#{!avaliaServicoBean.usouTentouUsar || avaliaServicoBean.jaAvaliado}"
+                                            id="cmbVrNotaAvaliacao">
+                                            <f:selectItem itemLabel="Nota" itemValue="-1" />
+                                            <f:selectItem itemLabel="0" itemValue="0" />
+                                            <f:selectItem itemLabel="1" itemValue="1" />
+                                            <f:selectItem itemLabel="2" itemValue="2" />
+                                            <f:selectItem itemLabel="3" itemValue="3" />
+                                            <f:selectItem itemLabel="4" itemValue="4" />
+                                            <f:selectItem itemLabel="5" itemValue="5" />
+                                            <f:selectItem itemLabel="6" itemValue="6" />
+                                            <f:selectItem itemLabel="7" itemValue="7" />
+                                            <f:selectItem itemLabel="8" itemValue="8" />
+                                            <f:selectItem itemLabel="9" itemValue="9" />
+                                            <f:selectItem itemLabel="10" itemValue="10" />
+                                        </h:selectOneMenu></td>
+
+                                    <td class="rf-dt-c problema"><h:selectOneRadio
+                                            value="#{avaliaServicoBean.avaliacaoVO.problema.nuProblema}"
+                                            layout="pageDirection" id="rbtNuProblema"
+                                            disabled="#{!avaliaServicoBean.usouTentouUsar || avaliaServicoBean.jaAvaliado}">
+                                            <f:selectItems value="#{C.view.listaProblema}" var="item"
+                                                itemLabel="#{item.deProblema}" itemValue="#{item.nuProblema}" />
+                                        </h:selectOneRadio></td>
+
+                                    <td class="rf-dt-c comentario"><h:inputTextarea cols="29" rows="4"
+                                            value="#{avaliaServicoBean.avaliacaoVO.deComentario}"
+                                            onfocus="$(this).campoAlfaNumero(300)" id="txaDeComentario"
+                                            disabled="#{!avaliaServicoBean.usouTentouUsar || avaliaServicoBean.jaAvaliado}" />
+                                    </td>
+
+                                </tr>
+
+                                <!-- *	*	*	*	*	*	*	* -->
+                                <a4j:repeat value="#{avaliaServicoBean.listaNoticia}" var="noticia">
+
+                                    <tr class="rf-dt-r noticia">
+                                        <td colspan="5" class="rf-dt-c"><span class="informativo"
+                                            style="float: left;">Informativo TI</span> <span class="corpo"
+                                            style="float: left;"> <h:outputText
+                                                    value="#{C.view.limparHtml(noticia.deNoticia)}"
+                                                    rendered="#{!(C.view.limparHtml(noticia.deNoticia).length() > 100)}" />
+                                                <h:outputText
+                                                    value="#{C.view.limparHtml(noticia.deNoticia).substring(0, 100)} ..."
+                                                    rendered="#{C.view.limparHtml(noticia.deNoticia).length() > 100}" />
+                                        </span> <a4j:commandLink action="#{C.view.setNoticia(noticia)}"
+                                                oncomplete="U.abrirPopup('leiaMaisNoticia');" render="leiaMaisNoticia"
+                                                value=" (Leia Mais)" styleClass="leiaMais" execute="@this" /></td>
+                                    </tr>
+
+                                </a4j:repeat>
+                                <!-- *	*	*	*	*	*	*	* -->
+
+                            </a4j:repeat>
+                            <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+                        </table>
+                    </div>
+                    <div class="clearBoth"></div>
+
+                    <ul class="botoes">
+                        <li><a4j:commandLink value="Finalizar Avaliação" action="#{C.view.salvar()}"
+                                styleClass="button caixa" title="#{msgs.MA009}" render="form renderInicial"
+                                execute="@form" oncomplete="U.posRender();" /></li>
+                    </ul>
+
+                </div>
+            </h:form>
+
+        </ui:define>
+
+        <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+    </ui:composition>
+</ui:fragment>

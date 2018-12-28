@@ -1,0 +1,89 @@
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:a4j="http://richfaces.org/a4j" xmlns:cc="http://java.sun.com/jsf/composite"
+    xmlns:rich="http://richfaces.org/rich">
+
+    <cc:interface>
+        <cc:attribute name="id" required="true" />
+        <cc:attribute name="valor" required="true" expert="true" />
+        <cc:attribute name="tamanhoMaximo" required="true" />
+    </cc:interface>
+
+    <cc:implementation>
+        <input type="text" id="hd#{cc.attrs.id}" style="display: none" />
+        <style>
+cke_bottom_detail, .cke_bottom {
+	display: none
+}
+</style>
+        <rich:editor id="#{cc.attrs.id}" toolbar="custom" value="#{cc.attrs.valor}"
+            styleClass="#{cc.attrs.id} invisivel">
+            <f:facet name="config">
+			toolbar_full:
+			[
+				{ name: 'document', items : [ 'Source','-','Save','NewPage','DocProps','Preview','Print','-','Templates' ] },
+				{ name: 'clipboard', items : [ 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo' ] },
+				{ name: 'editing', items : [ 'Find','Replace','-','SelectAll','-','SpellChecker', 'Scayt' ] },
+				{ name: 'forms', items : [ 'Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField' ] },
+				'/',
+				{ name: 'basicstyles', items : [ 'Bold','Italic','Underline','Strike','Subscript','Superscript','-','RemoveFormat' ] },
+				{ name: 'paragraph', items : [ 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','CreateDiv', '-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','BidiLtr','BidiRtl' ] },
+				{ name: 'links', items : [ 'Link','Unlink','Anchor' ] },
+				{ name: 'insert', items : [ 'Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak','Iframe' ] },
+				'/',
+				{ name: 'styles', items : [ 'Styles','Format','Font','FontSize' ] },
+				{ name: 'colors', items : [ 'TextColor','BGColor' ] },
+				{ name: 'tools', items : [ 'Maximize', 'ShowBlocks','-','About' ] }
+			],
+			toolbar_custom:
+			[
+				{ name: 'basicstyles', items : [ 'Bold','Italic','Underline','-' ] },
+				{ name: 'paragraph', items : [ 'JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','NumberedList', 'BulletedList','-' ] },		                            
+				{ name: 'styles', items : [ 'FontSize','Font','Format','-' ] },
+				{ name: 'paragraph', items : [ 'Outdent','Indent','-' ] },
+				{ name: 'colors', items : [ 'TextColor' ] },
+			],
+			config_Element:  
+            [  
+                { resize_enabled : false },  
+                { removePlugins  : 'elementspath'}  
+            ]  		                        
+ 		</f:facet>
+        </rich:editor>
+
+        <script type="text/javascript">
+		// Recuperando o textarea
+		var campo = $('textarea.#{cc.attrs.id}');
+		// Recuperando o editor
+		var editor_#{cc.attrs.id} = U.getCompRF(campo.parent()[0].id).ckeditor;
+		var fnInit#{cc.attrs.id} = function() {
+			// atualiza
+			editor_#{cc.attrs.id} = U.getCompRF(campo.parent()[0].id).ckeditor;
+			// Adiciona um evento para ser executado quando o editor estiver completamente pronto para ser utilizado
+			editor_#{cc.attrs.id}.on('instanceReady', function(e) {
+				// Exibe apenas o editor
+				$('span.#{cc.attrs.id}').removeClass("invisivel");
+				var ed = editor_#{cc.attrs.id};
+				// Adiciona o evento para quaisquer alterações no componente 
+				ed.on('change', function(e) {
+					// Atualiza as informações no componente textarea
+					ed.updateElement();
+				});
+				// Aplica o maxlength ao editor
+				EDITOR.aplicarMaxLength(ed, #{cc.attrs.tamanhoMaximo});
+				// Troca o evento de foco
+				$("#hd#{cc.attrs.id}")[0].focus = function(){ed.focus()};
+			});
+		};
+		// Se já encontrou o editor
+		if(editor_#{cc.attrs.id}) {
+			fnInit#{cc.attrs.id}();
+		}
+		else {
+			$(window).bind("load", fnInit#{cc.attrs.id});
+		}
+	</script>
+
+    </cc:implementation>
+
+</ui:fragment>

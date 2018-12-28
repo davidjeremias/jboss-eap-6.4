@@ -1,0 +1,138 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- ************************************************************************************************************************************* -->
+
+	<parent>
+		<groupId>br.gov.caixa.siavs</groupId>
+		<artifactId>siavs-bom</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
+	<artifactId>siavs-web</artifactId>
+	<packaging>war</packaging>
+	<description>Sistema de Avaliação de Serviços - Parte WEB</description>
+	<properties>
+		<keycloak.version>2.5.4.Final</keycloak.version>
+	</properties>
+
+	<!-- ************************************************************************************************************************************* -->
+
+	<build>
+		<plugins>
+
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.3</version>
+
+				<configuration>
+					<warSourceDirectory>WebContent</warSourceDirectory>
+					<warSourceExcludes>**/*.jrxml</warSourceExcludes>
+				</configuration>
+
+			</plugin>
+
+		</plugins>
+	</build>
+
+	<!-- ************************************************************************************************************************************* -->
+
+	<dependencies>
+
+		<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+			* * * * * * * * * * * -->
+		<!-- RichFaces -->
+
+		<dependency>
+			<groupId>org.richfaces.ui</groupId>
+			<artifactId>richfaces-components-ui</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.richfaces.core</groupId>
+			<artifactId>richfaces-core-impl</artifactId>
+		</dependency>
+
+		<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+			* * * * * * * * * * * -->
+		<!-- Jboss -->
+
+		<dependency>
+			<groupId>javax.enterprise</groupId>
+			<artifactId>cdi-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss.spec.javax.faces</groupId>
+			<artifactId>jboss-jsf-api_2.1_spec</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss.spec.javax.servlet</groupId>
+			<artifactId>jboss-servlet-api_3.0_spec</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss.spec.javax.security.jacc</groupId>
+			<artifactId>jboss-jacc-api_1.4_spec</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.picketbox</groupId>
+			<artifactId>jbosssx-client</artifactId>
+			<version>4.0.19.Final</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+			* * * * * * * * * * * -->
+		<!-- Framework -->
+
+		<dependency>
+			<groupId>br.com.spread.framework</groupId>
+			<artifactId>spread-framework-jsf</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>br.com.spread.framework</groupId>
+			<artifactId>spread-framework-view</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>br.com.spread.framework</groupId>
+			<artifactId>spread-framework-view-reports</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+			* * * * * * * * * * * -->
+		<!-- SIAVS -->
+
+		<dependency>
+			<groupId>br.gov.caixa.siavs</groupId>
+			<artifactId>siavs-ejb</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+			* * * * * * * * * * * -->
+		<!-- KEYCLOAK -->
+		<dependency>
+			<groupId>org.keycloak</groupId>
+			<artifactId>keycloak-core</artifactId>
+			<version>3.4.3.Final</version>
+		</dependency>
+
+
+	</dependencies>
+
+	<!-- ************************************************************************************************************************************* -->
+
+</project>

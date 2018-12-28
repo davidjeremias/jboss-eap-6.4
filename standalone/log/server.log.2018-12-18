@@ -1,0 +1,1080 @@
+10:48:01,357 INFO  [org.apache.coyote.http11.Http11Protocol] (MSC service thread 1-4) JBWEB003075: Coyote HTTP/1.1 pausing on: http-localhost/127.0.0.1:8080
+10:48:01,362 INFO  [org.apache.coyote.http11.Http11Protocol] (MSC service thread 1-4) JBWEB003077: Coyote HTTP/1.1 stopping on : http-localhost/127.0.0.1:8080
+10:48:01,370 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-2) JBAS010409: Fonte de dados sem limite [java:jboss/datasources/siavsDS]
+10:48:01,458 INFO  [org.jboss.web] (ServerService Thread Pool -- 86) JBAS018224: Desregistra o contexto da web: 
+10:48:01,776 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) JBAS016009: Interrupção do serviço Weld para a implantação siavs.ear
+10:48:01,920 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015974: Interrompendo a subimplantação (runtime-name: siavs.jar) em 610ms
+10:48:02,044 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015974: Interrompendo a subimplantação (runtime-name: siavs.war) em 732ms
+10:48:02,097 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015877: Implantação encerrada siavs.ear (runtime-name: siavs.ear) em 792ms
+10:48:02,135 INFO  [org.jboss.as] (MSC service thread 1-3) JBAS015950: JBoss EAP 6.4.0.GA (AS 7.5.0.Final-redhat-21) interrompido em 828ms
+14:37:29,815 INFO  [org.jboss.modules] (main) JBoss Modules version 1.3.6.Final-redhat-1
+14:37:30,489 INFO  [org.jboss.msc] (main) JBoss MSC version 1.1.5.Final-redhat-1
+14:37:30,609 INFO  [org.jboss.as] (MSC service thread 1-3) JBAS015899: Iniciando JBoss EAP 6.4.0.GA (AS 7.5.0.Final-redhat-21)
+14:37:30,621 DEBUG [org.jboss.as.config] (MSC service thread 1-3) Propriedades de sistema configurado:
+	awt.toolkit = sun.awt.windows.WToolkit
+	file.encoding = Cp1252
+	file.encoding.pkg = sun.io
+	file.separator = \
+	java.awt.graphicsenv = sun.awt.Win32GraphicsEnvironment
+	java.awt.headless = true
+	java.awt.printerjob = sun.awt.windows.WPrinterJob
+	java.class.path = C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4\jboss-modules.jar
+	java.class.version = 51.0
+	java.endorsed.dirs = C:\Program Files\Java\jdk1.7.0_67\jre\lib\endorsed
+	java.ext.dirs = C:\Program Files\Java\jdk1.7.0_67\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext
+	java.home = C:\Program Files\Java\jdk1.7.0_67\jre
+	java.io.tmpdir = C:\Users\p577394\AppData\Local\Temp\
+	java.library.path = C:\Program Files\Java\jdk1.7.0_67\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;native;C:\WINDOWS\CCM\;C:/Program Files/Java/jdk1.8.0_40/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_40/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_40/bin/../jre/lib/amd64;/opt\sybase\OCS-15_0\lib3p;/opt\sybase\OCS-15_0\dll;/opt\sybase\OCS-15_0\bin;/opt\sybase\DataAccess\ODBC\dll;c:\Program Files (x86)\IBM\WebSphere MQ\Java\lib;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Arquivos de Programas\GTK2-Runtime\lib;c:\Program Files (x86)\IBM\WebSphere MQ\bin;c:\Program Files (x86)\IBM\WebSphere MQ\bin64;c:\Program Files (x86)\IBM\WebSphere MQ\tools\c\samples\bin;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;c:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\Wbem;C:\windows\System32;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\desenvolvimento\maven\bin;C:\Program Files\Java\jdk1.8.0_40\bin;c:\wamp\bin\php\php5.0.0;C:\Users\p577394\AppData\Local\Microsoft\WindowsApps;C:\Users\p577394\AppData\Roaming\npm;C:\desenvolvimento\ide\eclipse;;.
+	java.net.preferIPv4Stack = true
+	java.runtime.name = Java(TM) SE Runtime Environment
+	java.runtime.version = 1.7.0_67-b01
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 1.7
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = http://java.oracle.com/
+	java.vendor.url.bug = http://bugreport.sun.com/bugreport/
+	java.version = 1.7.0_67
+	java.vm.info = mixed mode
+	java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 1.7
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 24.65-b04
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	javax.xml.datatype.DatatypeFactory = __redirected.__DatatypeFactory
+	javax.xml.parsers.DocumentBuilderFactory = __redirected.__DocumentBuilderFactory
+	javax.xml.parsers.SAXParserFactory = __redirected.__SAXParserFactory
+	javax.xml.stream.XMLEventFactory = __redirected.__XMLEventFactory
+	javax.xml.stream.XMLInputFactory = __redirected.__XMLInputFactory
+	javax.xml.stream.XMLOutputFactory = __redirected.__XMLOutputFactory
+	javax.xml.transform.TransformerFactory = __redirected.__TransformerFactory
+	javax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema = __redirected.__SchemaFactory
+	javax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom = __redirected.__XPathFactory
+	jboss.bind.address = localhost
+	jboss.bind.address.management = localhost
+	jboss.home.dir = C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4
+	jboss.host.name = df5200et054
+	jboss.modules.dir = C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4\modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = df5200et054
+	jboss.qualified.host.name = df5200et054
+	jboss.server.base.dir = C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4\standalone
+	jboss.server.config.dir = C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4\standalone\configuration
+	jboss.server.data.dir = C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4\standalone\data
+	jboss.server.deploy.dir = C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4\standalone\data\content
+	jboss.server.log.dir = C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4\standalone\log
+	jboss.server.name = df5200et054
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4\standalone\tmp
+	line.separator = 
+
+	logging.configuration = file:C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4\standalone\configuration\logging.properties
+	module.path = C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4\modules
+	org.jboss.boot.log.file = C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4\standalone\log\boot.log
+	org.jboss.logmanager.nocolor = true
+	org.jboss.resolver.warning = true
+	org.xml.sax.driver = __redirected.__XMLReaderFactory
+	os.arch = amd64
+	os.name = Windows 8.1
+	os.version = 6.3
+	path.separator = ;
+	program.name = JBossTools: Red Hat JBoss EAP 6.1+
+	sun.arch.data.model = 64
+	sun.boot.class.path = C:\Program Files\Java\jdk1.7.0_67\jre\lib\resources.jar;C:\Program Files\Java\jdk1.7.0_67\jre\lib\rt.jar;C:\Program Files\Java\jdk1.7.0_67\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.7.0_67\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.7.0_67\jre\lib\jce.jar;C:\Program Files\Java\jdk1.7.0_67\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.7.0_67\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.7.0_67\jre\classes
+	sun.boot.library.path = C:\Program Files\Java\jdk1.7.0_67\jre\bin
+	sun.cpu.endian = little
+	sun.cpu.isalist = amd64
+	sun.desktop = windows
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = org.jboss.modules.Main -mp C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4\modules -jaxpmodule javax.xml.jaxp-provider -jaxpmodule javax.xml.jaxp-provider org.jboss.as.standalone -b localhost --server-config=standalone.xml -Djboss.server.base.dir=C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4\standalone
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = Cp1252
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = 
+	sun.rmi.dgc.client.gcInterval = 3600000
+	sun.rmi.dgc.server.gcInterval = 3600000
+	user.country = BR
+	user.dir = C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4\bin
+	user.home = C:\Users\p577394
+	user.language = pt
+	user.name = p577394
+	user.script = 
+	user.timezone = America/Sao_Paulo
+	user.variant = 
+14:37:30,624 DEBUG [org.jboss.as.config] (MSC service thread 1-3) Argumentos VM: -Dprogram.name=JBossTools: Red Hat JBoss EAP 6.1+ -Xms1024m -Xmx1024m -XX:MaxPermSize=256m -Dorg.jboss.resolver.warning=true -Djava.net.preferIPv4Stack=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Dorg.jboss.boot.log.file=C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4\standalone\log\boot.log -Dlogging.configuration=file:C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4\standalone\configuration\logging.properties -Djboss.home.dir=C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4 -Dorg.jboss.logmanager.nocolor=true -Djboss.bind.address.management=localhost -Dfile.encoding=Cp1252 
+14:37:32,393 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) JBAS015003: Encontrado siavs.ear no diretório da implantação. Crie um arquivo chamado siavs.ear.dodeploy para aplicar o trigger na implantação
+14:37:32,420 INFO  [org.xnio] (MSC service thread 1-2) XNIO Version 3.0.13.GA-redhat-1
+14:37:32,425 INFO  [org.jboss.as.server] (Controller Boot Thread) JBAS015888: Criação de serviço de gerenciamento http usando o socket-binding (management-http)
+14:37:32,434 INFO  [org.xnio.nio] (MSC service thread 1-2) XNIO NIO Implementation Version 3.0.13.GA-redhat-1
+14:37:32,561 INFO  [org.jboss.remoting] (MSC service thread 1-2) JBoss Remoting version 3.3.4.Final-redhat-1
+14:37:32,601 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 31) JBAS010280: Ativação do subsistema Infinispan.
+14:37:32,641 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 46) JBAS010153: A propriedade de identificador do nó é configurado ao valor default. Por favor certifique-se de que isto é único.
+14:37:32,658 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 39) JBAS011800: Ativação do Subsistema de Nomeação
+14:37:32,729 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 44) JBAS013371: Ativação do Subsistema de Segurança
+14:37:32,729 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 48) JBAS015537: Ativação da Extensão WebServices
+14:37:32,738 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 37) JBAS012615: As seguintes implantações JSF foram ativadas: [main, 1.2]
+14:37:32,859 INFO  [org.jboss.as.security] (MSC service thread 1-4) JBAS013370: Versão =4.1.1.Final-redhat-1 PicketBox Atual
+14:37:32,864 INFO  [org.jboss.as.connector.logging] (MSC service thread 1-2) JBAS010408: Inicialização JCA do Subsistema (IronJacamar 1.0.31.Final-redhat-1)
+14:37:33,136 INFO  [org.jboss.as.naming] (MSC service thread 1-3) JBAS011802: Iniciando o Serviço de Nomeação
+14:37:33,216 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-3) JBAS015400: Sessão de correio limitado [java:jboss/mail/Default]
+14:37:33,530 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 28) JBAS010404: Deploying non-JDBC-compliant driver class org.postgresql.Driver (version 9.1)
+14:37:33,549 INFO  [org.apache.coyote.http11.Http11Protocol] (MSC service thread 1-3) JBWEB003001: Coyote HTTP/1.1 initializing on : http-localhost/127.0.0.1:8080
+14:37:33,565 INFO  [org.apache.coyote.http11.Http11Protocol] (MSC service thread 1-3) JBWEB003000: Coyote HTTP/1.1 starting on: http-localhost/127.0.0.1:8080
+14:37:33,683 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-1) JBAS015012: Foi iniciado o FileSystemDeploymentService para o diretório C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4\standalone\deployments
+14:37:33,699 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Iniciando a implantação do "siavs.ear" (runtime-name: "siavs.ear")
+14:37:33,727 INFO  [org.jboss.as.remoting] (MSC service thread 1-2) JBAS017100: Escutando no 127.0.0.1:9999
+14:37:33,810 INFO  [org.jboss.as.remoting] (MSC service thread 1-1) JBAS017100: Escutando no 127.0.0.1:4447
+14:37:34,184 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-3) JBAS010400: Limite da fonte de dados [java:jboss/datasources/siavsDS]
+14:37:34,197 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) JBAS015973: Inciando a subimplantação (runtime-name: "siavs.jar")
+14:37:34,197 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015973: Inciando a subimplantação (runtime-name: "siavs.war")
+14:37:34,453 INFO  [org.jboss.ws.common.management] (MSC service thread 1-4) JBWS022052: Starting JBoss Web Services - Stack CXF Server 4.3.4.Final-redhat-1
+14:37:37,896 WARN  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015850: O /C:/desenvolvimento/middleware/jboss-eap-6.4.0/jboss-eap-6.4/standalone/deployments/siavs.ear/siavs.war/META-INF/jboss-deployment-structure.xml em sub-implantação ignorado. O jboss-deployment-structure.xml é apenas pesquisado para implantações de nível superior.
+14:37:38,740 WARN  [org.jboss.as.dependency.deprecated] (MSC service thread 1-3) JBAS015980: A implantação "deployment.siavs.ear" está usando o módulo preterido ("org.jboss.security.negotiation:main") que pode ser removido em versões futuras sem aviso.
+14:37:38,741 WARN  [org.jboss.as.dependency.deprecated] (MSC service thread 1-3) JBAS015980: A implantação "deployment.siavs.ear" está usando o módulo preterido ("org.jboss.security.negotiation:main") que pode ser removido em versões futuras sem aviso.
+14:37:39,178 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) JBAS016002: Processamento da implantação weld siavs.ear
+14:37:39,763 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) JBAS016002: Processamento da implantação weld siavs.war
+14:37:39,774 INFO  [org.jboss.weld.deployer] (MSC service thread 1-4) JBAS016002: Processamento da implantação weld siavs.jar
+14:37:39,784 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named AvaliacaoSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/AvaliacaoSB!br.gov.caixa.siavs.service.client.AvaliacaoSL
+	java:app/siavs.war/AvaliacaoSB!br.gov.caixa.siavs.service.client.AvaliacaoSL
+	java:module/AvaliacaoSB!br.gov.caixa.siavs.service.client.AvaliacaoSL
+	java:global/siavs/siavs.war/AvaliacaoSB!br.gov.caixa.siavs.service.client.AvaliacaoSR
+	java:app/siavs.war/AvaliacaoSB!br.gov.caixa.siavs.service.client.AvaliacaoSR
+	java:module/AvaliacaoSB!br.gov.caixa.siavs.service.client.AvaliacaoSR
+	java:jboss/exported/siavs/siavs.war/AvaliacaoSB!br.gov.caixa.siavs.service.client.AvaliacaoSR
+
+14:37:39,790 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named GrupoServicoSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/GrupoServicoSB!br.gov.caixa.siavs.service.client.GrupoServicoSR
+	java:app/siavs.war/GrupoServicoSB!br.gov.caixa.siavs.service.client.GrupoServicoSR
+	java:module/GrupoServicoSB!br.gov.caixa.siavs.service.client.GrupoServicoSR
+	java:jboss/exported/siavs/siavs.war/GrupoServicoSB!br.gov.caixa.siavs.service.client.GrupoServicoSR
+	java:global/siavs/siavs.war/GrupoServicoSB!br.gov.caixa.siavs.service.client.GrupoServicoSL
+	java:app/siavs.war/GrupoServicoSB!br.gov.caixa.siavs.service.client.GrupoServicoSL
+	java:module/GrupoServicoSB!br.gov.caixa.siavs.service.client.GrupoServicoSL
+
+14:37:39,791 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named ServicoSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/ServicoSB!br.gov.caixa.siavs.service.client.ServicoSL
+	java:app/siavs.war/ServicoSB!br.gov.caixa.siavs.service.client.ServicoSL
+	java:module/ServicoSB!br.gov.caixa.siavs.service.client.ServicoSL
+	java:global/siavs/siavs.war/ServicoSB!br.gov.caixa.siavs.service.client.ServicoSR
+	java:app/siavs.war/ServicoSB!br.gov.caixa.siavs.service.client.ServicoSR
+	java:module/ServicoSB!br.gov.caixa.siavs.service.client.ServicoSR
+	java:jboss/exported/siavs/siavs.war/ServicoSB!br.gov.caixa.siavs.service.client.ServicoSR
+
+14:37:39,793 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named AvaliacaoSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/AvaliacaoSB!br.gov.caixa.siavs.service.client.AvaliacaoSL
+	java:app/siavs.jar/AvaliacaoSB!br.gov.caixa.siavs.service.client.AvaliacaoSL
+	java:module/AvaliacaoSB!br.gov.caixa.siavs.service.client.AvaliacaoSL
+	java:global/siavs/siavs.jar/AvaliacaoSB!br.gov.caixa.siavs.service.client.AvaliacaoSR
+	java:app/siavs.jar/AvaliacaoSB!br.gov.caixa.siavs.service.client.AvaliacaoSR
+	java:module/AvaliacaoSB!br.gov.caixa.siavs.service.client.AvaliacaoSR
+	java:jboss/exported/siavs/siavs.jar/AvaliacaoSB!br.gov.caixa.siavs.service.client.AvaliacaoSR
+
+14:37:39,793 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named ProblemaSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/ProblemaSB!br.gov.caixa.siavs.service.client.ProblemaSR
+	java:app/siavs.war/ProblemaSB!br.gov.caixa.siavs.service.client.ProblemaSR
+	java:module/ProblemaSB!br.gov.caixa.siavs.service.client.ProblemaSR
+	java:jboss/exported/siavs/siavs.war/ProblemaSB!br.gov.caixa.siavs.service.client.ProblemaSR
+	java:global/siavs/siavs.war/ProblemaSB!br.gov.caixa.siavs.service.client.ProblemaSL
+	java:app/siavs.war/ProblemaSB!br.gov.caixa.siavs.service.client.ProblemaSL
+	java:module/ProblemaSB!br.gov.caixa.siavs.service.client.ProblemaSL
+
+14:37:39,793 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named NoticiaSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/NoticiaSB!br.gov.caixa.siavs.service.client.NoticiaSR
+	java:app/siavs.jar/NoticiaSB!br.gov.caixa.siavs.service.client.NoticiaSR
+	java:module/NoticiaSB!br.gov.caixa.siavs.service.client.NoticiaSR
+	java:jboss/exported/siavs/siavs.jar/NoticiaSB!br.gov.caixa.siavs.service.client.NoticiaSR
+	java:global/siavs/siavs.jar/NoticiaSB!br.gov.caixa.siavs.service.client.NoticiaSL
+	java:app/siavs.jar/NoticiaSB!br.gov.caixa.siavs.service.client.NoticiaSL
+	java:module/NoticiaSB!br.gov.caixa.siavs.service.client.NoticiaSL
+
+14:37:39,794 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named FuncionarioCaixaSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/FuncionarioCaixaSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaSR
+	java:app/siavs.war/FuncionarioCaixaSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaSR
+	java:module/FuncionarioCaixaSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaSR
+	java:jboss/exported/siavs/siavs.war/FuncionarioCaixaSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaSR
+	java:global/siavs/siavs.war/FuncionarioCaixaSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaSL
+	java:app/siavs.war/FuncionarioCaixaSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaSL
+	java:module/FuncionarioCaixaSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaSL
+
+14:37:39,795 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named UnidadeSorteioSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/UnidadeSorteioSB!br.gov.caixa.siavs.service.client.UnidadeSorteioSL
+	java:app/siavs.war/UnidadeSorteioSB!br.gov.caixa.siavs.service.client.UnidadeSorteioSL
+	java:module/UnidadeSorteioSB!br.gov.caixa.siavs.service.client.UnidadeSorteioSL
+	java:global/siavs/siavs.war/UnidadeSorteioSB!br.gov.caixa.siavs.service.client.UnidadeSorteioSR
+	java:app/siavs.war/UnidadeSorteioSB!br.gov.caixa.siavs.service.client.UnidadeSorteioSR
+	java:module/UnidadeSorteioSB!br.gov.caixa.siavs.service.client.UnidadeSorteioSR
+	java:jboss/exported/siavs/siavs.war/UnidadeSorteioSB!br.gov.caixa.siavs.service.client.UnidadeSorteioSR
+
+14:37:39,796 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named MetaSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/MetaSB!br.gov.caixa.siavs.service.client.MetaSL
+	java:app/siavs.war/MetaSB!br.gov.caixa.siavs.service.client.MetaSL
+	java:module/MetaSB!br.gov.caixa.siavs.service.client.MetaSL
+	java:global/siavs/siavs.war/MetaSB!br.gov.caixa.siavs.service.client.MetaSR
+	java:app/siavs.war/MetaSB!br.gov.caixa.siavs.service.client.MetaSR
+	java:module/MetaSB!br.gov.caixa.siavs.service.client.MetaSR
+	java:jboss/exported/siavs/siavs.war/MetaSB!br.gov.caixa.siavs.service.client.MetaSR
+
+14:37:39,794 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named ServicoSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/ServicoSB!br.gov.caixa.siavs.service.client.ServicoSL
+	java:app/siavs.jar/ServicoSB!br.gov.caixa.siavs.service.client.ServicoSL
+	java:module/ServicoSB!br.gov.caixa.siavs.service.client.ServicoSL
+	java:global/siavs/siavs.jar/ServicoSB!br.gov.caixa.siavs.service.client.ServicoSR
+	java:app/siavs.jar/ServicoSB!br.gov.caixa.siavs.service.client.ServicoSR
+	java:module/ServicoSB!br.gov.caixa.siavs.service.client.ServicoSR
+	java:jboss/exported/siavs/siavs.jar/ServicoSB!br.gov.caixa.siavs.service.client.ServicoSR
+
+14:37:39,798 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named EmailConvocacaoSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/EmailConvocacaoSB!br.gov.caixa.siavs.service.client.EmailConvocacaoSR
+	java:app/siavs.war/EmailConvocacaoSB!br.gov.caixa.siavs.service.client.EmailConvocacaoSR
+	java:module/EmailConvocacaoSB!br.gov.caixa.siavs.service.client.EmailConvocacaoSR
+	java:jboss/exported/siavs/siavs.war/EmailConvocacaoSB!br.gov.caixa.siavs.service.client.EmailConvocacaoSR
+	java:global/siavs/siavs.war/EmailConvocacaoSB!br.gov.caixa.siavs.service.client.EmailConvocacaoSL
+	java:app/siavs.war/EmailConvocacaoSB!br.gov.caixa.siavs.service.client.EmailConvocacaoSL
+	java:module/EmailConvocacaoSB!br.gov.caixa.siavs.service.client.EmailConvocacaoSL
+
+14:37:39,798 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named GrupoServicoSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/GrupoServicoSB!br.gov.caixa.siavs.service.client.GrupoServicoSR
+	java:app/siavs.jar/GrupoServicoSB!br.gov.caixa.siavs.service.client.GrupoServicoSR
+	java:module/GrupoServicoSB!br.gov.caixa.siavs.service.client.GrupoServicoSR
+	java:jboss/exported/siavs/siavs.jar/GrupoServicoSB!br.gov.caixa.siavs.service.client.GrupoServicoSR
+	java:global/siavs/siavs.jar/GrupoServicoSB!br.gov.caixa.siavs.service.client.GrupoServicoSL
+	java:app/siavs.jar/GrupoServicoSB!br.gov.caixa.siavs.service.client.GrupoServicoSL
+	java:module/GrupoServicoSB!br.gov.caixa.siavs.service.client.GrupoServicoSL
+
+14:37:39,798 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named FncroCaixaSegmentoSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/FncroCaixaSegmentoSB!br.gov.caixa.siavs.service.client.FncroCaixaSegmentoSL
+	java:app/siavs.war/FncroCaixaSegmentoSB!br.gov.caixa.siavs.service.client.FncroCaixaSegmentoSL
+	java:module/FncroCaixaSegmentoSB!br.gov.caixa.siavs.service.client.FncroCaixaSegmentoSL
+	java:global/siavs/siavs.war/FncroCaixaSegmentoSB!br.gov.caixa.siavs.service.client.FncroCaixaSegmentoSR
+	java:app/siavs.war/FncroCaixaSegmentoSB!br.gov.caixa.siavs.service.client.FncroCaixaSegmentoSR
+	java:module/FncroCaixaSegmentoSB!br.gov.caixa.siavs.service.client.FncroCaixaSegmentoSR
+	java:jboss/exported/siavs/siavs.war/FncroCaixaSegmentoSB!br.gov.caixa.siavs.service.client.FncroCaixaSegmentoSR
+
+14:37:39,799 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named GrupoSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/GrupoSB!br.gov.caixa.siavs.service.client.GrupoSR
+	java:app/siavs.jar/GrupoSB!br.gov.caixa.siavs.service.client.GrupoSR
+	java:module/GrupoSB!br.gov.caixa.siavs.service.client.GrupoSR
+	java:jboss/exported/siavs/siavs.jar/GrupoSB!br.gov.caixa.siavs.service.client.GrupoSR
+	java:global/siavs/siavs.jar/GrupoSB!br.gov.caixa.siavs.service.client.GrupoSL
+	java:app/siavs.jar/GrupoSB!br.gov.caixa.siavs.service.client.GrupoSL
+	java:module/GrupoSB!br.gov.caixa.siavs.service.client.GrupoSL
+
+14:37:39,799 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named ServicoSegmentoSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/ServicoSegmentoSB!br.gov.caixa.siavs.service.client.ServicoSegmentoSL
+	java:app/siavs.war/ServicoSegmentoSB!br.gov.caixa.siavs.service.client.ServicoSegmentoSL
+	java:module/ServicoSegmentoSB!br.gov.caixa.siavs.service.client.ServicoSegmentoSL
+	java:global/siavs/siavs.war/ServicoSegmentoSB!br.gov.caixa.siavs.service.client.ServicoSegmentoSR
+	java:app/siavs.war/ServicoSegmentoSB!br.gov.caixa.siavs.service.client.ServicoSegmentoSR
+	java:module/ServicoSegmentoSB!br.gov.caixa.siavs.service.client.ServicoSegmentoSR
+	java:jboss/exported/siavs/siavs.war/ServicoSegmentoSB!br.gov.caixa.siavs.service.client.ServicoSegmentoSR
+
+14:37:39,799 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named FuncionarioCaixaLocalSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/FuncionarioCaixaLocalSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaLocalSL
+	java:app/siavs.jar/FuncionarioCaixaLocalSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaLocalSL
+	java:module/FuncionarioCaixaLocalSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaLocalSL
+	java:global/siavs/siavs.jar/FuncionarioCaixaLocalSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaLocalSR
+	java:app/siavs.jar/FuncionarioCaixaLocalSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaLocalSR
+	java:module/FuncionarioCaixaLocalSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaLocalSR
+	java:jboss/exported/siavs/siavs.jar/FuncionarioCaixaLocalSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaLocalSR
+
+14:37:39,800 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named UnidadeSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/UnidadeSB!br.gov.caixa.siavs.service.client.UnidadeSL
+	java:app/siavs.war/UnidadeSB!br.gov.caixa.siavs.service.client.UnidadeSL
+	java:module/UnidadeSB!br.gov.caixa.siavs.service.client.UnidadeSL
+	java:global/siavs/siavs.war/UnidadeSB!br.gov.caixa.siavs.service.client.UnidadeSR
+	java:app/siavs.war/UnidadeSB!br.gov.caixa.siavs.service.client.UnidadeSR
+	java:module/UnidadeSB!br.gov.caixa.siavs.service.client.UnidadeSR
+	java:jboss/exported/siavs/siavs.war/UnidadeSB!br.gov.caixa.siavs.service.client.UnidadeSR
+
+14:37:39,800 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named AgendamentoSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/AgendamentoSB!br.gov.caixa.siavs.service.client.AgendamentoSR
+	java:app/siavs.jar/AgendamentoSB!br.gov.caixa.siavs.service.client.AgendamentoSR
+	java:module/AgendamentoSB!br.gov.caixa.siavs.service.client.AgendamentoSR
+	java:jboss/exported/siavs/siavs.jar/AgendamentoSB!br.gov.caixa.siavs.service.client.AgendamentoSR
+	java:global/siavs/siavs.jar/AgendamentoSB
+	java:app/siavs.jar/AgendamentoSB
+	java:module/AgendamentoSB
+
+14:37:39,800 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named EmailPosicionamentoSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/EmailPosicionamentoSB!br.gov.caixa.siavs.service.client.EmailPosicionamentoSR
+	java:app/siavs.war/EmailPosicionamentoSB!br.gov.caixa.siavs.service.client.EmailPosicionamentoSR
+	java:module/EmailPosicionamentoSB!br.gov.caixa.siavs.service.client.EmailPosicionamentoSR
+	java:jboss/exported/siavs/siavs.war/EmailPosicionamentoSB!br.gov.caixa.siavs.service.client.EmailPosicionamentoSR
+	java:global/siavs/siavs.war/EmailPosicionamentoSB!br.gov.caixa.siavs.service.client.EmailPosicionamentoSL
+	java:app/siavs.war/EmailPosicionamentoSB!br.gov.caixa.siavs.service.client.EmailPosicionamentoSL
+	java:module/EmailPosicionamentoSB!br.gov.caixa.siavs.service.client.EmailPosicionamentoSL
+
+14:37:39,800 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named ProblemaSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/ProblemaSB!br.gov.caixa.siavs.service.client.ProblemaSR
+	java:app/siavs.jar/ProblemaSB!br.gov.caixa.siavs.service.client.ProblemaSR
+	java:module/ProblemaSB!br.gov.caixa.siavs.service.client.ProblemaSR
+	java:jboss/exported/siavs/siavs.jar/ProblemaSB!br.gov.caixa.siavs.service.client.ProblemaSR
+	java:global/siavs/siavs.jar/ProblemaSB!br.gov.caixa.siavs.service.client.ProblemaSL
+	java:app/siavs.jar/ProblemaSB!br.gov.caixa.siavs.service.client.ProblemaSL
+	java:module/ProblemaSB!br.gov.caixa.siavs.service.client.ProblemaSL
+
+14:37:39,801 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named GrupoUnidadeSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/GrupoUnidadeSB!br.gov.caixa.siavs.service.client.GrupoUnidadeSR
+	java:app/siavs.war/GrupoUnidadeSB!br.gov.caixa.siavs.service.client.GrupoUnidadeSR
+	java:module/GrupoUnidadeSB!br.gov.caixa.siavs.service.client.GrupoUnidadeSR
+	java:jboss/exported/siavs/siavs.war/GrupoUnidadeSB!br.gov.caixa.siavs.service.client.GrupoUnidadeSR
+	java:global/siavs/siavs.war/GrupoUnidadeSB!br.gov.caixa.siavs.service.client.GrupoUnidadeSL
+	java:app/siavs.war/GrupoUnidadeSB!br.gov.caixa.siavs.service.client.GrupoUnidadeSL
+	java:module/GrupoUnidadeSB!br.gov.caixa.siavs.service.client.GrupoUnidadeSL
+
+14:37:39,801 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named NoticiaSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/NoticiaSB!br.gov.caixa.siavs.service.client.NoticiaSR
+	java:app/siavs.war/NoticiaSB!br.gov.caixa.siavs.service.client.NoticiaSR
+	java:module/NoticiaSB!br.gov.caixa.siavs.service.client.NoticiaSR
+	java:jboss/exported/siavs/siavs.war/NoticiaSB!br.gov.caixa.siavs.service.client.NoticiaSR
+	java:global/siavs/siavs.war/NoticiaSB!br.gov.caixa.siavs.service.client.NoticiaSL
+	java:app/siavs.war/NoticiaSB!br.gov.caixa.siavs.service.client.NoticiaSL
+	java:module/NoticiaSB!br.gov.caixa.siavs.service.client.NoticiaSL
+
+14:37:39,802 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named GrupoSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/GrupoSB!br.gov.caixa.siavs.service.client.GrupoSR
+	java:app/siavs.war/GrupoSB!br.gov.caixa.siavs.service.client.GrupoSR
+	java:module/GrupoSB!br.gov.caixa.siavs.service.client.GrupoSR
+	java:jboss/exported/siavs/siavs.war/GrupoSB!br.gov.caixa.siavs.service.client.GrupoSR
+	java:global/siavs/siavs.war/GrupoSB!br.gov.caixa.siavs.service.client.GrupoSL
+	java:app/siavs.war/GrupoSB!br.gov.caixa.siavs.service.client.GrupoSL
+	java:module/GrupoSB!br.gov.caixa.siavs.service.client.GrupoSL
+
+14:37:39,803 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named FuncionarioCaixaLocalSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/FuncionarioCaixaLocalSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaLocalSL
+	java:app/siavs.war/FuncionarioCaixaLocalSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaLocalSL
+	java:module/FuncionarioCaixaLocalSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaLocalSL
+	java:global/siavs/siavs.war/FuncionarioCaixaLocalSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaLocalSR
+	java:app/siavs.war/FuncionarioCaixaLocalSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaLocalSR
+	java:module/FuncionarioCaixaLocalSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaLocalSR
+	java:jboss/exported/siavs/siavs.war/FuncionarioCaixaLocalSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaLocalSR
+
+14:37:39,803 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named AgendamentoSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/AgendamentoSB!br.gov.caixa.siavs.service.client.AgendamentoSR
+	java:app/siavs.war/AgendamentoSB!br.gov.caixa.siavs.service.client.AgendamentoSR
+	java:module/AgendamentoSB!br.gov.caixa.siavs.service.client.AgendamentoSR
+	java:jboss/exported/siavs/siavs.war/AgendamentoSB!br.gov.caixa.siavs.service.client.AgendamentoSR
+	java:global/siavs/siavs.war/AgendamentoSB
+	java:app/siavs.war/AgendamentoSB
+	java:module/AgendamentoSB
+
+14:37:39,804 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named SegmentoSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/SegmentoSB!br.gov.caixa.siavs.service.client.SegmentoSL
+	java:app/siavs.war/SegmentoSB!br.gov.caixa.siavs.service.client.SegmentoSL
+	java:module/SegmentoSB!br.gov.caixa.siavs.service.client.SegmentoSL
+	java:global/siavs/siavs.war/SegmentoSB!br.gov.caixa.siavs.service.client.SegmentoSR
+	java:app/siavs.war/SegmentoSB!br.gov.caixa.siavs.service.client.SegmentoSR
+	java:module/SegmentoSB!br.gov.caixa.siavs.service.client.SegmentoSR
+	java:jboss/exported/siavs/siavs.war/SegmentoSB!br.gov.caixa.siavs.service.client.SegmentoSR
+
+14:37:39,805 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named UsuarioSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/UsuarioSB!br.gov.caixa.siavs.service.client.UsuarioSL
+	java:app/siavs.war/UsuarioSB!br.gov.caixa.siavs.service.client.UsuarioSL
+	java:module/UsuarioSB!br.gov.caixa.siavs.service.client.UsuarioSL
+	java:global/siavs/siavs.war/UsuarioSB!br.gov.caixa.siavs.service.client.UsuarioSR
+	java:app/siavs.war/UsuarioSB!br.gov.caixa.siavs.service.client.UsuarioSR
+	java:module/UsuarioSB!br.gov.caixa.siavs.service.client.UsuarioSR
+	java:jboss/exported/siavs/siavs.war/UsuarioSB!br.gov.caixa.siavs.service.client.UsuarioSR
+
+14:37:39,801 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named FuncionarioCaixaSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/FuncionarioCaixaSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaSR
+	java:app/siavs.jar/FuncionarioCaixaSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaSR
+	java:module/FuncionarioCaixaSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaSR
+	java:jboss/exported/siavs/siavs.jar/FuncionarioCaixaSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaSR
+	java:global/siavs/siavs.jar/FuncionarioCaixaSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaSL
+	java:app/siavs.jar/FuncionarioCaixaSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaSL
+	java:module/FuncionarioCaixaSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaSL
+
+14:37:39,826 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named UnidadeSorteioSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/UnidadeSorteioSB!br.gov.caixa.siavs.service.client.UnidadeSorteioSL
+	java:app/siavs.jar/UnidadeSorteioSB!br.gov.caixa.siavs.service.client.UnidadeSorteioSL
+	java:module/UnidadeSorteioSB!br.gov.caixa.siavs.service.client.UnidadeSorteioSL
+	java:global/siavs/siavs.jar/UnidadeSorteioSB!br.gov.caixa.siavs.service.client.UnidadeSorteioSR
+	java:app/siavs.jar/UnidadeSorteioSB!br.gov.caixa.siavs.service.client.UnidadeSorteioSR
+	java:module/UnidadeSorteioSB!br.gov.caixa.siavs.service.client.UnidadeSorteioSR
+	java:jboss/exported/siavs/siavs.jar/UnidadeSorteioSB!br.gov.caixa.siavs.service.client.UnidadeSorteioSR
+
+14:37:39,832 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named SegmentoSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/SegmentoSB!br.gov.caixa.siavs.service.client.SegmentoSL
+	java:app/siavs.jar/SegmentoSB!br.gov.caixa.siavs.service.client.SegmentoSL
+	java:module/SegmentoSB!br.gov.caixa.siavs.service.client.SegmentoSL
+	java:global/siavs/siavs.jar/SegmentoSB!br.gov.caixa.siavs.service.client.SegmentoSR
+	java:app/siavs.jar/SegmentoSB!br.gov.caixa.siavs.service.client.SegmentoSR
+	java:module/SegmentoSB!br.gov.caixa.siavs.service.client.SegmentoSR
+	java:jboss/exported/siavs/siavs.jar/SegmentoSB!br.gov.caixa.siavs.service.client.SegmentoSR
+
+14:37:39,833 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named MetaSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/MetaSB!br.gov.caixa.siavs.service.client.MetaSL
+	java:app/siavs.jar/MetaSB!br.gov.caixa.siavs.service.client.MetaSL
+	java:module/MetaSB!br.gov.caixa.siavs.service.client.MetaSL
+	java:global/siavs/siavs.jar/MetaSB!br.gov.caixa.siavs.service.client.MetaSR
+	java:app/siavs.jar/MetaSB!br.gov.caixa.siavs.service.client.MetaSR
+	java:module/MetaSB!br.gov.caixa.siavs.service.client.MetaSR
+	java:jboss/exported/siavs/siavs.jar/MetaSB!br.gov.caixa.siavs.service.client.MetaSR
+
+14:37:39,833 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named EmailConvocacaoSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/EmailConvocacaoSB!br.gov.caixa.siavs.service.client.EmailConvocacaoSR
+	java:app/siavs.jar/EmailConvocacaoSB!br.gov.caixa.siavs.service.client.EmailConvocacaoSR
+	java:module/EmailConvocacaoSB!br.gov.caixa.siavs.service.client.EmailConvocacaoSR
+	java:jboss/exported/siavs/siavs.jar/EmailConvocacaoSB!br.gov.caixa.siavs.service.client.EmailConvocacaoSR
+	java:global/siavs/siavs.jar/EmailConvocacaoSB!br.gov.caixa.siavs.service.client.EmailConvocacaoSL
+	java:app/siavs.jar/EmailConvocacaoSB!br.gov.caixa.siavs.service.client.EmailConvocacaoSL
+	java:module/EmailConvocacaoSB!br.gov.caixa.siavs.service.client.EmailConvocacaoSL
+
+14:37:39,835 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named FncroCaixaSegmentoSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/FncroCaixaSegmentoSB!br.gov.caixa.siavs.service.client.FncroCaixaSegmentoSL
+	java:app/siavs.jar/FncroCaixaSegmentoSB!br.gov.caixa.siavs.service.client.FncroCaixaSegmentoSL
+	java:module/FncroCaixaSegmentoSB!br.gov.caixa.siavs.service.client.FncroCaixaSegmentoSL
+	java:global/siavs/siavs.jar/FncroCaixaSegmentoSB!br.gov.caixa.siavs.service.client.FncroCaixaSegmentoSR
+	java:app/siavs.jar/FncroCaixaSegmentoSB!br.gov.caixa.siavs.service.client.FncroCaixaSegmentoSR
+	java:module/FncroCaixaSegmentoSB!br.gov.caixa.siavs.service.client.FncroCaixaSegmentoSR
+	java:jboss/exported/siavs/siavs.jar/FncroCaixaSegmentoSB!br.gov.caixa.siavs.service.client.FncroCaixaSegmentoSR
+
+14:37:39,836 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named ServicoSegmentoSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/ServicoSegmentoSB!br.gov.caixa.siavs.service.client.ServicoSegmentoSL
+	java:app/siavs.jar/ServicoSegmentoSB!br.gov.caixa.siavs.service.client.ServicoSegmentoSL
+	java:module/ServicoSegmentoSB!br.gov.caixa.siavs.service.client.ServicoSegmentoSL
+	java:global/siavs/siavs.jar/ServicoSegmentoSB!br.gov.caixa.siavs.service.client.ServicoSegmentoSR
+	java:app/siavs.jar/ServicoSegmentoSB!br.gov.caixa.siavs.service.client.ServicoSegmentoSR
+	java:module/ServicoSegmentoSB!br.gov.caixa.siavs.service.client.ServicoSegmentoSR
+	java:jboss/exported/siavs/siavs.jar/ServicoSegmentoSB!br.gov.caixa.siavs.service.client.ServicoSegmentoSR
+
+14:37:39,836 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named UnidadeSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/UnidadeSB!br.gov.caixa.siavs.service.client.UnidadeSL
+	java:app/siavs.jar/UnidadeSB!br.gov.caixa.siavs.service.client.UnidadeSL
+	java:module/UnidadeSB!br.gov.caixa.siavs.service.client.UnidadeSL
+	java:global/siavs/siavs.jar/UnidadeSB!br.gov.caixa.siavs.service.client.UnidadeSR
+	java:app/siavs.jar/UnidadeSB!br.gov.caixa.siavs.service.client.UnidadeSR
+	java:module/UnidadeSB!br.gov.caixa.siavs.service.client.UnidadeSR
+	java:jboss/exported/siavs/siavs.jar/UnidadeSB!br.gov.caixa.siavs.service.client.UnidadeSR
+
+14:37:39,837 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named EmailPosicionamentoSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/EmailPosicionamentoSB!br.gov.caixa.siavs.service.client.EmailPosicionamentoSR
+	java:app/siavs.jar/EmailPosicionamentoSB!br.gov.caixa.siavs.service.client.EmailPosicionamentoSR
+	java:module/EmailPosicionamentoSB!br.gov.caixa.siavs.service.client.EmailPosicionamentoSR
+	java:jboss/exported/siavs/siavs.jar/EmailPosicionamentoSB!br.gov.caixa.siavs.service.client.EmailPosicionamentoSR
+	java:global/siavs/siavs.jar/EmailPosicionamentoSB!br.gov.caixa.siavs.service.client.EmailPosicionamentoSL
+	java:app/siavs.jar/EmailPosicionamentoSB!br.gov.caixa.siavs.service.client.EmailPosicionamentoSL
+	java:module/EmailPosicionamentoSB!br.gov.caixa.siavs.service.client.EmailPosicionamentoSL
+
+14:37:39,838 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named UsuarioSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/UsuarioSB!br.gov.caixa.siavs.service.client.UsuarioSL
+	java:app/siavs.jar/UsuarioSB!br.gov.caixa.siavs.service.client.UsuarioSL
+	java:module/UsuarioSB!br.gov.caixa.siavs.service.client.UsuarioSL
+	java:global/siavs/siavs.jar/UsuarioSB!br.gov.caixa.siavs.service.client.UsuarioSR
+	java:app/siavs.jar/UsuarioSB!br.gov.caixa.siavs.service.client.UsuarioSR
+	java:module/UsuarioSB!br.gov.caixa.siavs.service.client.UsuarioSR
+	java:jboss/exported/siavs/siavs.jar/UsuarioSB!br.gov.caixa.siavs.service.client.UsuarioSR
+
+14:37:39,838 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named GrupoUnidadeSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/GrupoUnidadeSB!br.gov.caixa.siavs.service.client.GrupoUnidadeSR
+	java:app/siavs.jar/GrupoUnidadeSB!br.gov.caixa.siavs.service.client.GrupoUnidadeSR
+	java:module/GrupoUnidadeSB!br.gov.caixa.siavs.service.client.GrupoUnidadeSR
+	java:jboss/exported/siavs/siavs.jar/GrupoUnidadeSB!br.gov.caixa.siavs.service.client.GrupoUnidadeSR
+	java:global/siavs/siavs.jar/GrupoUnidadeSB!br.gov.caixa.siavs.service.client.GrupoUnidadeSL
+	java:app/siavs.jar/GrupoUnidadeSB!br.gov.caixa.siavs.service.client.GrupoUnidadeSL
+	java:module/GrupoUnidadeSB!br.gov.caixa.siavs.service.client.GrupoUnidadeSL
+
+14:37:40,191 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) JBAS016005: Iniciando os  Serviços para a implantação CDI: siavs.ear
+14:37:40,568 INFO  [org.jboss.weld.Version] (MSC service thread 1-1) WELD-000900 1.1.28 (redhat)
+14:37:40,783 INFO  [org.jboss.weld.deployer] (MSC service thread 1-4) JBAS016008: Inicialização do serviço weld para a implantação siavs.ear
+14:37:44,837 INFO  [org.jboss.web] (ServerService Thread Pool -- 54) JBAS018210: Registra o contexto da web: 
+14:37:45,190 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (ServerService Thread Pool -- 54) Inicializando Mojarra 2.1.28-jbossorg-6  para o contexto ''
+14:37:48,396 INFO  [org.hibernate.validator.internal.util.Version] (ServerService Thread Pool -- 54) HV000001: Hibernate Validator 4.3.2.Final-redhat-2
+14:37:50,974 INFO  [org.richfaces.log.Cache] (ServerService Thread Pool -- 54) Selected fallback cache factory
+14:37:50,999 INFO  [org.richfaces.log.Cache] (ServerService Thread Pool -- 54) Creating LRUMap cache instance using parameters: {org.richfaces.CONTROL_SKINNING=enable, org.richfaces.SKIN=blueSky, org.richfaces.fileUpload.createTempFiles=false}
+14:37:51,000 INFO  [org.richfaces.log.Cache] (ServerService Thread Pool -- 54) Creating LRUMap cache instance of 512 items capacity
+14:37:51,032 INFO  [org.richfaces.log.Application] (ServerService Thread Pool -- 54) RichFaces Core Implementation by JBoss by Red Hat, version 4.3.2.Final
+14:37:51,623 WARNING [org.richfaces.log.Application] (ServerService Thread Pool -- 54) JMS API was found on the classpath; if you want to enable RichFaces Push JMS integration, set context-param 'org.richfaces.push.jms.enabled' in web.xml
+14:37:51,738 INFO  [org.jboss.ejb.client] (ServerService Thread Pool -- 54) JBoss EJB Client version 1.0.30.Final-redhat-1
+14:37:52,000 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 29) JBAS015859: Implantado "siavs.ear" (runtime-name: "siavs.ear")
+14:37:52,233 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015961: A interface do gerenciamento ouvindo no http://127.0.0.1:9990/management
+14:37:52,233 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015951: O console de administração ouvindo no http://127.0.0.1:9990
+14:37:52,234 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015874: JBoss EAP 6.4.0.GA (AS 7.5.0.Final-redhat-21) iniciado em 23624ms - Iniciado 1080 de serviços 1117 (os serviços 64 são lazy, passivos ou em demanda)
+14:47:01,294 INFO  [org.apache.coyote.http11.Http11Protocol] (MSC service thread 1-1) JBWEB003075: Coyote HTTP/1.1 pausing on: http-localhost/127.0.0.1:8080
+14:47:01,295 INFO  [org.apache.coyote.http11.Http11Protocol] (MSC service thread 1-1) JBWEB003077: Coyote HTTP/1.1 stopping on : http-localhost/127.0.0.1:8080
+14:47:01,318 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-1) JBAS010409: Fonte de dados sem limite [java:jboss/datasources/siavsDS]
+14:47:01,375 INFO  [org.jboss.web] (ServerService Thread Pool -- 93) JBAS018224: Desregistra o contexto da web: 
+14:47:01,382 WARN  [org.jboss.jca.core.connectionmanager.pool.strategy.OnePool] (ServerService Thread Pool -- 92) IJ000615: Destroying active connection in pool: siavsDS (org.jboss.jca.adapters.jdbc.local.LocalManagedConnection@37b82374)
+14:47:01,853 INFO  [org.jboss.weld.deployer] (MSC service thread 1-4) JBAS016009: Interrupção do serviço Weld para a implantação siavs.ear
+14:47:01,893 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015974: Interrompendo a subimplantação (runtime-name: siavs.jar) em 615ms
+14:47:02,035 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) JBAS015974: Interrompendo a subimplantação (runtime-name: siavs.war) em 752ms
+14:47:02,071 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) JBAS015877: Implantação encerrada siavs.ear (runtime-name: siavs.ear) em 812ms
+14:47:02,089 INFO  [org.jboss.as] (MSC service thread 1-3) JBAS015950: JBoss EAP 6.4.0.GA (AS 7.5.0.Final-redhat-21) interrompido em 821ms
+18:06:05,219 INFO  [org.jboss.modules] (main) JBoss Modules version 1.3.6.Final-redhat-1
+18:06:06,491 INFO  [org.jboss.msc] (main) JBoss MSC version 1.1.5.Final-redhat-1
+18:06:06,622 INFO  [org.jboss.as] (MSC service thread 1-2) JBAS015899: Iniciando JBoss EAP 6.4.0.GA (AS 7.5.0.Final-redhat-21)
+18:06:06,632 DEBUG [org.jboss.as.config] (MSC service thread 1-2) Propriedades de sistema configurado:
+	awt.toolkit = sun.awt.windows.WToolkit
+	file.encoding = Cp1252
+	file.encoding.pkg = sun.io
+	file.separator = \
+	java.awt.graphicsenv = sun.awt.Win32GraphicsEnvironment
+	java.awt.headless = true
+	java.awt.printerjob = sun.awt.windows.WPrinterJob
+	java.class.path = C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4\jboss-modules.jar
+	java.class.version = 51.0
+	java.endorsed.dirs = C:\Program Files\Java\jdk1.7.0_67\jre\lib\endorsed
+	java.ext.dirs = C:\Program Files\Java\jdk1.7.0_67\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext
+	java.home = C:\Program Files\Java\jdk1.7.0_67\jre
+	java.io.tmpdir = C:\Users\p577394\AppData\Local\Temp\
+	java.library.path = C:\Program Files\Java\jdk1.7.0_67\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Java\jdk1.7.0_67\jre\bin;native;C:\WINDOWS\CCM\;C:/Program Files/Java/jdk1.8.0_40/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_40/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_40/bin/../jre/lib/amd64;/opt\sybase\OCS-15_0\lib3p;/opt\sybase\OCS-15_0\dll;/opt\sybase\OCS-15_0\bin;/opt\sybase\DataAccess\ODBC\dll;c:\Program Files (x86)\IBM\WebSphere MQ\Java\lib;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Arquivos de Programas\GTK2-Runtime\lib;c:\Program Files (x86)\IBM\WebSphere MQ\bin;c:\Program Files (x86)\IBM\WebSphere MQ\bin64;c:\Program Files (x86)\IBM\WebSphere MQ\tools\c\samples\bin;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;c:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\Wbem;C:\windows\System32;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\desenvolvimento\maven\bin;C:\Program Files\Java\jdk1.8.0_40\bin;c:\wamp\bin\php\php5.0.0;C:\Users\p577394\AppData\Local\Microsoft\WindowsApps;C:\Users\p577394\AppData\Roaming\npm;C:\desenvolvimento\ide\eclipse;;.
+	java.net.preferIPv4Stack = true
+	java.runtime.name = Java(TM) SE Runtime Environment
+	java.runtime.version = 1.7.0_67-b01
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 1.7
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = http://java.oracle.com/
+	java.vendor.url.bug = http://bugreport.sun.com/bugreport/
+	java.version = 1.7.0_67
+	java.vm.info = mixed mode
+	java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 1.7
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 24.65-b04
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	javax.xml.datatype.DatatypeFactory = __redirected.__DatatypeFactory
+	javax.xml.parsers.DocumentBuilderFactory = __redirected.__DocumentBuilderFactory
+	javax.xml.parsers.SAXParserFactory = __redirected.__SAXParserFactory
+	javax.xml.stream.XMLEventFactory = __redirected.__XMLEventFactory
+	javax.xml.stream.XMLInputFactory = __redirected.__XMLInputFactory
+	javax.xml.stream.XMLOutputFactory = __redirected.__XMLOutputFactory
+	javax.xml.transform.TransformerFactory = __redirected.__TransformerFactory
+	javax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema = __redirected.__SchemaFactory
+	javax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom = __redirected.__XPathFactory
+	jboss.bind.address = localhost
+	jboss.bind.address.management = localhost
+	jboss.home.dir = C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4
+	jboss.host.name = df5200et054
+	jboss.modules.dir = C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4\modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = df5200et054
+	jboss.qualified.host.name = df5200et054
+	jboss.server.base.dir = C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4\standalone
+	jboss.server.config.dir = C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4\standalone\configuration
+	jboss.server.data.dir = C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4\standalone\data
+	jboss.server.deploy.dir = C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4\standalone\data\content
+	jboss.server.log.dir = C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4\standalone\log
+	jboss.server.name = df5200et054
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4\standalone\tmp
+	line.separator = 
+
+	logging.configuration = file:C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4\standalone\configuration\logging.properties
+	module.path = C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4\modules
+	org.jboss.boot.log.file = C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4\standalone\log\boot.log
+	org.jboss.logmanager.nocolor = true
+	org.jboss.resolver.warning = true
+	org.xml.sax.driver = __redirected.__XMLReaderFactory
+	os.arch = amd64
+	os.name = Windows 8.1
+	os.version = 6.3
+	path.separator = ;
+	program.name = JBossTools: Red Hat JBoss EAP 6.1+
+	sun.arch.data.model = 64
+	sun.boot.class.path = C:\Program Files\Java\jdk1.7.0_67\jre\lib\resources.jar;C:\Program Files\Java\jdk1.7.0_67\jre\lib\rt.jar;C:\Program Files\Java\jdk1.7.0_67\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.7.0_67\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.7.0_67\jre\lib\jce.jar;C:\Program Files\Java\jdk1.7.0_67\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.7.0_67\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.7.0_67\jre\classes
+	sun.boot.library.path = C:\Program Files\Java\jdk1.7.0_67\jre\bin
+	sun.cpu.endian = little
+	sun.cpu.isalist = amd64
+	sun.desktop = windows
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = org.jboss.modules.Main -mp C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4\modules -jaxpmodule javax.xml.jaxp-provider -jaxpmodule javax.xml.jaxp-provider org.jboss.as.standalone -b localhost --server-config=standalone.xml -Djboss.server.base.dir=C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4\standalone
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = Cp1252
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = 
+	sun.rmi.dgc.client.gcInterval = 3600000
+	sun.rmi.dgc.server.gcInterval = 3600000
+	user.country = BR
+	user.dir = C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4\bin
+	user.home = C:\Users\p577394
+	user.language = pt
+	user.name = p577394
+	user.script = 
+	user.timezone = America/Sao_Paulo
+	user.variant = 
+18:06:06,634 DEBUG [org.jboss.as.config] (MSC service thread 1-2) Argumentos VM: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:65264 -Dprogram.name=JBossTools: Red Hat JBoss EAP 6.1+ -Xms1024m -Xmx1024m -XX:MaxPermSize=256m -Dorg.jboss.resolver.warning=true -Djava.net.preferIPv4Stack=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Dorg.jboss.boot.log.file=C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4\standalone\log\boot.log -Dlogging.configuration=file:C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4\standalone\configuration\logging.properties -Djboss.home.dir=C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4 -Dorg.jboss.logmanager.nocolor=true -Djboss.bind.address.management=localhost -Dfile.encoding=Cp1252 
+18:06:08,209 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) JBAS015003: Encontrado siavs.ear no diretório da implantação. Crie um arquivo chamado siavs.ear.dodeploy para aplicar o trigger na implantação
+18:06:08,238 INFO  [org.xnio] (MSC service thread 1-1) XNIO Version 3.0.13.GA-redhat-1
+18:06:08,245 INFO  [org.jboss.as.server] (Controller Boot Thread) JBAS015888: Criação de serviço de gerenciamento http usando o socket-binding (management-http)
+18:06:08,248 INFO  [org.xnio.nio] (MSC service thread 1-1) XNIO NIO Implementation Version 3.0.13.GA-redhat-1
+18:06:08,294 INFO  [org.jboss.remoting] (MSC service thread 1-1) JBoss Remoting version 3.3.4.Final-redhat-1
+18:06:08,388 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 31) JBAS010280: Ativação do subsistema Infinispan.
+18:06:08,474 INFO  [org.jboss.as.connector.logging] (MSC service thread 1-1) JBAS010408: Inicialização JCA do Subsistema (IronJacamar 1.0.31.Final-redhat-1)
+18:06:08,499 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 37) JBAS012615: As seguintes implantações JSF foram ativadas: [main, 1.2]
+18:06:08,536 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 39) JBAS011800: Ativação do Subsistema de Nomeação
+18:06:08,567 INFO  [org.jboss.as.naming] (MSC service thread 1-2) JBAS011802: Iniciando o Serviço de Nomeação
+18:06:08,567 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-1) JBAS015400: Sessão de correio limitado [java:jboss/mail/Default]
+18:06:08,580 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 44) JBAS013371: Ativação do Subsistema de Segurança
+18:06:08,581 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 46) JBAS010153: A propriedade de identificador do nó é configurado ao valor default. Por favor certifique-se de que isto é único.
+18:06:08,587 INFO  [org.jboss.as.security] (MSC service thread 1-1) JBAS013370: Versão =4.1.1.Final-redhat-1 PicketBox Atual
+18:06:08,605 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 48) JBAS015537: Ativação da Extensão WebServices
+18:06:08,757 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 28) JBAS010404: Deploying non-JDBC-compliant driver class org.postgresql.Driver (version 9.1)
+18:06:09,522 INFO  [org.apache.coyote.http11.Http11Protocol] (MSC service thread 1-3) JBWEB003001: Coyote HTTP/1.1 initializing on : http-localhost/127.0.0.1:8080
+18:06:09,536 INFO  [org.apache.coyote.http11.Http11Protocol] (MSC service thread 1-3) JBWEB003000: Coyote HTTP/1.1 starting on: http-localhost/127.0.0.1:8080
+18:06:09,918 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-2) JBAS010400: Limite da fonte de dados [java:jboss/datasources/siavsDS]
+18:06:10,859 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-4) JBAS015012: Foi iniciado o FileSystemDeploymentService para o diretório C:\desenvolvimento\middleware\jboss-eap-6.4.0\jboss-eap-6.4\standalone\deployments
+18:06:10,861 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) JBAS015876: Iniciando a implantação do "siavs.ear" (runtime-name: "siavs.ear")
+18:06:10,876 INFO  [org.jboss.as.remoting] (MSC service thread 1-4) JBAS017100: Escutando no 127.0.0.1:4447
+18:06:10,911 INFO  [org.jboss.as.remoting] (MSC service thread 1-4) JBAS017100: Escutando no 127.0.0.1:9999
+18:06:11,437 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) JBAS015973: Inciando a subimplantação (runtime-name: "siavs.war")
+18:06:11,439 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) JBAS015973: Inciando a subimplantação (runtime-name: "siavs.jar")
+18:06:11,535 INFO  [org.jboss.ws.common.management] (MSC service thread 1-1) JBWS022052: Starting JBoss Web Services - Stack CXF Server 4.3.4.Final-redhat-1
+18:06:14,570 WARN  [org.jboss.as.server.deployment] (MSC service thread 1-3) JBAS015850: O /C:/desenvolvimento/middleware/jboss-eap-6.4.0/jboss-eap-6.4/standalone/deployments/siavs.ear/siavs.war/META-INF/jboss-deployment-structure.xml em sub-implantação ignorado. O jboss-deployment-structure.xml é apenas pesquisado para implantações de nível superior.
+18:06:15,190 WARN  [org.jboss.as.dependency.deprecated] (MSC service thread 1-2) JBAS015980: A implantação "deployment.siavs.ear" está usando o módulo preterido ("org.jboss.security.negotiation:main") que pode ser removido em versões futuras sem aviso.
+18:06:15,193 WARN  [org.jboss.as.dependency.deprecated] (MSC service thread 1-2) JBAS015980: A implantação "deployment.siavs.ear" está usando o módulo preterido ("org.jboss.security.negotiation:main") que pode ser removido em versões futuras sem aviso.
+18:06:15,858 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) JBAS016002: Processamento da implantação weld siavs.ear
+18:06:16,210 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) JBAS016002: Processamento da implantação weld siavs.jar
+18:06:16,214 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named AvaliacaoSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/AvaliacaoSB!br.gov.caixa.siavs.service.client.AvaliacaoSR
+	java:app/siavs.jar/AvaliacaoSB!br.gov.caixa.siavs.service.client.AvaliacaoSR
+	java:module/AvaliacaoSB!br.gov.caixa.siavs.service.client.AvaliacaoSR
+	java:jboss/exported/siavs/siavs.jar/AvaliacaoSB!br.gov.caixa.siavs.service.client.AvaliacaoSR
+	java:global/siavs/siavs.jar/AvaliacaoSB!br.gov.caixa.siavs.service.client.AvaliacaoSL
+	java:app/siavs.jar/AvaliacaoSB!br.gov.caixa.siavs.service.client.AvaliacaoSL
+	java:module/AvaliacaoSB!br.gov.caixa.siavs.service.client.AvaliacaoSL
+
+18:06:16,260 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named NoticiaSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/NoticiaSB!br.gov.caixa.siavs.service.client.NoticiaSR
+	java:app/siavs.jar/NoticiaSB!br.gov.caixa.siavs.service.client.NoticiaSR
+	java:module/NoticiaSB!br.gov.caixa.siavs.service.client.NoticiaSR
+	java:jboss/exported/siavs/siavs.jar/NoticiaSB!br.gov.caixa.siavs.service.client.NoticiaSR
+	java:global/siavs/siavs.jar/NoticiaSB!br.gov.caixa.siavs.service.client.NoticiaSL
+	java:app/siavs.jar/NoticiaSB!br.gov.caixa.siavs.service.client.NoticiaSL
+	java:module/NoticiaSB!br.gov.caixa.siavs.service.client.NoticiaSL
+
+18:06:16,267 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named ServicoSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/ServicoSB!br.gov.caixa.siavs.service.client.ServicoSL
+	java:app/siavs.jar/ServicoSB!br.gov.caixa.siavs.service.client.ServicoSL
+	java:module/ServicoSB!br.gov.caixa.siavs.service.client.ServicoSL
+	java:global/siavs/siavs.jar/ServicoSB!br.gov.caixa.siavs.service.client.ServicoSR
+	java:app/siavs.jar/ServicoSB!br.gov.caixa.siavs.service.client.ServicoSR
+	java:module/ServicoSB!br.gov.caixa.siavs.service.client.ServicoSR
+	java:jboss/exported/siavs/siavs.jar/ServicoSB!br.gov.caixa.siavs.service.client.ServicoSR
+
+18:06:16,268 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named GrupoServicoSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/GrupoServicoSB!br.gov.caixa.siavs.service.client.GrupoServicoSL
+	java:app/siavs.jar/GrupoServicoSB!br.gov.caixa.siavs.service.client.GrupoServicoSL
+	java:module/GrupoServicoSB!br.gov.caixa.siavs.service.client.GrupoServicoSL
+	java:global/siavs/siavs.jar/GrupoServicoSB!br.gov.caixa.siavs.service.client.GrupoServicoSR
+	java:app/siavs.jar/GrupoServicoSB!br.gov.caixa.siavs.service.client.GrupoServicoSR
+	java:module/GrupoServicoSB!br.gov.caixa.siavs.service.client.GrupoServicoSR
+	java:jboss/exported/siavs/siavs.jar/GrupoServicoSB!br.gov.caixa.siavs.service.client.GrupoServicoSR
+
+18:06:16,269 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named GrupoSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/GrupoSB!br.gov.caixa.siavs.service.client.GrupoSL
+	java:app/siavs.jar/GrupoSB!br.gov.caixa.siavs.service.client.GrupoSL
+	java:module/GrupoSB!br.gov.caixa.siavs.service.client.GrupoSL
+	java:global/siavs/siavs.jar/GrupoSB!br.gov.caixa.siavs.service.client.GrupoSR
+	java:app/siavs.jar/GrupoSB!br.gov.caixa.siavs.service.client.GrupoSR
+	java:module/GrupoSB!br.gov.caixa.siavs.service.client.GrupoSR
+	java:jboss/exported/siavs/siavs.jar/GrupoSB!br.gov.caixa.siavs.service.client.GrupoSR
+
+18:06:16,270 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named FuncionarioCaixaLocalSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/FuncionarioCaixaLocalSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaLocalSL
+	java:app/siavs.jar/FuncionarioCaixaLocalSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaLocalSL
+	java:module/FuncionarioCaixaLocalSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaLocalSL
+	java:global/siavs/siavs.jar/FuncionarioCaixaLocalSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaLocalSR
+	java:app/siavs.jar/FuncionarioCaixaLocalSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaLocalSR
+	java:module/FuncionarioCaixaLocalSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaLocalSR
+	java:jboss/exported/siavs/siavs.jar/FuncionarioCaixaLocalSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaLocalSR
+
+18:06:16,271 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named AgendamentoSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/AgendamentoSB!br.gov.caixa.siavs.service.client.AgendamentoSR
+	java:app/siavs.jar/AgendamentoSB!br.gov.caixa.siavs.service.client.AgendamentoSR
+	java:module/AgendamentoSB!br.gov.caixa.siavs.service.client.AgendamentoSR
+	java:jboss/exported/siavs/siavs.jar/AgendamentoSB!br.gov.caixa.siavs.service.client.AgendamentoSR
+	java:global/siavs/siavs.jar/AgendamentoSB
+	java:app/siavs.jar/AgendamentoSB
+	java:module/AgendamentoSB
+
+18:06:16,277 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named ProblemaSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/ProblemaSB!br.gov.caixa.siavs.service.client.ProblemaSR
+	java:app/siavs.jar/ProblemaSB!br.gov.caixa.siavs.service.client.ProblemaSR
+	java:module/ProblemaSB!br.gov.caixa.siavs.service.client.ProblemaSR
+	java:jboss/exported/siavs/siavs.jar/ProblemaSB!br.gov.caixa.siavs.service.client.ProblemaSR
+	java:global/siavs/siavs.jar/ProblemaSB!br.gov.caixa.siavs.service.client.ProblemaSL
+	java:app/siavs.jar/ProblemaSB!br.gov.caixa.siavs.service.client.ProblemaSL
+	java:module/ProblemaSB!br.gov.caixa.siavs.service.client.ProblemaSL
+
+18:06:16,283 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named FuncionarioCaixaSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/FuncionarioCaixaSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaSL
+	java:app/siavs.jar/FuncionarioCaixaSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaSL
+	java:module/FuncionarioCaixaSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaSL
+	java:global/siavs/siavs.jar/FuncionarioCaixaSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaSR
+	java:app/siavs.jar/FuncionarioCaixaSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaSR
+	java:module/FuncionarioCaixaSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaSR
+	java:jboss/exported/siavs/siavs.jar/FuncionarioCaixaSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaSR
+
+18:06:16,284 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named UnidadeSorteioSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/UnidadeSorteioSB!br.gov.caixa.siavs.service.client.UnidadeSorteioSL
+	java:app/siavs.jar/UnidadeSorteioSB!br.gov.caixa.siavs.service.client.UnidadeSorteioSL
+	java:module/UnidadeSorteioSB!br.gov.caixa.siavs.service.client.UnidadeSorteioSL
+	java:global/siavs/siavs.jar/UnidadeSorteioSB!br.gov.caixa.siavs.service.client.UnidadeSorteioSR
+	java:app/siavs.jar/UnidadeSorteioSB!br.gov.caixa.siavs.service.client.UnidadeSorteioSR
+	java:module/UnidadeSorteioSB!br.gov.caixa.siavs.service.client.UnidadeSorteioSR
+	java:jboss/exported/siavs/siavs.jar/UnidadeSorteioSB!br.gov.caixa.siavs.service.client.UnidadeSorteioSR
+
+18:06:16,285 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named SegmentoSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/SegmentoSB!br.gov.caixa.siavs.service.client.SegmentoSR
+	java:app/siavs.jar/SegmentoSB!br.gov.caixa.siavs.service.client.SegmentoSR
+	java:module/SegmentoSB!br.gov.caixa.siavs.service.client.SegmentoSR
+	java:jboss/exported/siavs/siavs.jar/SegmentoSB!br.gov.caixa.siavs.service.client.SegmentoSR
+	java:global/siavs/siavs.jar/SegmentoSB!br.gov.caixa.siavs.service.client.SegmentoSL
+	java:app/siavs.jar/SegmentoSB!br.gov.caixa.siavs.service.client.SegmentoSL
+	java:module/SegmentoSB!br.gov.caixa.siavs.service.client.SegmentoSL
+
+18:06:16,290 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named MetaSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/MetaSB!br.gov.caixa.siavs.service.client.MetaSL
+	java:app/siavs.jar/MetaSB!br.gov.caixa.siavs.service.client.MetaSL
+	java:module/MetaSB!br.gov.caixa.siavs.service.client.MetaSL
+	java:global/siavs/siavs.jar/MetaSB!br.gov.caixa.siavs.service.client.MetaSR
+	java:app/siavs.jar/MetaSB!br.gov.caixa.siavs.service.client.MetaSR
+	java:module/MetaSB!br.gov.caixa.siavs.service.client.MetaSR
+	java:jboss/exported/siavs/siavs.jar/MetaSB!br.gov.caixa.siavs.service.client.MetaSR
+
+18:06:16,291 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named EmailConvocacaoSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/EmailConvocacaoSB!br.gov.caixa.siavs.service.client.EmailConvocacaoSR
+	java:app/siavs.jar/EmailConvocacaoSB!br.gov.caixa.siavs.service.client.EmailConvocacaoSR
+	java:module/EmailConvocacaoSB!br.gov.caixa.siavs.service.client.EmailConvocacaoSR
+	java:jboss/exported/siavs/siavs.jar/EmailConvocacaoSB!br.gov.caixa.siavs.service.client.EmailConvocacaoSR
+	java:global/siavs/siavs.jar/EmailConvocacaoSB!br.gov.caixa.siavs.service.client.EmailConvocacaoSL
+	java:app/siavs.jar/EmailConvocacaoSB!br.gov.caixa.siavs.service.client.EmailConvocacaoSL
+	java:module/EmailConvocacaoSB!br.gov.caixa.siavs.service.client.EmailConvocacaoSL
+
+18:06:16,292 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named FncroCaixaSegmentoSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/FncroCaixaSegmentoSB!br.gov.caixa.siavs.service.client.FncroCaixaSegmentoSR
+	java:app/siavs.jar/FncroCaixaSegmentoSB!br.gov.caixa.siavs.service.client.FncroCaixaSegmentoSR
+	java:module/FncroCaixaSegmentoSB!br.gov.caixa.siavs.service.client.FncroCaixaSegmentoSR
+	java:jboss/exported/siavs/siavs.jar/FncroCaixaSegmentoSB!br.gov.caixa.siavs.service.client.FncroCaixaSegmentoSR
+	java:global/siavs/siavs.jar/FncroCaixaSegmentoSB!br.gov.caixa.siavs.service.client.FncroCaixaSegmentoSL
+	java:app/siavs.jar/FncroCaixaSegmentoSB!br.gov.caixa.siavs.service.client.FncroCaixaSegmentoSL
+	java:module/FncroCaixaSegmentoSB!br.gov.caixa.siavs.service.client.FncroCaixaSegmentoSL
+
+18:06:16,292 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named ServicoSegmentoSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/ServicoSegmentoSB!br.gov.caixa.siavs.service.client.ServicoSegmentoSL
+	java:app/siavs.jar/ServicoSegmentoSB!br.gov.caixa.siavs.service.client.ServicoSegmentoSL
+	java:module/ServicoSegmentoSB!br.gov.caixa.siavs.service.client.ServicoSegmentoSL
+	java:global/siavs/siavs.jar/ServicoSegmentoSB!br.gov.caixa.siavs.service.client.ServicoSegmentoSR
+	java:app/siavs.jar/ServicoSegmentoSB!br.gov.caixa.siavs.service.client.ServicoSegmentoSR
+	java:module/ServicoSegmentoSB!br.gov.caixa.siavs.service.client.ServicoSegmentoSR
+	java:jboss/exported/siavs/siavs.jar/ServicoSegmentoSB!br.gov.caixa.siavs.service.client.ServicoSegmentoSR
+
+18:06:16,293 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named UnidadeSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/UnidadeSB!br.gov.caixa.siavs.service.client.UnidadeSL
+	java:app/siavs.jar/UnidadeSB!br.gov.caixa.siavs.service.client.UnidadeSL
+	java:module/UnidadeSB!br.gov.caixa.siavs.service.client.UnidadeSL
+	java:global/siavs/siavs.jar/UnidadeSB!br.gov.caixa.siavs.service.client.UnidadeSR
+	java:app/siavs.jar/UnidadeSB!br.gov.caixa.siavs.service.client.UnidadeSR
+	java:module/UnidadeSB!br.gov.caixa.siavs.service.client.UnidadeSR
+	java:jboss/exported/siavs/siavs.jar/UnidadeSB!br.gov.caixa.siavs.service.client.UnidadeSR
+
+18:06:16,297 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named EmailPosicionamentoSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/EmailPosicionamentoSB!br.gov.caixa.siavs.service.client.EmailPosicionamentoSL
+	java:app/siavs.jar/EmailPosicionamentoSB!br.gov.caixa.siavs.service.client.EmailPosicionamentoSL
+	java:module/EmailPosicionamentoSB!br.gov.caixa.siavs.service.client.EmailPosicionamentoSL
+	java:global/siavs/siavs.jar/EmailPosicionamentoSB!br.gov.caixa.siavs.service.client.EmailPosicionamentoSR
+	java:app/siavs.jar/EmailPosicionamentoSB!br.gov.caixa.siavs.service.client.EmailPosicionamentoSR
+	java:module/EmailPosicionamentoSB!br.gov.caixa.siavs.service.client.EmailPosicionamentoSR
+	java:jboss/exported/siavs/siavs.jar/EmailPosicionamentoSB!br.gov.caixa.siavs.service.client.EmailPosicionamentoSR
+
+18:06:16,297 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named UsuarioSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/UsuarioSB!br.gov.caixa.siavs.service.client.UsuarioSL
+	java:app/siavs.jar/UsuarioSB!br.gov.caixa.siavs.service.client.UsuarioSL
+	java:module/UsuarioSB!br.gov.caixa.siavs.service.client.UsuarioSL
+	java:global/siavs/siavs.jar/UsuarioSB!br.gov.caixa.siavs.service.client.UsuarioSR
+	java:app/siavs.jar/UsuarioSB!br.gov.caixa.siavs.service.client.UsuarioSR
+	java:module/UsuarioSB!br.gov.caixa.siavs.service.client.UsuarioSR
+	java:jboss/exported/siavs/siavs.jar/UsuarioSB!br.gov.caixa.siavs.service.client.UsuarioSR
+
+18:06:16,309 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named GrupoUnidadeSB in deployment unit subdeployment "siavs.jar" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.jar/GrupoUnidadeSB!br.gov.caixa.siavs.service.client.GrupoUnidadeSR
+	java:app/siavs.jar/GrupoUnidadeSB!br.gov.caixa.siavs.service.client.GrupoUnidadeSR
+	java:module/GrupoUnidadeSB!br.gov.caixa.siavs.service.client.GrupoUnidadeSR
+	java:jboss/exported/siavs/siavs.jar/GrupoUnidadeSB!br.gov.caixa.siavs.service.client.GrupoUnidadeSR
+	java:global/siavs/siavs.jar/GrupoUnidadeSB!br.gov.caixa.siavs.service.client.GrupoUnidadeSL
+	java:app/siavs.jar/GrupoUnidadeSB!br.gov.caixa.siavs.service.client.GrupoUnidadeSL
+	java:module/GrupoUnidadeSB!br.gov.caixa.siavs.service.client.GrupoUnidadeSL
+
+18:06:16,314 INFO  [org.jboss.weld.deployer] (MSC service thread 1-4) JBAS016002: Processamento da implantação weld siavs.war
+18:06:16,328 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named AvaliacaoSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/AvaliacaoSB!br.gov.caixa.siavs.service.client.AvaliacaoSR
+	java:app/siavs.war/AvaliacaoSB!br.gov.caixa.siavs.service.client.AvaliacaoSR
+	java:module/AvaliacaoSB!br.gov.caixa.siavs.service.client.AvaliacaoSR
+	java:jboss/exported/siavs/siavs.war/AvaliacaoSB!br.gov.caixa.siavs.service.client.AvaliacaoSR
+	java:global/siavs/siavs.war/AvaliacaoSB!br.gov.caixa.siavs.service.client.AvaliacaoSL
+	java:app/siavs.war/AvaliacaoSB!br.gov.caixa.siavs.service.client.AvaliacaoSL
+	java:module/AvaliacaoSB!br.gov.caixa.siavs.service.client.AvaliacaoSL
+
+18:06:16,351 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named GrupoServicoSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/GrupoServicoSB!br.gov.caixa.siavs.service.client.GrupoServicoSL
+	java:app/siavs.war/GrupoServicoSB!br.gov.caixa.siavs.service.client.GrupoServicoSL
+	java:module/GrupoServicoSB!br.gov.caixa.siavs.service.client.GrupoServicoSL
+	java:global/siavs/siavs.war/GrupoServicoSB!br.gov.caixa.siavs.service.client.GrupoServicoSR
+	java:app/siavs.war/GrupoServicoSB!br.gov.caixa.siavs.service.client.GrupoServicoSR
+	java:module/GrupoServicoSB!br.gov.caixa.siavs.service.client.GrupoServicoSR
+	java:jboss/exported/siavs/siavs.war/GrupoServicoSB!br.gov.caixa.siavs.service.client.GrupoServicoSR
+
+18:06:16,352 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named ServicoSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/ServicoSB!br.gov.caixa.siavs.service.client.ServicoSL
+	java:app/siavs.war/ServicoSB!br.gov.caixa.siavs.service.client.ServicoSL
+	java:module/ServicoSB!br.gov.caixa.siavs.service.client.ServicoSL
+	java:global/siavs/siavs.war/ServicoSB!br.gov.caixa.siavs.service.client.ServicoSR
+	java:app/siavs.war/ServicoSB!br.gov.caixa.siavs.service.client.ServicoSR
+	java:module/ServicoSB!br.gov.caixa.siavs.service.client.ServicoSR
+	java:jboss/exported/siavs/siavs.war/ServicoSB!br.gov.caixa.siavs.service.client.ServicoSR
+
+18:06:16,353 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named ProblemaSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/ProblemaSB!br.gov.caixa.siavs.service.client.ProblemaSR
+	java:app/siavs.war/ProblemaSB!br.gov.caixa.siavs.service.client.ProblemaSR
+	java:module/ProblemaSB!br.gov.caixa.siavs.service.client.ProblemaSR
+	java:jboss/exported/siavs/siavs.war/ProblemaSB!br.gov.caixa.siavs.service.client.ProblemaSR
+	java:global/siavs/siavs.war/ProblemaSB!br.gov.caixa.siavs.service.client.ProblemaSL
+	java:app/siavs.war/ProblemaSB!br.gov.caixa.siavs.service.client.ProblemaSL
+	java:module/ProblemaSB!br.gov.caixa.siavs.service.client.ProblemaSL
+
+18:06:16,354 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named FuncionarioCaixaSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/FuncionarioCaixaSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaSL
+	java:app/siavs.war/FuncionarioCaixaSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaSL
+	java:module/FuncionarioCaixaSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaSL
+	java:global/siavs/siavs.war/FuncionarioCaixaSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaSR
+	java:app/siavs.war/FuncionarioCaixaSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaSR
+	java:module/FuncionarioCaixaSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaSR
+	java:jboss/exported/siavs/siavs.war/FuncionarioCaixaSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaSR
+
+18:06:16,355 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named UnidadeSorteioSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/UnidadeSorteioSB!br.gov.caixa.siavs.service.client.UnidadeSorteioSL
+	java:app/siavs.war/UnidadeSorteioSB!br.gov.caixa.siavs.service.client.UnidadeSorteioSL
+	java:module/UnidadeSorteioSB!br.gov.caixa.siavs.service.client.UnidadeSorteioSL
+	java:global/siavs/siavs.war/UnidadeSorteioSB!br.gov.caixa.siavs.service.client.UnidadeSorteioSR
+	java:app/siavs.war/UnidadeSorteioSB!br.gov.caixa.siavs.service.client.UnidadeSorteioSR
+	java:module/UnidadeSorteioSB!br.gov.caixa.siavs.service.client.UnidadeSorteioSR
+	java:jboss/exported/siavs/siavs.war/UnidadeSorteioSB!br.gov.caixa.siavs.service.client.UnidadeSorteioSR
+
+18:06:16,356 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named MetaSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/MetaSB!br.gov.caixa.siavs.service.client.MetaSL
+	java:app/siavs.war/MetaSB!br.gov.caixa.siavs.service.client.MetaSL
+	java:module/MetaSB!br.gov.caixa.siavs.service.client.MetaSL
+	java:global/siavs/siavs.war/MetaSB!br.gov.caixa.siavs.service.client.MetaSR
+	java:app/siavs.war/MetaSB!br.gov.caixa.siavs.service.client.MetaSR
+	java:module/MetaSB!br.gov.caixa.siavs.service.client.MetaSR
+	java:jboss/exported/siavs/siavs.war/MetaSB!br.gov.caixa.siavs.service.client.MetaSR
+
+18:06:16,357 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named EmailConvocacaoSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/EmailConvocacaoSB!br.gov.caixa.siavs.service.client.EmailConvocacaoSR
+	java:app/siavs.war/EmailConvocacaoSB!br.gov.caixa.siavs.service.client.EmailConvocacaoSR
+	java:module/EmailConvocacaoSB!br.gov.caixa.siavs.service.client.EmailConvocacaoSR
+	java:jboss/exported/siavs/siavs.war/EmailConvocacaoSB!br.gov.caixa.siavs.service.client.EmailConvocacaoSR
+	java:global/siavs/siavs.war/EmailConvocacaoSB!br.gov.caixa.siavs.service.client.EmailConvocacaoSL
+	java:app/siavs.war/EmailConvocacaoSB!br.gov.caixa.siavs.service.client.EmailConvocacaoSL
+	java:module/EmailConvocacaoSB!br.gov.caixa.siavs.service.client.EmailConvocacaoSL
+
+18:06:16,357 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named FncroCaixaSegmentoSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/FncroCaixaSegmentoSB!br.gov.caixa.siavs.service.client.FncroCaixaSegmentoSR
+	java:app/siavs.war/FncroCaixaSegmentoSB!br.gov.caixa.siavs.service.client.FncroCaixaSegmentoSR
+	java:module/FncroCaixaSegmentoSB!br.gov.caixa.siavs.service.client.FncroCaixaSegmentoSR
+	java:jboss/exported/siavs/siavs.war/FncroCaixaSegmentoSB!br.gov.caixa.siavs.service.client.FncroCaixaSegmentoSR
+	java:global/siavs/siavs.war/FncroCaixaSegmentoSB!br.gov.caixa.siavs.service.client.FncroCaixaSegmentoSL
+	java:app/siavs.war/FncroCaixaSegmentoSB!br.gov.caixa.siavs.service.client.FncroCaixaSegmentoSL
+	java:module/FncroCaixaSegmentoSB!br.gov.caixa.siavs.service.client.FncroCaixaSegmentoSL
+
+18:06:16,358 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named ServicoSegmentoSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/ServicoSegmentoSB!br.gov.caixa.siavs.service.client.ServicoSegmentoSL
+	java:app/siavs.war/ServicoSegmentoSB!br.gov.caixa.siavs.service.client.ServicoSegmentoSL
+	java:module/ServicoSegmentoSB!br.gov.caixa.siavs.service.client.ServicoSegmentoSL
+	java:global/siavs/siavs.war/ServicoSegmentoSB!br.gov.caixa.siavs.service.client.ServicoSegmentoSR
+	java:app/siavs.war/ServicoSegmentoSB!br.gov.caixa.siavs.service.client.ServicoSegmentoSR
+	java:module/ServicoSegmentoSB!br.gov.caixa.siavs.service.client.ServicoSegmentoSR
+	java:jboss/exported/siavs/siavs.war/ServicoSegmentoSB!br.gov.caixa.siavs.service.client.ServicoSegmentoSR
+
+18:06:16,359 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named UnidadeSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/UnidadeSB!br.gov.caixa.siavs.service.client.UnidadeSL
+	java:app/siavs.war/UnidadeSB!br.gov.caixa.siavs.service.client.UnidadeSL
+	java:module/UnidadeSB!br.gov.caixa.siavs.service.client.UnidadeSL
+	java:global/siavs/siavs.war/UnidadeSB!br.gov.caixa.siavs.service.client.UnidadeSR
+	java:app/siavs.war/UnidadeSB!br.gov.caixa.siavs.service.client.UnidadeSR
+	java:module/UnidadeSB!br.gov.caixa.siavs.service.client.UnidadeSR
+	java:jboss/exported/siavs/siavs.war/UnidadeSB!br.gov.caixa.siavs.service.client.UnidadeSR
+
+18:06:16,366 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named EmailPosicionamentoSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/EmailPosicionamentoSB!br.gov.caixa.siavs.service.client.EmailPosicionamentoSL
+	java:app/siavs.war/EmailPosicionamentoSB!br.gov.caixa.siavs.service.client.EmailPosicionamentoSL
+	java:module/EmailPosicionamentoSB!br.gov.caixa.siavs.service.client.EmailPosicionamentoSL
+	java:global/siavs/siavs.war/EmailPosicionamentoSB!br.gov.caixa.siavs.service.client.EmailPosicionamentoSR
+	java:app/siavs.war/EmailPosicionamentoSB!br.gov.caixa.siavs.service.client.EmailPosicionamentoSR
+	java:module/EmailPosicionamentoSB!br.gov.caixa.siavs.service.client.EmailPosicionamentoSR
+	java:jboss/exported/siavs/siavs.war/EmailPosicionamentoSB!br.gov.caixa.siavs.service.client.EmailPosicionamentoSR
+
+18:06:16,367 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named GrupoUnidadeSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/GrupoUnidadeSB!br.gov.caixa.siavs.service.client.GrupoUnidadeSR
+	java:app/siavs.war/GrupoUnidadeSB!br.gov.caixa.siavs.service.client.GrupoUnidadeSR
+	java:module/GrupoUnidadeSB!br.gov.caixa.siavs.service.client.GrupoUnidadeSR
+	java:jboss/exported/siavs/siavs.war/GrupoUnidadeSB!br.gov.caixa.siavs.service.client.GrupoUnidadeSR
+	java:global/siavs/siavs.war/GrupoUnidadeSB!br.gov.caixa.siavs.service.client.GrupoUnidadeSL
+	java:app/siavs.war/GrupoUnidadeSB!br.gov.caixa.siavs.service.client.GrupoUnidadeSL
+	java:module/GrupoUnidadeSB!br.gov.caixa.siavs.service.client.GrupoUnidadeSL
+
+18:06:16,368 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named NoticiaSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/NoticiaSB!br.gov.caixa.siavs.service.client.NoticiaSR
+	java:app/siavs.war/NoticiaSB!br.gov.caixa.siavs.service.client.NoticiaSR
+	java:module/NoticiaSB!br.gov.caixa.siavs.service.client.NoticiaSR
+	java:jboss/exported/siavs/siavs.war/NoticiaSB!br.gov.caixa.siavs.service.client.NoticiaSR
+	java:global/siavs/siavs.war/NoticiaSB!br.gov.caixa.siavs.service.client.NoticiaSL
+	java:app/siavs.war/NoticiaSB!br.gov.caixa.siavs.service.client.NoticiaSL
+	java:module/NoticiaSB!br.gov.caixa.siavs.service.client.NoticiaSL
+
+18:06:16,368 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named GrupoSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/GrupoSB!br.gov.caixa.siavs.service.client.GrupoSL
+	java:app/siavs.war/GrupoSB!br.gov.caixa.siavs.service.client.GrupoSL
+	java:module/GrupoSB!br.gov.caixa.siavs.service.client.GrupoSL
+	java:global/siavs/siavs.war/GrupoSB!br.gov.caixa.siavs.service.client.GrupoSR
+	java:app/siavs.war/GrupoSB!br.gov.caixa.siavs.service.client.GrupoSR
+	java:module/GrupoSB!br.gov.caixa.siavs.service.client.GrupoSR
+	java:jboss/exported/siavs/siavs.war/GrupoSB!br.gov.caixa.siavs.service.client.GrupoSR
+
+18:06:16,369 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named FuncionarioCaixaLocalSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/FuncionarioCaixaLocalSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaLocalSL
+	java:app/siavs.war/FuncionarioCaixaLocalSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaLocalSL
+	java:module/FuncionarioCaixaLocalSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaLocalSL
+	java:global/siavs/siavs.war/FuncionarioCaixaLocalSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaLocalSR
+	java:app/siavs.war/FuncionarioCaixaLocalSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaLocalSR
+	java:module/FuncionarioCaixaLocalSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaLocalSR
+	java:jboss/exported/siavs/siavs.war/FuncionarioCaixaLocalSB!br.gov.caixa.siavs.service.client.FuncionarioCaixaLocalSR
+
+18:06:16,370 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named AgendamentoSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/AgendamentoSB!br.gov.caixa.siavs.service.client.AgendamentoSR
+	java:app/siavs.war/AgendamentoSB!br.gov.caixa.siavs.service.client.AgendamentoSR
+	java:module/AgendamentoSB!br.gov.caixa.siavs.service.client.AgendamentoSR
+	java:jboss/exported/siavs/siavs.war/AgendamentoSB!br.gov.caixa.siavs.service.client.AgendamentoSR
+	java:global/siavs/siavs.war/AgendamentoSB
+	java:app/siavs.war/AgendamentoSB
+	java:module/AgendamentoSB
+
+18:06:16,371 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named SegmentoSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/SegmentoSB!br.gov.caixa.siavs.service.client.SegmentoSR
+	java:app/siavs.war/SegmentoSB!br.gov.caixa.siavs.service.client.SegmentoSR
+	java:module/SegmentoSB!br.gov.caixa.siavs.service.client.SegmentoSR
+	java:jboss/exported/siavs/siavs.war/SegmentoSB!br.gov.caixa.siavs.service.client.SegmentoSR
+	java:global/siavs/siavs.war/SegmentoSB!br.gov.caixa.siavs.service.client.SegmentoSL
+	java:app/siavs.war/SegmentoSB!br.gov.caixa.siavs.service.client.SegmentoSL
+	java:module/SegmentoSB!br.gov.caixa.siavs.service.client.SegmentoSL
+
+18:06:16,371 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named UsuarioSB in deployment unit subdeployment "siavs.war" of deployment "siavs.ear" are as follows:
+
+	java:global/siavs/siavs.war/UsuarioSB!br.gov.caixa.siavs.service.client.UsuarioSL
+	java:app/siavs.war/UsuarioSB!br.gov.caixa.siavs.service.client.UsuarioSL
+	java:module/UsuarioSB!br.gov.caixa.siavs.service.client.UsuarioSL
+	java:global/siavs/siavs.war/UsuarioSB!br.gov.caixa.siavs.service.client.UsuarioSR
+	java:app/siavs.war/UsuarioSB!br.gov.caixa.siavs.service.client.UsuarioSR
+	java:module/UsuarioSB!br.gov.caixa.siavs.service.client.UsuarioSR
+	java:jboss/exported/siavs/siavs.war/UsuarioSB!br.gov.caixa.siavs.service.client.UsuarioSR
+
+18:06:16,651 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) JBAS016005: Iniciando os  Serviços para a implantação CDI: siavs.ear
+18:06:16,731 INFO  [org.jboss.weld.Version] (MSC service thread 1-2) WELD-000900 1.1.28 (redhat)
+18:06:16,841 INFO  [org.jboss.weld.deployer] (MSC service thread 1-4) JBAS016008: Inicialização do serviço weld para a implantação siavs.ear
+18:06:19,964 INFO  [org.jboss.web] (ServerService Thread Pool -- 51) JBAS018210: Registra o contexto da web: 
+18:06:20,212 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (ServerService Thread Pool -- 51) Inicializando Mojarra 2.1.28-jbossorg-6  para o contexto ''
+18:06:23,082 INFO  [org.hibernate.validator.internal.util.Version] (ServerService Thread Pool -- 51) HV000001: Hibernate Validator 4.3.2.Final-redhat-2
+18:06:25,215 INFO  [org.richfaces.log.Cache] (ServerService Thread Pool -- 51) Selected fallback cache factory
+18:06:25,217 INFO  [org.richfaces.log.Cache] (ServerService Thread Pool -- 51) Creating LRUMap cache instance using parameters: {org.richfaces.CONTROL_SKINNING=enable, org.richfaces.SKIN=blueSky, org.richfaces.fileUpload.createTempFiles=false}
+18:06:25,218 INFO  [org.richfaces.log.Cache] (ServerService Thread Pool -- 51) Creating LRUMap cache instance of 512 items capacity
+18:06:25,225 INFO  [org.richfaces.log.Application] (ServerService Thread Pool -- 51) RichFaces Core Implementation by JBoss by Red Hat, version 4.3.2.Final
+18:06:25,471 WARNING [org.richfaces.log.Application] (ServerService Thread Pool -- 51) JMS API was found on the classpath; if you want to enable RichFaces Push JMS integration, set context-param 'org.richfaces.push.jms.enabled' in web.xml
+18:06:25,494 INFO  [org.jboss.ejb.client] (ServerService Thread Pool -- 51) JBoss EJB Client version 1.0.30.Final-redhat-1
+18:06:25,626 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 29) JBAS015859: Implantado "siavs.ear" (runtime-name: "siavs.ear")
+18:06:25,811 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015961: A interface do gerenciamento ouvindo no http://127.0.0.1:9990/management
+18:06:25,811 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015951: O console de administração ouvindo no http://127.0.0.1:9990
+18:06:25,812 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015874: JBoss EAP 6.4.0.GA (AS 7.5.0.Final-redhat-21) iniciado em 21110ms - Iniciado 1080 de serviços 1117 (os serviços 64 são lazy, passivos ou em demanda)
+18:09:29,030 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-4) JBAS010409: Fonte de dados sem limite [java:jboss/datasources/siavsDS]
+18:09:29,028 INFO  [org.apache.coyote.http11.Http11Protocol] (MSC service thread 1-2) JBWEB003075: Coyote HTTP/1.1 pausing on: http-localhost/127.0.0.1:8080
+18:09:29,031 INFO  [org.apache.coyote.http11.Http11Protocol] (MSC service thread 1-2) JBWEB003077: Coyote HTTP/1.1 stopping on : http-localhost/127.0.0.1:8080
+18:09:29,044 INFO  [org.jboss.web] (ServerService Thread Pool -- 84) JBAS018224: Desregistra o contexto da web: 
+18:09:29,442 INFO  [org.jboss.weld.deployer] (MSC service thread 1-4) JBAS016009: Interrupção do serviço Weld para a implantação siavs.ear
+18:09:29,477 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015974: Interrompendo a subimplantação (runtime-name: siavs.jar) em 514ms
+18:09:29,589 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) JBAS015974: Interrompendo a subimplantação (runtime-name: siavs.war) em 624ms
+18:09:29,629 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015877: Implantação encerrada siavs.ear (runtime-name: siavs.ear) em 694ms
+18:09:29,653 INFO  [org.jboss.as] (MSC service thread 1-1) JBAS015950: JBoss EAP 6.4.0.GA (AS 7.5.0.Final-redhat-21) interrompido em 714ms

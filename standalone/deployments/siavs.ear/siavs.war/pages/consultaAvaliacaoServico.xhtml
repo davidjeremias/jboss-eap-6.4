@@ -1,0 +1,106 @@
+<ui:composition template="/composicoes/layoutSimples.xhtml" xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:rich="http://richfaces.org/rich"
+    xmlns:a4j="http://richfaces.org/a4j" xmlns:siavs="http://java.sun.com/jsf/composite/siavs">
+
+    <ui:define name="conteudoSimples">
+
+        <h:form id="form">
+            <div id="consultaAvaliacaoServico">
+
+                <h:panelGroup rendered="#{C.view.painelAvaliacao.lista.isEmpty()}">
+
+                    <div class="formPesquisa">
+                        <div class="linha">
+                            <div>
+                                <label for="cmbGrupo">Grupo<siavs:obrigatorio />:
+                                </label>
+                                <h:selectOneMenu value="#{C.view.painelAvaliacao.grupoVO.nuGrupo}"
+                                    valueChangeListener="#{C.view.cmbGrupoOnChange}" style="width: 130px;">
+                                    <f:ajax render="agrServicos" />
+                                    <f:selectItems value="#{C.view.painelAvaliacao.listaGrupo}" var="item"
+                                        itemLabel="#{item.noGrupo}" itemValue="#{item.nuGrupo}" style="width: 30%;" />
+                                </h:selectOneMenu>
+                            </div>
+
+                            <div>
+                                <label for="txtDtInicial:txtDtInicialInputDate">Data Inicial:</label>
+
+                                <siavs:calendario id="txtDtInicial" valor="#{C.view.painelAvaliacao.dtInicial}" />
+                            </div>
+
+                            <div>
+                                <label for="txtDtFinal:txtDtFinalInputDate" style="width: 69px;">Data Final:</label>
+
+                                <siavs:calendario id="txtDtFinal" valor="#{C.view.painelAvaliacao.dtFinal}" />
+                            </div>
+
+                        </div>
+                        <div class="clearBoth"></div>
+                    </div>
+
+                    <fieldset>
+                        <legend>Serviços</legend>
+                        <h:panelGrid id="agrServicos" columns="2">
+                            <h:selectManyCheckbox layout="pageDirection" value="#{C.view.listaServicosSelecionados}"
+                                style="margin: 0 auto !important; font-size: 10px; width:350px;">
+                                <f:ajax render="ckbMarcarTodos" />
+                                <f:selectItems value="#{C.view.listaServicosGrupo1}" var="item"
+                                    itemLabel="#{item.servico.deServico}" itemValue="#{item.servico.nuServico}" />
+                            </h:selectManyCheckbox>
+                            <h:selectManyCheckbox layout="pageDirection" value="#{C.view.listaServicosSelecionados}"
+                                style="margin: 0 auto !important; font-size: 10px; width:350px;">
+                                <f:ajax render="ckbMarcarTodos" />
+                                <f:selectItems value="#{C.view.listaServicosGrupo2}" var="item"
+                                    itemLabel="#{item.servico.deServico}" itemValue="#{item.servico.nuServico}" />
+                            </h:selectManyCheckbox>
+                        </h:panelGrid>
+                    </fieldset>
+
+                    <h:panelGroup rendered="#{not empty C.view.listaServicosGrupo1}">
+                        <div class="linha marcarTodos">
+                            <h:selectBooleanCheckbox id="ckbMarcarTodos" value="#{C.view.ckbMarcarTodos}"
+                                valueChangeListener="#{C.view.ckbMarcarTodosOnChange}">
+                                <f:ajax event="change" render="agrServicos" />
+                            </h:selectBooleanCheckbox>
+                            <label for="ckbMarcarTodos">Marcar todos</label>
+                            <div class="clearBoth"></div>
+                        </div>
+                    </h:panelGroup>
+
+                    <ul class="botoes">
+                        <li><a4j:commandLink value="Consultar" id="btConsultar" action="#{C.view.consultar()}"
+                                styleClass="button caixa" title="Clique para consultar!" render="form tabAvaliacao"
+                                execute="@form" oncomplete="U.posRender();" /></li>
+                    </ul>
+
+                    <div class="clearBoth"></div>
+                </h:panelGroup>
+
+                <a4j:outputPanel id="tabAvaliacao">
+                    <h:panelGroup rendered="#{C.view.painelAvaliacao.lista.size() > 0}">
+                        <h:commandLink action="#{C.view.exibirRelatorio()}" styleClass="bt_excel"
+                            title="Clique para visualizar as avaliações em formato XLS!"
+                            rendered="#{C.view.painelAvaliacao.servico == null &amp;&amp; controle.administrador}" />
+
+                        <div class="clearBoth"></div>
+
+                        <ui:param name="exibirGrafico" value="false" />
+                        <ui:include src="/pages/painelAvaliacao.xhtml" />
+
+                        <h:panelGroup rendered="#{C.view.painelAvaliacao.servico == null}">
+                            <ul class="botoes">
+                                <li><a4j:commandLink value="Voltar"
+                                        action="#{C.view.painelAvaliacao.lista.clear()}" styleClass="button orange"
+                                        title="Clique para voltar a tela inicial de #{C.view.titulo}!" render="form"
+                                        execute="@form" oncomplete="U.posRender()" /></li>
+                            </ul>
+                        </h:panelGroup>
+                    </h:panelGroup>
+                </a4j:outputPanel>
+            </div>
+        </h:form>
+
+    </ui:define>
+
+</ui:composition>

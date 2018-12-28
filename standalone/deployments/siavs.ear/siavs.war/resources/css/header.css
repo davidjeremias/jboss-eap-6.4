@@ -1,0 +1,60 @@
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+/*  Cabecalho */
+
+div#header {
+	background-color: #0039ba;
+	height: 97px;
+	background-image: url("#{resource['images/bg_cabecalho.png']}");
+	background-repeat: repeat-x;
+	background-position: bottom;
+}
+
+div#header .subHeader {
+	width: 1020px;
+	margin: 0 auto;
+}
+
+div#header .subHeader .logoCaixa {
+	background-image: url("#{resource['images/tt_caixa.png']}");
+	width: 145px;
+	height: 33px;
+	display: block;
+	left: 13px;
+	top: 7px;
+	position: relative;	
+}
+
+div#header .subHeader .tituloSistema {
+	color: #FFFFFF !important;
+	font-size: 22px !important;
+	position: relative;
+	top: 24px;
+	left: 13px;
+}
+
+div#header .subHeader .tituloSistema:hover {
+	text-decoration: none;
+}
+
+div#header .boxMaster {
+	float: right;
+	position: relative;
+  	width: 300px;
+  	line-height: 20px;
+  	padding: 0 10px;
+  	right: 27px;
+  	top: 15px;
+	border: 1px solid #eeeeee;
+	background: #ebf1f6; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ebf1f6 0%, from(#F0F8FF), to(#87CEFF)); /* FF3.6+ */
+	background: -moz-linear-gradient(top, #F0F8FF, #87CEFF); /* FF */
+	background: -webkit-gradient(linear, left top, left bottom, from(#F0F8FF), to(#87CEFA)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  from(#F0F8FF), to(#87CEFA)); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  from(#F0F8FF), to(#87CEFA)); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  from(#F0F8FF), to(#87CEFA)); /* IE10+ */
+	background: linear-gradient(to bottom,  from(#F0F8FF), to(#87CEFA)); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F0F8FF', endColorstr='#87CEFA',GradientType=0 ); /* IE6-9 */
+	border-radius: .5em .5em .5em .5em;
+	text-align: left; 
+	vertical-align: middle;
+}

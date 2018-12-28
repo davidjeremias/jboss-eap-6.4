@@ -1,0 +1,66 @@
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:a4j="http://richfaces.org/a4j" xmlns:cc="http://java.sun.com/jsf/composite"
+    xmlns:rich="http://richfaces.org/rich">
+
+    <cc:interface>
+    </cc:interface>
+
+    <cc:implementation xmlns:siavs="http://java.sun.com/jsf/composite/siavs">
+        <h:form>
+            <ul class="titulos">
+                <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+                <a4j:region rendered="#{C.view.titulo == manterGrupoView.titulo}">
+                    <li class="selecionada"><siavs:tituloTela titulo="#{manterGrupoView.titulo}" /></li>
+                </a4j:region>
+                <a4j:region rendered="#{C.view.titulo != manterGrupoView.titulo}">
+                    <li><siavs:tituloTela titulo="#{manterGrupoView.titulo}" onclick="return fnCheckAlteracao();"
+                            link="#{manterGrupoView.irTelaAlteracao(manterGrupoView.vo)}" estiloAba="" indexBg="4" /></li>
+                </a4j:region>
+                <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+                <a4j:region rendered="#{C.view.titulo == vinculaServicoView.titulo}">
+                    <li class="selecionada" style="left: -40px;"><siavs:tituloTela
+                            titulo="#{vinculaServicoView.titulo}" /></li>
+                </a4j:region>
+                <a4j:region rendered="#{C.view.titulo != vinculaServicoView.titulo}">
+                    <li style="left: -40px;"><siavs:tituloTela titulo="#{vinculaServicoView.titulo}"
+                            onclick="return fnCheckAlteracao();" link="#{vinculaServicoView.irTelaInicio()}"
+                            rendered="#{!empty manterGrupoView.vo.pk}" estiloAba="" indexBg="3" /></li>
+                </a4j:region>
+                <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+                <a4j:region rendered="#{C.view.titulo == manterMetaView.titulo}">
+                    <li class="selecionada" style="left: -80px;"><siavs:tituloTela
+                            titulo="#{manterMetaView.titulo}" /></li>
+                </a4j:region>
+                <a4j:region rendered="#{C.view.titulo != manterMetaView.titulo}">
+                    <li style="left: -80px;"><siavs:tituloTela titulo="#{manterMetaView.titulo}"
+                            onclick="return fnCheckAlteracao();" link="#{manterMetaView.irTelaInicio()}"
+                            rendered="#{!empty manterGrupoView.vo.pk}" estiloAba="" indexBg="2" /></li>
+                </a4j:region>
+                <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+                <a4j:region rendered="#{C.view.titulo == vinculaUnidadeView.titulo}">
+                    <li class="selecionada" style="left: -120px;"><siavs:tituloTela
+                            titulo="#{vinculaUnidadeView.titulo}" /></li>
+                </a4j:region>
+                <a4j:region rendered="#{C.view.titulo != vinculaUnidadeView.titulo}">
+                    <li style="left: -120px;"><siavs:tituloTela titulo="#{vinculaUnidadeView.titulo}"
+                            onclick="alert('aqui1');" link="#{vinculaUnidadeView.irTelaInicio()}"
+                            rendered="#{!empty manterGrupoView.vo.pk}" estiloAba="" indexBg="2" /></li>
+                </a4j:region>
+                <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+                <a4j:region rendered="#{C.view.titulo == registraEmailConvocacaoView.titulo}">
+                    <li class="selecionada" style="left: -160px;"><siavs:tituloTela
+                            titulo="#{registraEmailConvocacaoView.titulo}" /></li>
+                </a4j:region>
+                <a4j:region rendered="#{C.view.titulo != registraEmailConvocacaoView.titulo}">
+                    <li style="left: -160px;"><siavs:tituloTela titulo="#{registraEmailConvocacaoView.titulo}"
+                            onclick="alert('aqui');" link="#{registraEmailConvocacaoView.irTelaInicio()}"
+                            rendered="#{!empty manterGrupoView.vo.pk}" estiloAba="" indexBg="1" /></li>
+                </a4j:region>
+                <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+            </ul>
+        </h:form>
+    </cc:implementation>
+
+</ui:fragment>

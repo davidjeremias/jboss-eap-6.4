@@ -1,0 +1,147 @@
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:rich="http://richfaces.org/rich" xmlns:a4j="http://richfaces.org/a4j">
+
+    <ui:composition template="/composicoes/layoutSimples.xhtml" xmlns:siavs="http://java.sun.com/jsf/composite/siavs">
+
+        <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+        <ui:define name="titulo">
+            <siavs:tituloGrupo />
+        </ui:define>
+
+        <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+        <ui:define name="conteudoSimples">
+
+            <script type="text/javascript">
+
+			/**
+			 * Função que filtra os itens selecionados.
+			 */
+			function selecionar() {
+				var comp = U.getComp('txtDeServico');
+				var source = U.getCompRF('plServico').getSourceList();
+				// limpa as seleções
+				source.unselectItem(source.getSelectedItems());
+				
+				// Se tiver mais que 3 caracteres e tiver alterado a quantidade de caracteres
+				if(comp.value.length >= 3 &amp;&amp; comp.textoAnterior != comp.value){
+					// Armazena o texto anterior
+					comp.textoAnterior = comp.value;
+
+					try{
+						// Recupera o container que define a rolagem
+						var container = source.scrollContainer.parent();
+						// Localiza os itens fazendo uma pesquisa "case insensitive"
+						var item = $("[id$='plServicoSourceItems'] div:containsNoCase('" + comp.value + "')").not("div:contains('(inativo)')").eq(0);
+						source.selectItem(item);
+						// rola para a seleção
+						container.scrollTop(item.offset().top - container.offset().top + container.scrollTop());
+					}
+					catch(e){}
+				}
+			}
+
+			var arrayServicos = new Array();
+			
+		<ui:repeat var="servico" value="#{C.view.listaServico}">
+			var servico = new Object();
+			servico.nuServico = #{servico.nuServico};
+			servico.deServico = '#{servico.deServico}';
+			servico.icAtivo = #{servico.icAtivo};
+		
+			arrayServicos[arrayServicos.length] = servico;
+		</ui:repeat>
+
+			/**
+			 * Adiciona uma função no carregamento da tela.
+			 */
+			$(window).ready(iniciarTela);
+
+			/**
+			 * Inicia a tela.
+			 */
+			function iniciarTela(){
+				if(arrayServicos == null || arrayServicos.length == 0){
+					return;
+				}
+
+				for ( var r in arrayServicos) {
+					// Se estiver inativo
+					if(!arrayServicos[r].icAtivo){
+						var item = $("[id$='plServicoSourceItems'] div:contains('" + arrayServicos[r].deServico + "')")[0];
+						if(item &amp;&amp; item.innerHTML){
+							item.innerHTML = arrayServicos[r].deServico + " (inativo)";
+						}
+						item = $("[id$='plServicoTargetItems'] div:contains('" + arrayServicos[r].deServico + "')")[0];
+						if(item &amp;&amp; item.innerHTML){
+							item.innerHTML = arrayServicos[r].deServico + " (inativo)";
+						}
+					}
+				}
+
+				var pickList = U.getCompRF('plServico');
+				// Adiciona um evento pra quando selecionar o item
+				RichFaces.Event.bind(U.getCompRF('plServico').getSourceList(), "selectItem", function() { validar(pickList.getSourceList()); });
+				RichFaces.Event.bind(U.getCompRF('plServico').getTargetList(), "selectItem", function() { validar(pickList.getTargetList()); });
+		 	}
+
+			/**
+			 * Valida a seleção do item.
+			 */
+			function validar(lista){
+				// Percorre a lista com os itens selecionados
+				for (var r = 0; r &lt; lista.getSelectedItems().length; r++) {
+					// Se estiver inativo
+					if(lista.getSelectedItems()[r].innerHTML.indexOf("(inativo)") != -1){
+						// Exibe uma mensagem para o usuário
+						Mensagem.exibirManual('#{msgs.MA008}');
+						// Desmarca o item
+						lista.unselectItem(lista.currentSelectItem())
+						return;
+					}
+				}
+			}
+			
+		</script>
+
+            <h:form>
+                <div id="vinculaServico">
+                    <div class="linha">
+                        <label for="txtDeServico">Serviço :</label>
+                        <h:inputText id="txtDeServico" maxlength="50" onkeyup="selecionar()"
+                            disabled="#{manterGrupoView.vo.icAgencia}" />
+                        <div class="clearBoth"></div>
+                    </div>
+
+                    <rich:pickList id="plServico" value="#{C.view.listaServicoVinculado}" sourceCaption="Serviço"
+                        targetCaption="Serviço Grupo" listHeight="200px" addText="&gt;" removeText="&lt;"
+                        switchByDblClick="false" disabled="#{manterGrupoView.vo.icAgencia}">
+                        <a4j:ajax />
+                        <f:selectItems value="#{C.view.listaServico}" var="servico" itemValue="#{servico.nuServico}"
+                            itemLabel="#{servico.deServico}" />
+                    </rich:pickList>
+                </div>
+
+                <ul class="botoes">
+                    <li><a4j:commandLink value="Salvar" action="#{C.view.salvar()}" styleClass="button caixa"
+                            title="#{msgs.MA006}" render="plServico renderInicial" execute="@form"
+                            oncomplete="U.posRender(); iniciarTela();" rendered="#{!manterGrupoView.vo.icAgencia}" /></li>
+                    <li><h:commandLink value="Novo" immediate="true"
+                            action="#{manterServicoView.irTelaCadastroVinculaServico()}" styleClass="button orange"
+                            title="Clique para ir a tela de serviço!" rendered="#{!manterGrupoView.vo.icAgencia}" /></li>
+                    <li><h:commandLink value="Voltar" immediate="true"
+                            action="#{manterGrupoView.irTelaAlteracao(manterGrupoView.vo)}" styleClass="button orange"
+                            title="Clique para voltar a tela do #{manterGrupoView.titulo}!" /></li>
+                </ul>
+
+            </h:form>
+
+        </ui:define>
+
+        <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+    </ui:composition>
+
+</ui:fragment>

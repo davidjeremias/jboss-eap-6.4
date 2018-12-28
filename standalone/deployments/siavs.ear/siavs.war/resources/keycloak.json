@@ -1,0 +1,8 @@
+{
+  "realm" : "caixa-key",
+  "auth-server-url" : "http://localhost:9000/auth/",
+  "ssl-required" : "none",
+  "resource" : "login-app",
+  "bearer-only" : true,
+  "enable-cors" : true
+}

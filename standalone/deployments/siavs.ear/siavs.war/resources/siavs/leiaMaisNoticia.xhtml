@@ -1,0 +1,29 @@
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:a4j="http://richfaces.org/a4j" xmlns:cc="http://java.sun.com/jsf/composite"
+    xmlns:rich="http://richfaces.org/rich">
+
+    <cc:interface>
+        <cc:attribute name="dataHora" required="true" />
+        <cc:attribute name="noticia" required="true" />
+    </cc:interface>
+
+    <cc:implementation>
+
+        <rich:popupPanel id="leiaMaisNoticia" modal="true" autosized="false" resizeable="false" height="200" width="600"
+            styleClass="leiaMaisNoticia">
+
+            <h:outputLabel value="Boletim Informativo da TI AV CAIXA" styleClass="titulo" />
+            <h:outputLabel value="#{cc.attrs.noticia}" styleClass="noticia" escape="false" />
+
+            <h:form>
+                <ul class="botoes">
+                    <li><h:commandLink value="OK" onclick="U.fecharPopup('leiaMaisNoticia'); return false;"
+                            styleClass="button orange" /></li>
+                </ul>
+            </h:form>
+
+        </rich:popupPanel>
+    </cc:implementation>
+
+</ui:fragment>

@@ -1,0 +1,80 @@
+.rf-msg-err,
+.rf-msgs-err,
+.rf-msg-ftl,
+.rf-msgs-ftl,
+.rf-msg-inf,
+.rf-msgs-inf,
+.rf-msg-wrn,
+.rf-msgs-wrn,
+.rf-msg-ok,
+.rf-msgs-ok	{
+	background-image: none !important;
+	padding: 0px !important;
+	font-family: Arial Bold !important; 
+	font-size: 13px !important;
+}
+
+#painelModalMsg_container #painelModalMsg_content {
+	background-image: url("#{resource['images/msg/bg_msg.png']}");
+	background-size: 5px 100%;
+}
+
+#painelModalMsg_container .msgsPopup {
+	font-family: Arial Bold !important; 
+	font-size: 13px !important; 
+	color: #0039ba !important; 
+	text-align: center;
+	width: 100%;
+	display: -webkit-box;
+}
+
+#painelModalMsg_container #msgManual,
+#painelModalMsg_container #msgAuto .rf-msgs-det {
+	padding: 5px 0 6px 31px !important;
+}
+
+#painelModalMsg_container #msgManual,
+#painelModalMsg_container #msgAuto,
+#painelModalMsg_container #msgAuto .rf-msgs-det  {
+	margin: 10px auto !important;;
+	background-size: 24px;
+	background-repeat: no-repeat;
+}
+
+#painelModalMsg_container #msgAuto #msgAutoConteudo span {
+	margin: 20px 0;
+}
+
+#painelModalMsg_container #msgManual.msgQuestao {
+	background-image: url("#{resource['images/msg/ico_questao.png']}");
+}
+
+#painelModalMsg_container #msgManual.msgInfo,
+#painelModalMsg_container #msgAuto .rf-msgs-inf .rf-msgs-det {
+	background-image: url("#{resource['images/msg/ico_info.png']}");
+	color: #0039ba !important;
+}
+
+#painelModalMsg_container #msgAuto .rf-msgs-err .rf-msgs-det {
+	background-image: url("#{resource['images/msg/ico_erro.png']}");
+	color: #c30000 !important;
+}
+
+#painelModalMsg_container.msgAuto #msgManual,
+#painelModalMsg_container.msgAuto #trBtConfirmacao,
+#painelModalMsg_container.msgManual #msgAuto,
+#painelModalMsg_container.msgInfo #trBtConfirmacao,
+#painelModalMsg_container.msgQuestao #trBtOk,
+#painelModalMsg_container #painelModalMsg_header
+{
+	display: none;
+}
+
+#painelModalMsg_container .botoesPopup {
+	text-align: center;
+	padding: 10px;
+}
+
+#painelModalMsg_container .botoesPopup div a {
+	margin: 0 10px;
+}

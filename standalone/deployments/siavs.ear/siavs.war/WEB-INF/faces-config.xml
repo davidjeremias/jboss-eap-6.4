@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config version="2.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+	
+<!-- Home ************************************************************************************ -->
+	<navigation-rule>
+		<from-view-id>/*</from-view-id>
+		<navigation-case>
+			<from-outcome>home</from-outcome>
+			<to-view-id>/pages/home.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+	</navigation-rule>
+<!-- Erro ************************************************************************************ -->
+	<navigation-rule>
+		<from-view-id>/*</from-view-id>
+		<navigation-case>
+			<from-outcome>erro</from-outcome>
+			<to-view-id>/pages/erro.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+	</navigation-rule>
+<!-- Manter Grupo ************************************************************************************ -->
+	<navigation-rule>
+		<from-view-id>/*</from-view-id>
+		<navigation-case>
+			<from-outcome>manterGrupo</from-outcome>
+			<to-view-id>/pages/manterGrupo.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+<!-- Manter Segmento ************************************************************************************ -->
+	<navigation-rule>
+		<from-view-id>/*</from-view-id>
+		<navigation-case>
+			<from-outcome>manterSegmento</from-outcome>
+			<to-view-id>/pages/manterSegmento.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+<!-- Manter Servico ************************************************************************************ -->
+	<navigation-rule>
+		<from-view-id>/*</from-view-id>
+		<navigation-case>
+			<from-outcome>manterServico</from-outcome>
+			<to-view-id>/pages/manterServico.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+<!-- Manter Meta ************************************************************************************ -->
+	<navigation-rule>
+		<from-view-id>/*</from-view-id>
+		<navigation-case>
+			<from-outcome>manterMeta</from-outcome>
+			<to-view-id>/pages/manterMeta.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+<!-- Registra Email Convocacao Avaliação *************************************************************** -->
+	<navigation-rule>
+		<from-view-id>/*</from-view-id>
+		<navigation-case>
+			<from-outcome>registraEmailConvocacao</from-outcome>
+			<to-view-id>/pages/registraEmailConvocacao.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+<!-- Vincula Serviço ************************************************************************************ -->
+	<navigation-rule>
+		<from-view-id>/*</from-view-id>
+		<navigation-case>
+			<from-outcome>vinculaServico</from-outcome>
+			<to-view-id>/pages/vinculaServico.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+	</navigation-rule>
+<!-- Publica Notícia ************************************************************************************ -->
+	<navigation-rule>
+		<from-view-id>/*</from-view-id>
+		<navigation-case>
+			<from-outcome>publicaNoticia</from-outcome>
+			<to-view-id>/pages/publicaNoticia.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+<!-- Designa Avaliador ************************************************************************************ -->
+	<navigation-rule>
+		<from-view-id>/*</from-view-id>
+		<navigation-case>
+			<from-outcome>designaAvaliador</from-outcome>
+			<to-view-id>/pages/designaAvaliador.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+<!-- Avalia Serviço ************************************************************************************ -->
+	<navigation-rule>
+		<from-view-id>/*</from-view-id>
+		<navigation-case>
+			<from-outcome>avaliaServico</from-outcome>
+			<to-view-id>/pages/avaliaServico.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+<!-- Consulta Painel de Avaliação ************************************************************************************ -->
+	<navigation-rule>
+		<from-view-id>/*</from-view-id>
+		<navigation-case>
+			<from-outcome>consultaPainelAvaliacao</from-outcome>
+			<to-view-id>/pages/consultaPainelAvaliacao.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+<!-- Consulta Avaliação Serviço ************************************************************************************ -->
+	<navigation-rule>
+		<from-view-id>/*</from-view-id>
+		<navigation-case>
+			<from-outcome>consultaAvaliacaoServico</from-outcome>
+			<to-view-id>/pages/consultaAvaliacaoServico.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+<!-- Registra Email de Posicionamento ***************************************************************** -->
+	<navigation-rule>
+		<from-view-id>/*</from-view-id>
+		<navigation-case>
+			<from-outcome>enviarEmailPosicionamento</from-outcome>
+			<to-view-id>/pages/registraEmailPosicionamento.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+<!-- Manter Usuário ************************************************************************************ -->
+	<navigation-rule>
+		<from-view-id>/*</from-view-id>
+		<navigation-case>
+			<from-outcome>manterUsuario</from-outcome>
+			<to-view-id>/pages/manterUsuario.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+<!-- ************************************************************************************ -->
+	<application>
+		<resource-bundle>
+			<base-name>br.gov.caixa.siavs.messages</base-name>
+			<var>msgs</var>
+		</resource-bundle>
+		<locale-config>
+			<default-locale>pt_BR</default-locale>
+			<supported-locale>pt_BR</supported-locale>
+			<supported-locale>en_US</supported-locale>
+		</locale-config>
+	</application>
+	<factory>
+		<exception-handler-factory>br.com.spread.framework.excecao.jsf.FactoryTratadorExcecaoJSF</exception-handler-factory>
+	</factory>
+<!-- ************************************************************************************ -->
+</faces-config>

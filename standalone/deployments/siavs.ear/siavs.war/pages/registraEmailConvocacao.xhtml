@@ -1,0 +1,46 @@
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:rich="http://richfaces.org/rich" xmlns:a4j="http://richfaces.org/a4j">
+
+    <ui:composition template="/composicoes/layoutSimples.xhtml" xmlns:siavs="http://java.sun.com/jsf/composite/siavs">
+
+        <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+        <ui:define name="titulo">
+            <siavs:tituloGrupo />
+        </ui:define>
+
+        <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+        <ui:define name="conteudoSimples">
+            <h:form id="formEmailConvocacao">
+                <div class="linha">
+                    <label for="txtDeAssunto">Assunto <siavs:obrigatorio />:
+                    </label>
+                    <h:inputText id="txtDeAssunto" maxlength="100" style="width: 60% !important;"
+                        value="#{C.view.vo.deAssunto}" />
+                    <div class="clearBoth"></div>
+                </div>
+                <div class="linha">
+                    <siavs:editor id="txtDeConteudo" tamanhoMaximo="4000" valor="#{C.view.vo.deConteudo}" />
+                    <div class="clearBoth"></div>
+                </div>
+
+                <ul class="botoes">
+                    <li><a4j:commandLink value="Salvar" action="#{C.view.incluir(C.view.vo)}"
+                            rendered="#{empty C.view.vo.pk}" styleClass="button caixa" title="#{msgs.MA006}"
+                            render="formCadastro renderInicial" execute="@form" oncomplete="U.posRender()" /> <a4j:commandLink
+                            value="Salvar" action="#{C.view.alterar(C.view.vo)}" rendered="#{!empty C.view.vo.pk}"
+                            styleClass="button caixa" title="#{msgs.MA006}" render="formCadastro renderInicial"
+                            execute="@form" oncomplete="U.posRender()" /> <h:commandLink value="Voltar" immediate="true"
+                            action="#{manterGrupoView.irTelaAlteracao(manterGrupoView.vo)}" styleClass="button orange"
+                            title="Clique para voltar a tela do #{manterGrupoView.titulo}!" /></li>
+                </ul>
+            </h:form>
+        </ui:define>
+
+        <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+    </ui:composition>
+
+</ui:fragment>

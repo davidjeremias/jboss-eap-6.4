@@ -1,0 +1,27 @@
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:a4j="http://richfaces.org/a4j">
+
+    <ui:composition template="/composicoes/masterLayout.xhtml" xmlns:siavs="http://java.sun.com/jsf/composite/siavs">
+        <ui:define name="conteudo">
+            <!-- *************************************************************************************************************************************************************** -->
+
+            <h:panelGroup id="jsfTelaPrincipal" styleClass="layoutPadrao">
+                <div class="telaPrincipal">
+
+                    <div class="telaErro" style="width: 640px; margin: 0 auto;">
+                        <h4>Acesso não autorizado</h4>
+                        <div class="padrao_erro" style="margin-top: 50px;">
+                            <h5>Falha de autorização</h5>
+                            <p>Ocorreu uma falha de autorização no acesso para esta página.</p>
+                            <p>Favor entrar em contato com a área de suporte técnico da sua unidade.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </h:panelGroup>
+
+            <!-- *************************************************************************************************************************************************************** -->
+        </ui:define>
+    </ui:composition>
+
+</ui:fragment>

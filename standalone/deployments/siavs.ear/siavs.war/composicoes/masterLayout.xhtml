@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
+
+<h:head>
+	<title>SIAVS</title>
+	<h:outputScript library="scripts" name="jquery-1.9.1.js" target="head" />
+	<h:outputScript library="scripts" name="bootstrap.min.js" target="head" />
+
+	<h:outputScript library="scripts" name="util.js" target="head" />
+
+	<h:outputScript library="scripts" name="jquery.mask.js" target="body" />
+	<h:outputScript library="scripts" name="jquery.flot.js" target="body" />
+	<h:outputScript library="scripts" name="jquery.flot.categories.js"
+		target="body" />
+	<h:outputScript library="scripts" name="TextNumero.js" target="body" />
+	<h:outputScript library="scripts" name="TextAlfaNumero.js"
+		target="body" />
+	<h:outputScript library="scripts" name="TextData.js" target="body" />
+	<h:outputScript library="scripts" name="TextUtil.js" target="body" />
+	<h:outputScript library="scripts" name="ckeditor/plugin.js"
+		target="body" />
+	<h:outputScript library="scripts" name="jquery.custom.js" target="body" />
+
+	<h:outputStylesheet library="css" name="reset.css" />
+	<h:outputStylesheet library="css" name="button.css" />
+	<h:outputStylesheet library="css" name="clearfix.css" />
+	<h:outputStylesheet library="css" name="siavs.css" />
+	<h:outputStylesheet library="css" name="header.css" />
+	<h:outputStylesheet library="css" name="menu.css" />
+	<h:outputStylesheet library="css" name="especificos.css" />
+
+
+</h:head>
+
+<h:body onload="U.iniciarTela()"
+	xmlns:siavs="http://java.sun.com/jsf/composite/siavs">
+
+	<script type="text/javascript">
+  	var msg = "#{controle.msgErro}";
+   	if(msg) {
+   		$(window).bind("load", function(){Mensagem.exibirManual(msg);})
+    }
+    
+</script>
+	<ui:include src="frCompStatus.xhtml" />
+	<ui:include src="header.xhtml" />
+	<ui:include src="menu.xhtml" />
+	<ui:include src="versao.xhtml" />
+	<ui:insert name="conteudo" />
+
+	<div id="dvVersaoBrowser" style="display: none">
+		<div class="container">
+			<div class="alert alert-warning alert-dismissable fade in">
+				<a href="#" class="close" data-dismiss="alert" aria-label="close"></a>
+				<strong>Warning!</strong> This alert box could indicate a warning
+				that might need attention.
+			</div>
+		</div>
+	</div>
+</h:body>
+</html>

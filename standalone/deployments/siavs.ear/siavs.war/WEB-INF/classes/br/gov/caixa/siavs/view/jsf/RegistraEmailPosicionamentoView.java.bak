@@ -1,0 +1,288 @@
+package br.gov.caixa.siavs.view.jsf;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import javax.enterprise.context.ConversationScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
+
+import org.richfaces.event.FileUploadEvent;
+import org.richfaces.model.UploadedFile;
+
+import br.com.spread.framework.exception.BusinessException;
+import br.com.spread.framework.exception.SystemException;
+import br.com.spread.framework.global.Dominio.Operacao;
+import br.com.spread.framework.util.Util;
+import br.gov.caixa.siavs.global.Mensagem.Msg;
+import br.gov.caixa.siavs.service.client.EmailPosicionamentoSR;
+import br.gov.caixa.siavs.vo.EmailPosicionamentoVO;
+import br.gov.caixa.siavs.vo.GrupoVO;
+import br.gov.caixa.siavs.vo.ServicoVO;
+
+/**
+ * <b>Title:</b> EnviarEmailPosicionamentoView <br>
+ * <b>Description:</b> Classe que permite ao Publicador enviar email com informações/orientações a respeito dos serviços/sistemas.<br>
+ * <b>Company:</b> Spread
+ * @author joana.espindola
+ * @version: $Revision: 1.0 $, $Date: 04/07/2013$
+ */
+@Named
+@ConversationScoped
+public class RegistraEmailPosicionamentoView extends AbstractViewSIAVS<EmailPosicionamentoVO> {
+
+	private static final long serialVersionUID = 1L;
+
+// ***********************************************************************************************************************************
+
+	@Inject
+	private ControlaAcessoView controlaAcessoView;
+	
+	private Date dtInicio = new Date();
+	private Date dtFim= new Date();
+	private String icDestinatario;
+
+// ***********************************************************************************************************************************
+
+	/**
+	 * @see br.gov.caixa.siavs.view.jsf.AbstractViewSIAVS#getTitulo()
+	 */
+	@Override
+	public String getTitulo() {
+		return "Enviar Email Posicionamento";
+	}
+
+	/**
+	 * @see br.gov.caixa.siavs.view.jsf.AbstractViewSIAVS#getNomePadrao()
+	 */
+	@Override
+	public String getNomePadrao() {
+		return "enviarEmailPosicionamento";
+	}
+
+	/**
+	 * @see br.gov.caixa.siavs.view.jsf.AbstractViewSIAVS#limparVO()
+	 */
+	@Override
+	protected void limparVO() {
+		super.limparVO();
+		this.setIcDestinatario(null);
+
+		if(controlaAcessoView.isPublicador() && controlaAcessoView.getGrupoUnidadeUsuario() != null) {
+			this.getVo().setGrupo(controlaAcessoView.getGrupoUnidadeUsuario());
+			this.getVoFiltro().setGrupo(controlaAcessoView.getGrupoUnidadeUsuario());
+		}
+		else {
+			this.getVo().setGrupo(new GrupoVO());
+			this.getVoFiltro().setGrupo(new GrupoVO());
+		}
+		
+		this.getVo().setServico(new ServicoVO());
+		
+		this.getVoFiltro().setServico(new ServicoVO());
+		//this.setDtInicio(null);
+		//this.setDtFim(null);
+		this.setDtInicio(dataAtual);
+		this.setDtFim(dataAtual);
+		//this.set(dataAtual);
+		this.getVo().setDeAssunto("SIAVS - Posicionamento do Serviço <<Nome do Serviço>>: <<Assunto>>");
+	}
+
+	/**
+	 * @see br.gov.caixa.siavs.view.jsf.AbstractViewSIAVS#permiteAlterar(br.gov.caixa.siavs.vo.AbstractVOSIAVS)
+	 */
+	@Override
+	public Boolean permiteAlterar(EmailPosicionamentoVO vo) {
+		return false;
+	}
+	
+	/**
+	 * @see br.gov.caixa.siavs.view.jsf.AbstractViewSIAVS#permiteExcluir(br.gov.caixa.siavs.vo.AbstractVOSIAVS)
+	 */
+	@Override
+	public Boolean permiteExcluir(EmailPosicionamentoVO vo) {
+		// RN028
+		return vo == null || vo.getDtEnvio() == null;
+	}
+
+	/**
+	 * @see br.gov.caixa.siavs.view.jsf.AbstractViewSIAVS#getQtdeLinhasTabela()
+	 */
+	@Override
+	public Integer getQtdeLinhasTabela() {
+		return 10;
+	}
+
+	/**
+	 * @see br.gov.caixa.siavs.view.jsf.AbstractViewSIAVS#doListar(br.gov.caixa.siavs.vo.AbstractVOSIAVS)
+	 */
+	@Override
+	public void doListar(EmailPosicionamentoVO vo) {
+		try {
+			if(controlaAcessoView.isPublicador() && controlaAcessoView.getGrupoUnidadeUsuario() == null) {
+				this.setListaVo(null);
+				return;
+			}
+		
+			this.setListaVo(((EmailPosicionamentoSR) this.getService()).buscarEmails(this.getVoFiltro(), this.getDtInicio(), this.getDtFim()));
+		}
+		catch (Throwable e) {
+			this.tratarExcecao(e, null);
+		}
+	}
+
+	/**
+	 * @see br.com.spread.framework.view.basic.AbstractViewBasic#doIncluir(br.com.spread.framework.vo.AbstractVO)
+	 */
+	@Override
+	public void doIncluir(EmailPosicionamentoVO vo) throws SystemException, BusinessException {
+		if(!Util.notEmpty(this.getIcDestinatario())){
+			throw new BusinessException(Msg.MN_CAMPO_OBRIGATORIO.montar("destinatários"), "icDestinatario");
+		}
+		if("1".equals(this.getIcDestinatario()) && (vo.getServico() == null || ! Util.notEmpty(vo.getServico().getNuServico()))){
+			throw new BusinessException(Msg.MN_CAMPO_OBRIGATORIO.montar("serviço"), "servico");
+		}
+
+//		Caso o usuário escolha a opção TODOS, sera salvo todos os grupos da lista.  
+		if(0L == this.getVo().getGrupo().getNuGrupo()){
+			vo.getGrupo().setNoGrupo("Todos");
+			//TODO quando houver um RedMine solicitando que tenha o campo TODOS para a combo servico, descomente o codigo abaixo.
+			/*if(!controlaAcessoView.getListaServico(this.getVo().getGrupo()).equals(null) || 
+					Util.notEmpty(controlaAcessoView.getListaServico(this.getVo().getGrupo()))){
+				vo.getServico().setNoSistema("Todos");
+			}*/
+			
+			((EmailPosicionamentoSR) this.getService()).incluiEmailPosicionamentoEmLote(vo, controlaAcessoView.getListaGrupo());
+		}
+		
+		super.doIncluir(vo);
+	}
+
+	/**
+	 * @see br.com.spread.framework.view.jsf.AbstractViewJSF#tratarSucesso(br.com.spread.framework.global.Dominio.Operacao)
+	 */
+	@Override
+	protected void tratarSucesso(Operacao operacao) {
+		if(Operacao.INCLUIR.equals(operacao)){
+			this.adicionarMsgInfo(this.getMensagem("MN020"));
+		}
+		else {
+			super.tratarSucesso(operacao);
+		}
+	}
+	
+// ***********************************************************************************************************************************
+	
+	/**
+	 * Faz o upload do arquivo.
+	 * @param event FileUploadEvent
+	 */
+	public void arAnexoListener(FileUploadEvent event) {
+        UploadedFile item = event.getUploadedFile();
+        
+    	try {
+    		//FE5
+    		if(this.getVo().getArAnexo() != null) {
+    			throw new BusinessException("Existe arquivo anexado.");
+    		}
+    		if(item.getData().length > 524288) {
+    			throw new BusinessException("O tamanho máximo do arquivo deve ser de 512 kb.");
+    		}
+
+            this.getVo().setArAnexo(item.getData());
+            this.getVo().setNoAnexo(item.getName());
+		}
+		catch (BusinessException e) {
+			this.tratarExcecao(e, null);
+		}
+    }
+	
+	/**
+	 * Apaga o anexo.
+	 */
+	public void removerAnexo() {
+		this.getVo().setArAnexo(null);
+		this.getVo().setNoAnexo(null);
+	}
+	
+	/**
+	 * Abre o anexo.
+	 * @param vo EmailPosicionamentoVO
+	 */
+	public void abrirAnexo(EmailPosicionamentoVO vo) {
+		if(vo != null){
+			this.abrirArquivo(vo.getNoAnexo(), vo.getArAnexo());
+		}
+	}
+	
+// ***********************************************************************************************************************************
+	private Date dataAtual = new Date();
+	/**
+	 * @return Date
+	 */
+	public Date getDtInicio() {
+		//if (dtInicio.equals(null))
+	//	{
+			//SimpleDateFormat data = new SimpleDateFormat("dd/MM/yyyy");  
+			//Date d = new Date();
+			//dtInicio =dataAtual;
+	//	}
+		return dtInicio;
+	}
+
+	/**
+	 * @param dtInicio Date
+	 */
+	public void setDtInicio(Date dtInicio) {
+    	//try {
+    		//if (dtInicio.equals(null)){
+    		//	throw new BusinessException("Dia tem que estar entre 1 e 31 ");
+    	//	}
+    		this.dtInicio = dtInicio;
+		//}
+		//catch (BusinessException e) {
+    	//	this.dtInicio = dtInicio;
+		//	this.tratarExcecao(e, null);
+		//}
+	}
+
+	/**
+	 * @return Date
+	 */
+	public Date getDtFim() {
+		//if (dtFim.equals(null))
+		//{
+		//	SimpleDateFormat data = new SimpleDateFormat("dd/MM/yyyy");  
+		//	Date d = new Date();
+		//	dtFim =dataAtual;
+		//}
+		return dtFim;
+	}
+
+	/**
+	 * @param dtFim Date
+	 */
+	public void setDtFim(Date dtFim) {
+		this.dtFim = dtFim;
+	}
+
+	/**
+	 * @return String
+	 */
+	public String getIcDestinatario() {
+		return icDestinatario;
+	}
+
+	/**
+	 * @param icDestinatario String
+	 */
+	public void setIcDestinatario(String icDestinatario) {
+		this.icDestinatario = icDestinatario;
+		
+		if(!"1".equals(this.getIcDestinatario())){
+			this.getVo().setServico(new ServicoVO());
+		}
+	}
+	
+// ***********************************************************************************************************************************
+}

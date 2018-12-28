@@ -1,0 +1,37 @@
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:rich="http://richfaces.org/rich" xmlns:a4j="http://richfaces.org/a4j">
+
+    <ui:composition template="/composicoes/layoutBasico.xhtml" xmlns:siavs="http://java.sun.com/jsf/composite/siavs">
+
+        <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+        <ui:define name="colunasTabelaPesquisa">
+
+            <rich:column style="text-align:left; vertical-align: middle; width: 90%;">
+                <f:facet name="header">
+				Segmento
+			</f:facet>
+                <h:outputText value="#{voTabela.noSegmento}" />
+            </rich:column>
+
+        </ui:define>
+
+        <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+        <ui:define name="formCadastro">
+
+            <div class="linha">
+                <label for="txtNoSegmento">Segmento<siavs:obrigatorio />:
+                </label>
+                <h:inputText id="txtNoSegmento" maxlength="50" value="#{C.view.vo.noSegmento}" />
+                <div class="clearBoth"></div>
+            </div>
+
+        </ui:define>
+
+        <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+    </ui:composition>
+
+</ui:fragment>

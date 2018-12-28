@@ -1,0 +1,52 @@
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:rich="http://richfaces.org/rich" xmlns:a4j="http://richfaces.org/a4j">
+
+    <ui:composition template="/composicoes/layoutSimples.xhtml" xmlns:siavs="http://java.sun.com/jsf/composite/siavs">
+
+        <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+        <ui:define name="titulo">
+            <siavs:tituloGrupo />
+        </ui:define>
+
+        <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+        <ui:define name="conteudoSimples">
+
+            <h:form id="formMeta">
+                <div id="manterMeta">
+                    <div class="tabelaPesquisa" style="width: 100%;">
+                        <table>
+
+                            <ui:repeat var="vo" value="#{C.view.listaVo}">
+                                <tr>
+                                    <td><label for="txtVrNotaMeta">#{vo.aaCompetencia} :</label></td>
+                                    <td><h:inputText id="txtVrNotaMeta" value="#{vo.vrNotaMeta}" size="3"
+                                            maxlength="2" styleClass="numero" /></td>
+                                </tr>
+                            </ui:repeat>
+
+                        </table>
+                    </div>
+                    <div class="clearBoth"></div>
+                </div>
+
+                <ul class="botoes">
+                    <li><a4j:commandLink value="Salvar" action="#{C.view.salvar()}" styleClass="button caixa"
+                            title="#{msgs.MA006}" render="formMeta renderInicial" execute="@form"
+                            oncomplete="U.posRender()" /></li>
+                    <li><h:commandLink value="Voltar" immediate="true"
+                            action="#{manterGrupoView.irTelaAlteracao(manterGrupoView.vo)}" styleClass="button orange"
+                            title="Clique para voltar a tela do #{manterGrupoView.titulo}!" /></li>
+                </ul>
+
+            </h:form>
+
+        </ui:define>
+
+        <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+    </ui:composition>
+
+</ui:fragment>

@@ -1,0 +1,115 @@
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:rich="http://richfaces.org/rich" xmlns:a4j="http://richfaces.org/a4j">
+
+    <ui:composition template="/composicoes/layoutBasico.xhtml" xmlns:siavs="http://java.sun.com/jsf/composite/siavs">
+
+        <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+        <ui:define name="colunasTabelaPesquisa">
+
+            <rich:column style="text-align:left; width: 1%; vertical-align: middle;">
+                <f:facet name="header">
+				Matrícula
+			</f:facet>
+                <h:outputText value="#{voTabela.funcionarioCaixaLocal.funcionarioCaixa.deMatricula}" />
+            </rich:column>
+
+            <rich:column style="text-align:left; width: 45%; vertical-align: middle;"
+                sortBy="#{voTabela.funcionarioCaixaLocal.funcionarioCaixa.noFuncionario}"
+                sortOrder="#{C.view.ordenar('noFuncionario', true)}">
+                <f:facet name="header">
+                    <h:commandLink value="Nome" action="#{C.view.ordenar('noFuncionario', false)}">
+                        <h:graphicImage value="#{resource['images/bullet_arrow_up.png']}"
+                            style="margin-left: 370px; vertical-align: middle; active:images/bullet_arrow_up.png" />
+                        <f:ajax execute="@this" render="compTabelaPesquisa" />
+                    </h:commandLink>
+                </f:facet>
+                <h:outputText value="#{voTabela.funcionarioCaixaLocal.funcionarioCaixa.noFuncionario}" />
+            </rich:column>
+
+            <rich:column style="text-align:left; width: 45%; vertical-align: middle;">
+                <f:facet name="header">
+				Unidade
+			</f:facet>
+                <h:outputText value="#{voTabela.funcionarioCaixaLocal.unidade.nuUnidade}" /> - <h:outputText
+                    value="#{voTabela.funcionarioCaixaLocal.unidade.noUnidade}" />
+            </rich:column>
+
+            <rich:column style="text-align:left; width: 1%; white-space: nowrap;">
+                <f:facet name="header">
+				Acesso
+			</f:facet>
+                <h:outputText value="#{dominioView.getNivelAcesso(voTabela.icAcesso).nome}" />
+            </rich:column>
+
+        </ui:define>
+
+        <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+        <ui:define name="formCadastro">
+
+            <div class="linha">
+                <label for="txtNuMatricula">Matrícula<siavs:obrigatorio />:
+                </label>
+                <h:inputText id="txtNuMatricula" maxlength="7"
+                    value="#{C.view.vo.funcionarioCaixaLocal.funcionarioCaixa.deMatricula}"
+                    style="width: 120px; margin-top: 2px;" disabled="#{!empty C.view.vo.pk}"
+                    valueChangeListener="#{C.view.txtNuMatriculaOnChange}" styleClass="matriculaRede">
+                    <f:ajax render="txtNoFuncionario txtNoUnidade txtEmail cmbIcAcesso" />
+                </h:inputText>
+                <a4j:commandLink value="Consultar" action="#{C.view.consultarUsuario()}"
+                    rendered="#{empty C.view.vo.pk}" styleClass="bt_listar" style="margin-top: -10px;"
+                    title="Clique para consultar os dados do usuário!" render="txtNoFuncionario txtNoUnidade txtEmail"
+                    execute="@form" oncomplete="U.posRender()" />
+                <div class="clearBoth"></div>
+            </div>
+
+            <div class="linha">
+                <label for="txtNoFuncionario">Nome:</label>
+                <h:inputText id="txtNoFuncionario"
+                    value="#{C.view.vo.funcionarioCaixaLocal.funcionarioCaixa.noFuncionario}" disabled="true" />
+                <div class="clearBoth"></div>
+            </div>
+
+            <div class="linha">
+                <label for="txtNoUnidade">Unidade:</label>
+                <h:inputText id="txtNoUnidade" value="#{C.view.vo.funcionarioCaixaLocal.unidade.noUnidade}"
+                    disabled="true" />
+                <div class="clearBoth"></div>
+            </div>
+
+            <div class="linha">
+                <label for="cmbIcAcesso">Nível de acesso<siavs:obrigatorio />:
+                </label>
+                <h:selectOneMenu id="cmbIcAcesso" value="#{C.view.vo.icAcesso}">
+                    <f:selectItem itemLabel="Selecione" itemValue="" />
+                    <f:selectItems value="#{dominioView.listaNivelAcesso}" var="item" itemLabel="#{item.nome}"
+                        itemValue="#{item.codigo}" />
+                </h:selectOneMenu>
+                <div class="clearBoth"></div>
+            </div>
+
+            <div class="linha">
+                <label for="txtEmail">Email*:</label>
+                <h:inputText id="txtEmail" value="#{C.view.vo.funcionarioCaixaLocal.unidade.deEmail}"
+                    style="width:280px;" disabled="true" />
+                <label style="width: 70px;">@mail.caixa</label>
+                <div class="clearBoth"></div>
+            </div>
+
+        </ui:define>
+
+        <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+        <ui:define name="conteudoExtra">
+            <h:outputText
+                value="* Este e-mail será utilizado como remetente para as mensagens enviadas na opção Posicionamento / Enviar Email."
+                styleClass="manterUsuarioRodape" rendered="#{C.view.opIncluir || C.view.opAlterar}" />
+        </ui:define>
+
+        <!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+    </ui:composition>
+
+</ui:fragment>

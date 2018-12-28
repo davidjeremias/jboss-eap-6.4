@@ -1,0 +1,66 @@
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:rich="http://richfaces.org/rich" xmlns:a4j="http://richfaces.org/a4j">
+    
+<ui:composition template="/composicoes/layoutBasico.xhtml" xmlns:siavs="http://java.sun.com/jsf/composite/siavs">
+
+<!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+	<ui:define name="titulo">
+		<siavs:tituloGrupo/>
+	</ui:define>
+
+<!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+
+	<ui:define name="colunasTabelaPesquisa">
+	
+		<rich:column style="text-align:left; vertical-align: middle; width: 90%;">
+			<f:facet name="header">
+				Grupo
+			</f:facet>
+			<h:outputText value="#{voTabela.noGrupo}" />
+		</rich:column>
+		
+	</ui:define>
+	
+<!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->
+	
+	<ui:define name="formCadastro">
+		<div class="linha">
+			<label for="txtNomeGrupo">Nome do Grupo<siavs:obrigatorio/>:</label>
+			<h:inputText id="txtNomeGrupo" maxlength="50" value="#{C.view.vo.noGrupo}" disabled="#{C.view.vo.icAgencia}" />
+			<div class="clearBoth"></div>
+		</div>
+		
+		<div class="linha">
+			<label for="chkIcEnviaEmailConvocacao">Email de Convocação :</label>
+			<h:selectBooleanCheckbox id="chkIcEnviaEmailConvocacao" value="#{C.view.vo.icEnviaEmailConvocacao}" valueChangeListener="#{C.view.chkIcEnviaEmailConvocacaoOnChange}" disabled="#{C.view.vo.icAgencia}">
+				<f:ajax render="agrFA"/>
+			</h:selectBooleanCheckbox>
+			<div class="clearBoth"></div>
+		</div>
+		
+		<div class="linha">
+			<h:panelGroup id="agrFA">
+				<label for="cmbFrequenciaAvaliacao">Frequência de Avaliação<siavs:obrigatorio condicao="#{C.view.vo.icEnviaEmailConvocacao}"/>:</label>
+				<h:selectOneMenu id="cmbFrequenciaAvaliacao" value="#{C.view.vo.icFrequenciaAvaliacao}" disabled="#{!C.view.vo.icEnviaEmailConvocacao || C.view.vo.icAgencia}">
+					<f:selectItem itemLabel="Selecione" itemValue=""/>
+					<f:selectItems value="#{dominioView.listaFrequenciaAvaliacao}" var="item" itemLabel="#{item.nome}" itemValue="#{item.codigo}" />
+				</h:selectOneMenu>
+			</h:panelGroup>
+			<div class="clearBoth"></div>
+		</div>
+		
+		<div class="linha">
+			<label for="chkAtivo">Ativo :</label>
+			<h:selectBooleanCheckbox id="chkAtivo" value="#{C.view.vo.icAtivo}"  />
+			<div class="clearBoth"></div>
+		</div>
+		
+	</ui:define>
+	
+<!-- *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	* -->	
+	
+</ui:composition>
+
+</ui:fragment>
